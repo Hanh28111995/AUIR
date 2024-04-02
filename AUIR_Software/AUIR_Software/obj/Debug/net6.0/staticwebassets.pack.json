@@ -449,12 +449,20 @@
       "PackagePath": "staticwebassets\\asset\\css\\AUIR_Software.styles.min.css"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\AIUR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\bg\\027174c23a678eef1961532798647c98.png",
-      "PackagePath": "staticwebassets\\asset\\img\\bg\\027174c23a678eef1961532798647c98.png"
+      "Id": "C:\\Users\\wcl\\Desktop\\AIUR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\bg\\Project\\Acexus.png",
+      "PackagePath": "staticwebassets\\asset\\img\\bg\\Project\\Acexus.png"
     },
     {
-      "Id": "C:\\Users\\wcl\\Desktop\\AIUR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\bg\\6d22058707501b80b566898627c3c5ff.png",
-      "PackagePath": "staticwebassets\\asset\\img\\bg\\6d22058707501b80b566898627c3c5ff.png"
+      "Id": "C:\\Users\\wcl\\Desktop\\AIUR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\bg\\Project\\FLOORING.png",
+      "PackagePath": "staticwebassets\\asset\\img\\bg\\Project\\FLOORING.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\AIUR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\bg\\Project\\KAVIK.png",
+      "PackagePath": "staticwebassets\\asset\\img\\bg\\Project\\KAVIK.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\AIUR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\bg\\Project\\LLC.png",
+      "PackagePath": "staticwebassets\\asset\\img\\bg\\Project\\LLC.png"
     },
     {
       "Id": "C:\\Users\\wcl\\Desktop\\AIUR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\bg\\hero_bg.mp4",
