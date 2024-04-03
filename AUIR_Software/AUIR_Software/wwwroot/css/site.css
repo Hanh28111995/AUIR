@@ -1,5 +1,11 @@
 @import url('https://fonts.cdnfonts.com/css/satoshi');
 
+
+@font-face {
+    font-family: "Sequel100Black-45";
+    src: url("https://db.onlinewebfonts.com/t/ab80d41fb980ff40273bb0028779b41e.eot");
+    src: url("https://db.onlinewebfonts.com/t/ab80d41fb980ff40273bb0028779b41e.eot?#iefix")format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/ab80d41fb980ff40273bb0028779b41e.woff2")format("woff2"), url("https://db.onlinewebfonts.com/t/ab80d41fb980ff40273bb0028779b41e.woff")format("woff"), url("https://db.onlinewebfonts.com/t/ab80d41fb980ff40273bb0028779b41e.ttf")format("truetype"), url("https://db.onlinewebfonts.com/t/ab80d41fb980ff40273bb0028779b41e.svg#Sequel100Black-45")format("svg");
+}
 @font-face {
     font-family: "Sequel100Black-45";
     src: url("https://db.onlinewebfonts.com/t/ab80d41fb980ff40273bb0028779b41e.eot");

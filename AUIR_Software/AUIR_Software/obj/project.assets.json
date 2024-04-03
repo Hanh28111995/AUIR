@@ -1724,11 +1724,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wcl\\Desktop\\AIUR\\AUIR_Software\\AUIR_Software\\AUIR_Software.csproj",
+      "projectUniqueName": "C:\\Users\\wcl\\Desktop\\AIUR\\github\\AUIR\\AUIR_Software\\AUIR_Software\\AUIR_Software.csproj",
       "projectName": "AUIR_Software",
-      "projectPath": "C:\\Users\\wcl\\Desktop\\AIUR\\AUIR_Software\\AUIR_Software\\AUIR_Software.csproj",
+      "projectPath": "C:\\Users\\wcl\\Desktop\\AIUR\\github\\AUIR\\AUIR_Software\\AUIR_Software\\AUIR_Software.csproj",
       "packagesPath": "C:\\Users\\wcl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wcl\\Desktop\\AIUR\\AUIR_Software\\AUIR_Software\\obj\\",
+      "outputPath": "C:\\Users\\wcl\\Desktop\\AIUR\\github\\AUIR\\AUIR_Software\\AUIR_Software\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

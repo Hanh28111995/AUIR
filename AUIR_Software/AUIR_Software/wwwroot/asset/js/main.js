@@ -1,4 +1,38 @@
-﻿////////////////event click navlink ////////////////////
+﻿$(document).ready(function () {
+    $(".page").click(function () {
+        var fuller = $(this).closest(".page").next();
+        var find_child = $(this).find(".page-expand");
+        if (find_child.length) {
+            // found!
+            section = $(this).closest(".section");
+            section.animate({
+                scrollTop: section.scrollTop() + find_child.height()
+            }, 700);
+            $(this).find(".page-expand").removeClass("page-expand").addClass("page-expanded");            
+        }
+        else {
+            var find_child = $(this).find(".page-expanded");                                    
+            $('.section').animate({
+                scrollTop: find_child.offset().top + find_child.height() +  parseInt(find_child.closest('.page').next().css('margin-top'),10)
+            }, 700);
+        }
+
+
+
+        //if ($(this).closest('.page').height() > fuller.height()) {
+        //    console.log($(this).closest('.page').offset().top)
+        //    section = $(this).closest('.section');
+        //    section.animate({
+        //        scrollTop: section.scrollTop() + $(this).closest('.page').height() - fuller.height()
+        //    }, 700);
+        //    fuller.addClass("page-expand").removeClass("page");
+        //}
+
+    });
+});
+
+
+////////////////event click navlink ////////////////////
 
 document.addEventListener('DOMContentLoaded', function () {
     var navLinks = document.querySelectorAll('.nav-link');
@@ -29,42 +63,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 ////////////gsap setting //////////////////////////////
-gsap.registerPlugin(ScrollTrigger);
+//gsap.registerPlugin(ScrollTrigger);
 
-document.getElementById("Home").addEventListener("click", function () {
-    console.log('ready')
-gsap.to(".text-existed", {
-    y: "-100%", delay: 0, duration: 1,         
-})   
-gsap.to(".text-removed", {
-    y: "0", delay: 0, duration: 1,
-})   
-gsap.to(".text-existed-s", {
-    y: "-100%", delay: 0, duration: 1,
-})
-    gsap.to(".text-removed-s", {
-        y: "-100%", delay: 0, duration: 1,
-        onComplete: function () {
-            document.getElementById("Home").addEventListener("click", function () {
-                console.log("check")
-                gsap.to(".home-page-expand",
-                    {
-                        y: "100%", 
-                        duration: 1, 
-                        scrollTrigger:
-                        {
-                            trigger: "#Home", // Element that triggers the animation
-                            start: "top 100%", // Animation starts when the trigger element is 80% from the top of the viewport
-                            end: "top 50%", // Animation ends when the trigger element is 20% from the bottom of the viewport
-                            scrub: true, // Smoothly animates the elements based on the scroll
-                            markers: true, // For demonstration purpose: shows markers indicating the start and end of the scroll trigger
-                        }
-                    })
-            })
-        }
-    })
-})
+//document.getElementById("Home").addEventListener("click", function () {
+//    gsap.to(".text-existed", {
+//        y: "-100%", delay: 0, duration: 1,
+//    })
+//    gsap.to(".text-removed", {
+//        y: "0", delay: 0, duration: 1,
+//    })
+//    gsap.to(".text-existed-s", {
+//        y: "-100%", delay: 0, duration: 1,
+//    })
+//    gsap.to(".text-removed-s", {
+//        y: "-100%", delay: 0, duration: 1,
+//        onComplete: function () {
+//            document.getElementById("Home").addEventListener("click", function () {
+//                gsap.to(".home-page-expand",
+//                    {
+//                        y: "100%",
+//                        duration: 1,
+//                        scrollTrigger:
+//                        {
+//                            trigger: "#Home",
+//                            start: "top center",
+//                            end: "bottom center",
+//                            scrub: true,
+//                        }
+//                    })
+//            })
+//        }
+//    })
+//})
 
 
 
-    
+
+

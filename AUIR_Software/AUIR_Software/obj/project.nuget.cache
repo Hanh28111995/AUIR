@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X8wYj8iyK7HsI2eIvcA/z8HWlZG4eU/+/G3L3jYmlQSUKUfkOhB9oZDzwxZLu3lshytkc86PZYc9w58yWiS0qQ==",
+  "dgSpecHash": "Fp6Q2oJtHmqCk8Y4Tz+pRAkiLbBGpryhL0lEwuxJRIOAw8LzefLM7BIszCGeowE5jkaub2VM6qv6yeQjaBvGVQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wcl\\Desktop\\AIUR\\AUIR_Software\\AUIR_Software\\AUIR_Software.csproj",
+  "projectFilePath": "C:\\Users\\wcl\\Desktop\\AIUR\\github\\AUIR\\AUIR_Software\\AUIR_Software\\AUIR_Software.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wcl\\.nuget\\packages\\bootstrap.sass\\5.3.3\\bootstrap.sass.5.3.3.nupkg.sha512",
     "C:\\Users\\wcl\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.0\\microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",

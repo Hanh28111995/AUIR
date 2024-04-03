@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AUIR_Software</title>
-    
-    
+
+
     <meta name="description" content="AIUR Software">
     @*<meta property="og:url" content="https://">*@
     <meta property="og:type" content="website">
@@ -25,10 +25,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link href="https://db.onlinewebfonts.com/c/ab80d41fb980ff40273bb0028779b41e?family=Sequel100Black-45" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
-    
+
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="./asset/css/AUIR_Software.styles.css" asp-append-version="true" />
@@ -37,9 +37,9 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-transparent box-shadow ">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">                    
-                    <img class="logo img-fluid" src="./asset/img/item/logo.png" alt=""/>
-                </a>          
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img class="logo img-fluid" src="./asset/img/item/logo.png" alt="" />
+                </a>
                 <div class=" d-inline-flex justify-content-between ml-auto">
                     <ul class="navbar-nav d-flex align-items-center">
                         <li class="nav-item">
@@ -48,29 +48,25 @@
                         <li class="nav-item">
                             <button class="navbar-toggler d-block custom-collapse-btn" type="button" data-toggle="collapse"
                                     data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                                    aria-label="Toggle navigation" >
-                                <img src="./asset/img/icon/collapse-menu.svg" alt="" />
-                            </button>                
-                        </li>
-                    </ul>
-                </div>                
-
-                
-                
-
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav m-auto">
-
-                        <li class="nav-item">
-                            <button class="navbar-toggler d-block text-light" type="button" data-toggle="collapse"
-                                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                                     aria-label="Toggle navigation">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                                </svg>
+                                <img src="./asset/img/icon/collapse-menu.svg" alt="" />
                             </button>
                         </li>
-                        
+                    </ul>
+                </div>
+
+
+
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <button class="navbar-toggler d-block text-light" type="button" data-toggle="collapse"
+                            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </button>
+                    <ul class="navbar-nav" style="height: unset;">                        
                         <li class="nav-item active">
                             <a class="nav-link" href="#Home">Home </a>
                         </li>
@@ -85,59 +81,61 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#Contact">Contact </a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <div class="nav-input">
-                                <label>Subscribe to our newsletter</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Insert your email" aria-label="" aria-describedby="button-addon2">
-                                    <button class="btn btn-outline-secondary custom-collapse-btn" type="button" id="button-addon2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <div class="tag-list">
-                                    <div class="col-12">
-                                        <div class="col-3">
-                                            <div class="tag-list-item">
-                                                Linkedin
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="tag-list-item">
-                                                Facebook
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="tag-list-item">
-                                                Youtube
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="tag-list-item">
-                                                Tiktok
-                                            </div>
-                                        </div>
-                                        <div class="col-3">
-                                            <div class="tag-list-item">
-                                                Instagram
-                                            </div>
-                                        </div>                                        
-                                    </div>
+                        </li>                     
+                    </ul>
+                    <div class="nav-input">
+                        <label>Subscribe to our newsletter</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Insert your email" aria-label="" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary custom-collapse-btn" type="button" id="button-addon2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                </svg>
+                            </button>
+                        </div>                     
+                    </div>
+                    <div class="tag-list">
+                        <div class="col-12 d-flex flex-row row" >
+                            <div class="col-3 d-flex justify-content-start">
+                                <div class="tag-list-item">
+                                    <span>
+                                    Linkedin
+                                    </span>
                                 </div>
                             </div>
-                        </li>
-
-                        <li class="nav-item">
-                        </li>
-
-                        
-                    </ul>
+                            <div class="col-3 d-flex justify-content-start">
+                                <div class="tag-list-item">
+                                    <span>
+                                    Facebook
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-3 d-flex justify-content-start">
+                                <div class="tag-list-item">
+                                    <span>
+                                    Youtube
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-3 d-flex justify-content-start">
+                                <div class="tag-list-item">
+                                    <span>
+                                    Tiktok
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-3 d-flex justify-content-start">
+                                <div class="tag-list-item">
+                                    <span>
+                                    Instagram
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                    
+
             </div>
         </nav>
     </header>
@@ -166,11 +164,10 @@
             @RenderBody()
         </main>
     </div>
-    
+
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="/asset/lib/slick/slick.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -178,10 +175,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>    
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-        
-    <script src="/asset/js/main.js" type="text/javascript" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    @*k<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>*@
+
+    <script src="/asset/js/main.js" type="text/javascript"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

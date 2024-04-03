@@ -1,5 +1,16 @@
 ﻿body {
   width: 100vw;
+  /*.projects-page {
+      .content-left {
+          h2{
+              color:;
+              fon
+          }
+      }
+
+      .content-right {
+      }
+  }*/
 }
 body .container-fluid {
   padding-left: 0;
@@ -15,11 +26,25 @@ body #navbarNavDropdown {
   top: 0px;
   right: -468px;
   transition: ease-in-out all 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+body #navbarNavDropdown button.navbar-toggler {
+  outline: none;
+  border: none;
+  margin-right: auto;
+}
+body #navbarNavDropdown button.navbar-toggler svg {
+  width: 59px;
+  height: 59px;
 }
 body #navbarNavDropdown ul {
   padding-top: 25px;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 body #navbarNavDropdown ul .nav-item .nav-link {
   font-family: " Space Grotesk", sans-serif;
@@ -28,36 +53,39 @@ body #navbarNavDropdown ul .nav-item .nav-link {
   font-weight: 400;
   line-height: 1.2;
 }
-body #navbarNavDropdown ul .nav-item .nav-input label {
+body #navbarNavDropdown .nav-input label {
   font-family: inherit;
   font-size: 20px;
   color: #FFFEFC;
 }
-body #navbarNavDropdown ul .nav-item .nav-input .input-group input {
+body #navbarNavDropdown .nav-input .input-group input {
   padding: 9px;
   border: 1px solid #fff;
   outline: 1px solid #fff;
   background: #1F1F1E;
 }
-body #navbarNavDropdown ul .nav-item .nav-input .input-group button.btn-outline-secondary {
+body #navbarNavDropdown .nav-input .input-group button.btn-outline-secondary {
   padding: 5px;
 }
-body #navbarNavDropdown ul .nav-item .nav-input .input-group button.btn-outline-secondary svg {
+body #navbarNavDropdown .nav-input .input-group button.btn-outline-secondary svg {
   width: 30px;
   height: 30px;
   color: #FF9E00;
 }
-body #navbarNavDropdown ul .nav-item:first-child {
-  left: -100px;
-  position: relative;
+body #navbarNavDropdown .tag-list .tag-list-item {
+  border: 1px solid #6B6A69;
+  border-radius: 200px;
+  padding: 10px 15px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  display: flex;
 }
-body #navbarNavDropdown ul .nav-item:first-child button {
-  outline: none;
-  border: none;
-}
-body #navbarNavDropdown ul .nav-item:first-child button svg {
-  width: 59px;
-  height: 59px;
+body #navbarNavDropdown .tag-list .tag-list-item span {
+  font-family: "Space Grotesk";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: white;
 }
 body header {
   padding: 5px 60px;
@@ -129,24 +157,36 @@ body header .custom-collapse-btn img {
   width: 25px;
   height: 25px;
 }
+body .section {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+}
 body #video-background {
   transform: translateY(-50%);
   position: relative;
-  top: calc(50% + 70px);
+  top: 50%;
   left: 0;
   width: 100%;
   z-index: 1;
-  padding-bottom: 70px;
+  background-color: transparent;
+  height: 100vh;
 }
-body section.home-page, body section.about-page, body section.project-page {
+body .page {
   color: #FFFEFC;
   height: 100vh;
   width: 100vw;
   position: relative;
   scroll-margin-block: 0;
 }
+body .about-page-expand, body .home-page-expand {
+  height: fit-content !important;
+}
 body .home-page .home-page-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
   left: 0;
@@ -156,6 +196,7 @@ body .home-page .home-page-overlay {
 }
 body .home-page .home-page-content {
   position: absolute;
+  width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
@@ -233,18 +274,26 @@ body .home-page .home-page-content .title-3 .wrap-limit-p {
 body .home-page .home-page-content .title-3 .wrap-limit-p p {
   margin-bottom: 0;
 }
-body .home-page-expand, body .about-page-expand {
-  background-color: rgba(0, 0, 0, 0.5);
+body .home-page .home-page-expand {
   position: relative;
-  padding: 0 60px;
-  z-index: 2;
+  z-index: 3;
+  padding: 0px 60px;
 }
-body .home-page-expand .home-page-expand-content, body .home-page-expand .about-page-expand-content, body .about-page-expand .home-page-expand-content, body .about-page-expand .about-page-expand-content {
+body .home-page .home-page-expand a {
+  color: #FF9E00;
+  text-decoration: underline;
+  font-size: 24px;
+}
+body .home-page .home-page-expand a:hover {
+  color: inherit;
+}
+body .home-page .home-page-expand .home-page-expand-content {
   border-bottom: 1px solid;
   border-image: linear-gradient(to right, #FDBB4F 75%, #E27726 25%);
   border-image-slice: 1;
+  margin-bottom: 30px;
 }
-body .home-page-expand .home-page-expand-content p, body .home-page-expand .about-page-expand-content p, body .about-page-expand .home-page-expand-content p, body .about-page-expand .about-page-expand-content p {
+body .home-page .home-page-expand .home-page-expand-content p {
   font-family: "Space Grotesk";
   font-size: 42px;
   font-weight: 400;
@@ -252,15 +301,104 @@ body .home-page-expand .home-page-expand-content p, body .home-page-expand .abou
   padding: 60px 0;
   color: #FFFEFC;
 }
-body .home-page-expand .home-page-expand-content p span, body .home-page-expand .about-page-expand-content p span, body .about-page-expand .home-page-expand-content p span, body .about-page-expand .about-page-expand-content p span {
+body .home-page .home-page-expand .home-page-expand-content p span {
   color: #FDBB4F;
 }
-body .home-page-expand .about-content-text, body .about-page-expand .about-content-text {
+body .about-page {
+  margin-top: 250px;
+}
+body .about-page .about-bg .bg-img {
+  top: 50%;
+  transform: translateY(50%);
+  position: relative;
+  z-index: -10;
+}
+body .about-page .about-bg .bg-img img {
+  display: block;
+  animation: rotate 20s linear infinite;
+}
+body .about-page .about-bg {
+  position: relative;
+  overflow-x: hidden;
+}
+body .about-page .about-bg .about-content {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transform: translateY(-50%);
+  margin-bottom: 500px;
+  /*p:first-child {
+  }
+
+  p:last-child {
+  }*/
+}
+body .about-page .about-bg .about-content > h1 {
+  font-family: "Sequel100Black-45";
+  position: relative;
+  font-size: 463px;
+  font-weight: 400;
+  line-height: 699px;
+  margin-top: 90px;
+  margin-bottom: 0px;
+  vertical-align: middle;
+  text-align: center;
+}
+body .about-page .about-bg .about-content .hor-wrap {
+  transform: translateY(100%);
+}
+body .about-page .about-bg .about-image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+body .about-page .about-bg .about-image img:first-child {
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  transform: translateY(50%);
+  z-index: 11;
+}
+body .about-page .about-bg .about-image img:last-of-type {
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  transform: translateY(50%);
+  z-index: 11;
+}
+body .about-page .about-bg .about-image .about-page-expand {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 100%;
+  padding: 0 60px;
+  z-index: 7;
+}
+body .about-page .about-bg .about-image .about-page-expand .about-page-expand-content {
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, #FDBB4F 75%, #E27726 25%);
+  border-image-slice: 1;
+}
+body .about-page .about-bg .about-image .about-page-expand .about-page-expand-content p {
+  font-family: "Space Grotesk";
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 60px 0;
+  color: #FFFEFC;
+}
+body .about-page .about-bg .about-image .about-page-expand .about-page-expand-content p span {
+  color: #FDBB4F;
+}
+body .about-page .about-bg .about-image .about-page-expand .about-content-text {
   display: flex;
   flex-direction: row;
   padding: 28px 0;
 }
-body .home-page-expand .about-content-text p:first-child, body .about-page-expand .about-content-text p:first-child {
+body .about-page .about-bg .about-image .about-page-expand .about-content-text p:first-child {
   display: flex;
   font-family: "Satoshi", sans-serif;
   font-size: 24px;
@@ -270,36 +408,13 @@ body .home-page-expand .about-content-text p:first-child, body .about-page-expan
   white-space: nowrap;
   margin-right: 135px;
 }
-body .home-page-expand .about-content-text p:last-child, body .about-page-expand .about-content-text p:last-child {
+body .about-page .about-bg .about-image .about-page-expand .about-content-text p:last-child {
   display: flex;
   font-family: "Space Grotesk";
   font-size: 24px;
   font-weight: 400;
   line-height: 1.3;
   color: white;
-}
-body .home-page-expand a, body .about-page-expand a {
-  color: #FF9E00;
-  text-decoration: underline;
-  font-size: 24px;
-  padding: 27px 0;
-}
-body .home-page-expand a:hover, body .about-page-expand a:hover {
-  color: inherit;
-}
-body .about-page .about-bg > img {
-  display: block;
-  animation: rotate 50s linear infinite;
-}
-body .about-page .about-bg {
-  position: relative;
-}
-body .about-page .about-bg .about-content {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 body .about-running-text {
   font-size: 2vw;
