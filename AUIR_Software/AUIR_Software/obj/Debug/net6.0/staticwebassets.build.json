@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "m98g9fNlimQm367d8BAo88+QGbLXZ2+h9Mj/AoyyvsM=",
+  "Hash": "qnEXwrFOA38gcPIzbH5ZXxs+rv2E3czwPCJhr9xiYb8=",
   "Source": "AUIR_Software",
   "BasePath": "_content/AUIR_Software",
   "Mode": "Default",
@@ -2242,6 +2242,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\asset\\img\\icon\\youtube.svg"
+    },
+    {
+      "Identity": "C:\\Users\\wcl\\Desktop\\AIUR\\github\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\item\\12.png",
+      "SourceId": "AUIR_Software",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\AIUR\\github\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\",
+      "BasePath": "_content/AUIR_Software",
+      "RelativePath": "asset/img/item/12.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\asset\\img\\item\\12.png"
+    },
+    {
+      "Identity": "C:\\Users\\wcl\\Desktop\\AIUR\\github\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\item\\32.png",
+      "SourceId": "AUIR_Software",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\wcl\\Desktop\\AIUR\\github\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\",
+      "BasePath": "_content/AUIR_Software",
+      "RelativePath": "asset/img/item/32.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\asset\\img\\item\\32.png"
     },
     {
       "Identity": "C:\\Users\\wcl\\Desktop\\AIUR\\github\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\item\\AIUR.png",

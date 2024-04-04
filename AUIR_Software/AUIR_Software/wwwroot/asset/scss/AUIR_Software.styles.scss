@@ -186,6 +186,8 @@ body {
         overflow: scroll;
     }
 
+
+
     #video-background {
         transform: translateY(-50%);
         position: relative;
@@ -329,6 +331,7 @@ body {
                 color: $Primary;
                 text-decoration: underline;
                 font-size: 24px;
+                padding-bottom: 2rem;
 
                 &:hover {
                     color: inherit;
@@ -347,8 +350,9 @@ body {
                     font-size: 42px;
                     font-weight: 400;
                     line-height: 1.2;
-                    padding: 60px 0;
+                    padding: 50px 0;
                     color: $LightText;
+                    margin-bottom: 0;
 
                     span {
                         color: $Primary500;
@@ -535,17 +539,172 @@ body {
         }
     }
 
-    /*.projects-page {
-        .content-left {
-            h2{
-                color:;
-                fon
+    .projects-page {
+        margin-top: 450px;
+
+        .projects-title {
+            padding: 60px;
+            height: 100vh;
+
+            .content-left {
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+
+                img {
+                    max-width: 740px;
+                    height: fit-content;
+                }
+
+                h5 {
+                    color: $Primary500;
+                    font-family: "Space Grotesk";
+                    font-size: 32px;
+                    font-weight: 400;
+                    line-height: 1.4;
+                    padding-top: 20px;
+
+                    span {
+                        color: $Primary700;
+                    }
+                }
+            }
+
+            .content-right {
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-items: right;
+
+                img {
+                    max-width: 424px;
+                    height: fit-content;
+                }
+
+                h5 {
+                    color: $Gray400;
+                    font-family: "Space Grotesk";
+                    font-size: 32px;
+                    font-weight: 400;
+                    line-height: 1.4;
+                    padding-top: 20px;
+                }
             }
         }
 
-        .content-right {
+        .projects-detail {
+            position: relative;
+
+            .projects-detail-item {
+                position: relative;
+
+                .paralax {
+                    height: 100vh;
+                    width: 100vw;
+                    background-attachment: fixed;
+                    background-position: bottom;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                .projects-detail-item-content {
+                    position: absolute;
+                    left: 0;
+                    bottom: 20%;
+                    padding: 0 60px;
+
+                    h3 {
+                        font-family: 'Satoshi', sans-serif;
+                        font-size: 92px;
+                        font-weight: 500;
+                        line-height: 1.4;
+                    }
+
+                    p {
+                        font-family: 'Satoshi', sans-serif;
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 1.4;
+                    }
+
+                    .describe-list {
+                        display: flex;
+                        flex-direction: row;
+
+                        .describe-list-item {
+                            border: 1px solid white;
+                            border-radius: 22px;
+                            padding: 10px 15px;
+                            font-family: "Space Grotesk";
+                            font-size: 12px;
+                            line-height: 1.2;
+                            font-weight: 500;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+
+            .see-all-projects {
+                position: absolute;
+                width: calc(100% - 60* 2px);
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                border-top: 1px solid;
+                border-bottom: 1px solid;
+                border-image: linear-gradient(to right, #FDBB4F 75%, #E27726 25%);
+                border-image-slice: 1;
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: end;
+
+                a {
+                    text-decoration: none;
+                    font-family: 'Satoshi', sans-serif;
+                    font-size: 72px;
+                    font-weight: 500;
+                    line-height: 1.4;
+                    color: $LightText;
+
+                    svg {
+                        height: 100px;
+                        width: 100px;
+                        color: $Primary;
+                    }
+                }
+            }
         }
-    }*/
+    }
+
+    .service-page {
+        background-color: $LightText;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        z-index:-1;
+
+        .service-title {
+            color: $DarkText;
+            text-align: center;
+
+            h5 {
+                font-family: 'Satoshi',sans-serif;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 1.4;
+            }
+
+            h3 {
+                font-family: 'Satoshi',sans-serif;
+                font-weight: 400;
+                font-size: 44px;
+                line-height: 1.2;
+            }
+        }
+    }
 
     @keyframes marquee0 {
         0% {

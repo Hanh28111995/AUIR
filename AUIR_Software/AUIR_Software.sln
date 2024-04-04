@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AUIR_Software", "AUIR_Software\AUIR_Software.csproj", "{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AUIR_Software", "AUIR_Software\AUIR_Software.csproj", "{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,20 +1,34 @@
-﻿$(document).ready(function () {
+﻿var fix_for_click = 35;
+
+$(document).ready(function () {
     $(".page").click(function () {
-        var fuller = $(this).closest(".page").next();
+        var fuller = $(this).closest(".page");
         var find_child = $(this).find(".page-expand");
         if (find_child.length) {
             // found!
-            section = $(this).closest(".section");
+            section = $(this).closest(".section");            
             section.animate({
-                scrollTop: section.scrollTop() + find_child.height()
+                scrollTop: section.scrollTop() + find_child.height() + fix_for_click
             }, 700);
-            $(this).find(".page-expand").removeClass("page-expand").addClass("page-expanded");            
+
+            $(this).find(".page-expand").removeClass("page-expand").addClass("page-expanded");
         }
         else {
-            var find_child = $(this).find(".page-expanded");                                    
-            $('.section').animate({
-                scrollTop: find_child.offset().top + find_child.height() +  parseInt(find_child.closest('.page').next().css('margin-top'),10)
-            }, 700);
+            var find_chil = $(this).find(".page-expanded");
+            
+            if (find_chil.length != 0) {
+                let x = find_chil.offset().top + find_chil.height() + parseInt(find_chil.closest('.page').next().css('margin-top'), 10);
+
+                $('.section').animate({
+                    scrollTop: section.scrollTop() + find_chil.offset().top + parseInt(find_chil.closest('.page').next().css('margin-top') || '0', 10)
+                }, 700);
+            }
+            else {
+                section = $(this).closest(".section");
+                section.animate({
+                    scrollTop: section.scrollTop() + fuller.height()
+                }, 700);
+            }
         }
 
 
@@ -98,5 +112,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+var slatCount = 10;
+
+//function horizontalBlinds(elementSelector) {
+//    var currentTop = 0; // Start from the top of the container
+//    var count;
+//    var containerHeight = $(elementSelector).height();
+
+//    // Determine height of each blind slat
+//    var slatHeight = Math.floor(containerHeight / slatCount);
+//    var slatLeftOverHeight = containerHeight - slatHeight * slatCount;
+
+//    // Animate each slat to 'shut' the blind
+//    for (var count = 0; count < slatCount; count++) {
+//        var slat = $(elementSelector + ' .slat').eq(count); // Select existing slats
+//        var actualHeight;
+//        if (count == slatCount - 1)
+//            actualHeight = slatHeight + slatLeftOverHeight;
+//        else
+//            actualHeight = slatHeight;
+
+//        // Delay each animation by count times 500 milliseconds
+//        slat.delay((slatCount - count - 1) * 500).animate({ height: actualHeight + 'px', top: (containerHeight - actualHeight) + 'px' });
+//    }
+//}
+
+
+function horizontalBlinds(elementSelector) {
+    var containerHeight = $(elementSelector).height();
+    var slatHeight = containerHeight / slatCount;
+
+    // Animate each slat to reveal the absolute element below it
+    for (var count = 0; count < slatCount; count++) {
+        var slat = $(elementSelector + '#blindbox');
+        slat.animate({ height: slatHeight * (count + 1) }, 500);
+    }
+}
+
+$(document).ready(function () {
+    $('.see-all-projects').on('click', function () {
+        horizontalBlinds('#blindbox');
+    });
+});
 
 

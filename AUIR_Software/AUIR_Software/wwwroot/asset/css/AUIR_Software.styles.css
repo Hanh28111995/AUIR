@@ -1,16 +1,5 @@
 ﻿body {
   width: 100vw;
-  /*.projects-page {
-      .content-left {
-          h2{
-              color:;
-              fon
-          }
-      }
-
-      .content-right {
-      }
-  }*/
 }
 body .container-fluid {
   padding-left: 0;
@@ -283,6 +272,7 @@ body .home-page .home-page-expand a {
   color: #FF9E00;
   text-decoration: underline;
   font-size: 24px;
+  padding-bottom: 2rem;
 }
 body .home-page .home-page-expand a:hover {
   color: inherit;
@@ -298,8 +288,9 @@ body .home-page .home-page-expand .home-page-expand-content p {
   font-size: 42px;
   font-weight: 400;
   line-height: 1.2;
-  padding: 60px 0;
+  padding: 50px 0;
   color: #FFFEFC;
+  margin-bottom: 0;
 }
 body .home-page .home-page-expand .home-page-expand-content p span {
   color: #FDBB4F;
@@ -453,6 +444,149 @@ body .about-running-text div .marquee__line p {
 body .about-running-text div .marquee__line:last-child {
   animation: marquee1 10s linear infinite;
   animation-delay: -10s;
+}
+body .projects-page {
+  margin-top: 450px;
+}
+body .projects-page .projects-title {
+  padding: 60px;
+  height: 100vh;
+}
+body .projects-page .projects-title .content-left {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+body .projects-page .projects-title .content-left img {
+  max-width: 740px;
+  height: fit-content;
+}
+body .projects-page .projects-title .content-left h5 {
+  color: #FDBB4F;
+  font-family: "Space Grotesk";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.4;
+  padding-top: 20px;
+}
+body .projects-page .projects-title .content-left h5 span {
+  color: #E27726;
+}
+body .projects-page .projects-title .content-right {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-items: right;
+}
+body .projects-page .projects-title .content-right img {
+  max-width: 424px;
+  height: fit-content;
+}
+body .projects-page .projects-title .content-right h5 {
+  color: #AFAEAB;
+  font-family: "Space Grotesk";
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.4;
+  padding-top: 20px;
+}
+body .projects-page .projects-detail {
+  position: relative;
+}
+body .projects-page .projects-detail .projects-detail-item {
+  position: relative;
+}
+body .projects-page .projects-detail .projects-detail-item .paralax {
+  height: 100vh;
+  width: 100vw;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .projects-page .projects-detail .projects-detail-item .projects-detail-item-content {
+  position: absolute;
+  left: 0;
+  bottom: 20%;
+  padding: 0 60px;
+}
+body .projects-page .projects-detail .projects-detail-item .projects-detail-item-content h3 {
+  font-family: "Satoshi", sans-serif;
+  font-size: 92px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+body .projects-page .projects-detail .projects-detail-item .projects-detail-item-content p {
+  font-family: "Satoshi", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+body .projects-page .projects-detail .projects-detail-item .projects-detail-item-content .describe-list {
+  display: flex;
+  flex-direction: row;
+}
+body .projects-page .projects-detail .projects-detail-item .projects-detail-item-content .describe-list .describe-list-item {
+  border: 1px solid white;
+  border-radius: 22px;
+  padding: 10px 15px;
+  font-family: "Space Grotesk";
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 500;
+  margin-left: 10px;
+}
+body .projects-page .projects-detail .see-all-projects {
+  position: absolute;
+  width: calc(100% - 120px);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, #FDBB4F 75%, #E27726 25%);
+  border-image-slice: 1;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: end;
+}
+body .projects-page .projects-detail .see-all-projects a {
+  text-decoration: none;
+  font-family: "Satoshi", sans-serif;
+  font-size: 72px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #FFFEFC;
+}
+body .projects-page .projects-detail .see-all-projects a svg {
+  height: 100px;
+  width: 100px;
+  color: #FF9E00;
+}
+body .service-page {
+  background-color: #FFFEFC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+body .service-page .service-title {
+  color: #545352;
+  text-align: center;
+}
+body .service-page .service-title h5 {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+}
+body .service-page .service-title h3 {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.2;
 }
 @keyframes marquee0 {
   0% {

@@ -521,6 +521,14 @@
       "PackagePath": "staticwebassets\\asset\\img\\icon\\youtube.svg"
     },
     {
+      "Id": "C:\\Users\\wcl\\Desktop\\AIUR\\github\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\item\\12.png",
+      "PackagePath": "staticwebassets\\asset\\img\\item\\12.png"
+    },
+    {
+      "Id": "C:\\Users\\wcl\\Desktop\\AIUR\\github\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\item\\32.png",
+      "PackagePath": "staticwebassets\\asset\\img\\item\\32.png"
+    },
+    {
       "Id": "C:\\Users\\wcl\\Desktop\\AIUR\\github\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\item\\AIUR.png",
       "PackagePath": "staticwebassets\\asset\\img\\item\\AIUR.png"
     },
