@@ -62,9 +62,9 @@ body {
                 }
             }
 
-            .nav-item.active a{
+            .nav-item.active a {
                 color: $Primary;
-               font-weight:bold;
+                font-weight: bold;
             }
         }
 
@@ -123,7 +123,7 @@ body {
         left: 0;
         width: 100%;
         z-index: 100;
-        background-color: black;
+        background-color: rgba(0,0,0,0.64);
 
         .navbar {
             padding-top: 0;
@@ -428,13 +428,38 @@ body {
                 }
 
                 .hor-wrap {
-                    transform: translateY(100%);
-                }
-                /*p:first-child {
-                }
+                    position: absolute;
+                    left: 50%;
+                    z-index: 5;
+                    transform: translate(-50%, 50%);
+                    justify-content: center;
+                    bottom: 0;
+                    opacity: 0;
+                    width: 100%;
 
-                p:last-child {
-                }*/
+                    p {
+                        font-family: 'Space Grotesk';
+                        font-weight: 400;
+                        font-size: 44px;
+                        text-align: center;
+                        line-height: 1.25;
+                        color: $LightText;
+                        display: flex;
+                        align-items: center;
+
+                        &:first-of-type {
+                            opacity: 1;
+                            transform: translateX(0%);
+                            max-width: 525px;
+                        }
+
+                        &:last-of-type {
+                            opacity: 0;
+                            transform: translateX(100%);
+                            max-width: 525px;
+                        }
+                    }
+                }
             }
 
             .about-image {
@@ -448,18 +473,20 @@ body {
 
                 img:first-child {
                     position: absolute;
-                    left: 0%;
+                    right: 0;
                     top: 50%;
-                    transform: translateY(50%);
+                    transform: translate(100%,50%);
                     z-index: 11;
+                    opacity: 0;
                 }
 
                 img:last-of-type {
                     position: absolute;
-                    right: 0%;
+                    left: 0;
                     top: 50%;
-                    transform: translateY(50%);
+                    transform: translate(-100%,50%);
                     z-index: 11;
+                    opacity: 0;
                 }
 
                 .about-page-expand {

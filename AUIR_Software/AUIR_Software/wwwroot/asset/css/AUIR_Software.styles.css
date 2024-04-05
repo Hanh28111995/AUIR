@@ -94,7 +94,7 @@ body header {
   left: 0;
   width: 100%;
   z-index: 100;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.64);
 }
 body header .navbar {
   padding-top: 0;
@@ -337,11 +337,6 @@ body .about-page .about-bg .about-content {
   text-align: center;
   transform: translateY(-50%);
   margin-bottom: 500px;
-  /*p:first-child {
-  }
-
-  p:last-child {
-  }*/
 }
 body .about-page .about-bg .about-content > h1 {
   font-family: "Sequel100Black-45";
@@ -355,7 +350,34 @@ body .about-page .about-bg .about-content > h1 {
   text-align: center;
 }
 body .about-page .about-bg .about-content .hor-wrap {
-  transform: translateY(100%);
+  position: absolute;
+  left: 50%;
+  z-index: 5;
+  transform: translate(-50%, 50%);
+  justify-content: center;
+  bottom: 0;
+  opacity: 0;
+  width: 100%;
+}
+body .about-page .about-bg .about-content .hor-wrap p {
+  font-family: "Space Grotesk";
+  font-weight: 400;
+  font-size: 44px;
+  text-align: center;
+  line-height: 1.25;
+  color: #FFFEFC;
+  display: flex;
+  align-items: center;
+}
+body .about-page .about-bg .about-content .hor-wrap p:first-of-type {
+  opacity: 1;
+  transform: translateX(0%);
+  max-width: 525px;
+}
+body .about-page .about-bg .about-content .hor-wrap p:last-of-type {
+  opacity: 0;
+  transform: translateX(100%);
+  max-width: 525px;
 }
 body .about-page .about-bg .about-image {
   position: absolute;
@@ -368,17 +390,19 @@ body .about-page .about-bg .about-image {
 }
 body .about-page .about-bg .about-image img:first-child {
   position: absolute;
-  left: 0%;
+  right: 0;
   top: 50%;
-  transform: translateY(50%);
+  transform: translate(100%, 50%);
   z-index: 11;
+  opacity: 0;
 }
 body .about-page .about-bg .about-image img:last-of-type {
   position: absolute;
-  right: 0%;
+  left: 0;
   top: 50%;
-  transform: translateY(50%);
+  transform: translate(-100%, 50%);
   z-index: 11;
+  opacity: 0;
 }
 body .about-page .about-bg .about-image .about-page-expand {
   background-color: rgba(0, 0, 0, 0.5);
