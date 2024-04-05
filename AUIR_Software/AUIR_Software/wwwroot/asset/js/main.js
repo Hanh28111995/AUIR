@@ -143,14 +143,37 @@ function horizontalBlinds(elementSelector) {
     var slatHeight = containerHeight / slatCount;
 
     // Animate each slat to reveal the absolute element below it
+    //for (var count = 0; count < slatCount; count++) {
+    //    var slat = $(elementSelector + '#blindbox');
+    //    slat.animate({ height: slatHeight * (count + 1) }, 500);
+    //}
+
     for (var count = 0; count < slatCount; count++) {
-        var slat = $(elementSelector + '#blindbox');
-        slat.animate({ height: slatHeight * (count + 1) }, 500);
-    }
+        // Create new slat element
+        var newSlat = $('<div class="slat"></div>');
+        // Clone content from the original element and append it to the new slat
+        $(elementSelector).children().clone().appendTo(newSlat);
+        // Append the new slat to the container
+        $(elementSelector).append(newSlat);
+        // Animate the new slat's height
+        newSlat.animate({ height: slatHeight }, 0);
+    }    
+    
+    $(elementSelector + ">.paralax").css('display', 'none');
+    $(elementSelector + " .projects-detail-item-content").hide();
+    $(".see-all-projects").hide();
+
+    var horizalPieces = $(elementSelector + ">.slat");    
+    for (var count = 0; count < (horizalPieces.length); count++) {
+        if (count) {
+            $(horizalPieces[count]).animate({ height: "0px" }, 1000)
+        }
+        
+    }                 
 }
 
 $(document).ready(function () {
-    $('.see-all-projects').on('click', function () {
+    $('#blindbox').on('click', function () {
         horizontalBlinds('#blindbox');
     });
 });

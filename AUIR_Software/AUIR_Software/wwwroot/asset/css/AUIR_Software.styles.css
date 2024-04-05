@@ -5,6 +5,10 @@ body .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
+body .slat {
+  overflow: hidden;
+  border: none;
+}
 body #navbarNavDropdown.show {
   right: 0px;
 }
@@ -454,6 +458,7 @@ body .projects-page .projects-title {
 }
 body .projects-page .projects-title .content-left {
   padding: 10px;
+  padding-left: 50px;
   display: flex;
   flex-direction: column;
 }
@@ -473,6 +478,7 @@ body .projects-page .projects-title .content-left h5 span {
   color: #E27726;
 }
 body .projects-page .projects-title .content-right {
+  padding-right: 50px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -536,6 +542,15 @@ body .projects-page .projects-detail .projects-detail-item .projects-detail-item
   font-weight: 500;
   margin-left: 10px;
 }
+body .projects-page .projects-detail .projects-detail-item .projects-last-item {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 body .projects-page .projects-detail .see-all-projects {
   position: absolute;
   width: calc(100% - 120px);
@@ -549,6 +564,7 @@ body .projects-page .projects-detail .see-all-projects {
   margin-bottom: 10px;
   display: flex;
   justify-content: end;
+  z-index: 3;
 }
 body .projects-page .projects-detail .see-all-projects a {
   text-decoration: none;
@@ -568,9 +584,6 @@ body .service-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  bottom: 0;
-  z-index: -1;
 }
 body .service-page .service-title {
   color: #545352;

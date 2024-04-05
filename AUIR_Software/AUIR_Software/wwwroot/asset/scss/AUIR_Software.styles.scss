@@ -8,6 +8,12 @@ body {
         padding-right: 0;
     }
 
+    .slat {
+        overflow: hidden;
+        border: none;        
+    }
+
+
 
     #navbarNavDropdown.show {
         right: 0px;
@@ -548,6 +554,7 @@ body {
 
             .content-left {
                 padding: 10px;
+                padding-left: 50px;
                 display: flex;
                 flex-direction: column;
 
@@ -571,6 +578,7 @@ body {
             }
 
             .content-right {
+                padding-right: 50px;
                 padding: 10px;
                 display: flex;
                 flex-direction: column;
@@ -645,6 +653,16 @@ body {
                 }
             }
 
+            .projects-detail-item .projects-last-item {
+                z-index: 2;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                overflow: hidden;
+            }
+
             .see-all-projects {
                 position: absolute;
                 width: calc(100% - 60* 2px);
@@ -658,6 +676,7 @@ body {
                 margin-bottom: 10px;
                 display: flex;
                 justify-content: end;
+                z-index: 3;
 
                 a {
                     text-decoration: none;
@@ -682,9 +701,6 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        position: absolute;
-        bottom: 0;
-        z-index:-1;
 
         .service-title {
             color: $DarkText;
