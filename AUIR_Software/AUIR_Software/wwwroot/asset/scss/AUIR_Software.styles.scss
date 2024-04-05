@@ -8,10 +8,14 @@ body {
         padding-right: 0;
     }
 
-    .slat {
+    .projects-last-item > .slat {
         overflow: hidden;
-        border: none;        
+        border: none;
+        position: relative;
+        transition: ease-in-out all 0.3s;        
     }
+
+
 
 
 
@@ -218,6 +222,7 @@ body {
     }
 
     .home-page {
+        background-color: black;
 
         .home-page-overlay {
             background-color: rgba(0,0,0,0.7);
@@ -329,6 +334,7 @@ body {
         }
 
         .home-page-expand {
+            background-color: $Gray900;
             position: relative;
             z-index: 3;
             padding: 0px 60px;
@@ -337,7 +343,6 @@ body {
                 color: $Primary;
                 text-decoration: underline;
                 font-size: 24px;
-                padding-bottom: 2rem;
 
                 &:hover {
                     color: inherit;
@@ -370,7 +375,9 @@ body {
 
 
     .about-page {
-        margin-top: 250px;
+        margin-top: 310px;
+        background-color: black;
+        mix-blend-mode: color;
 
         .about-bg {
             .bg-img {
@@ -449,13 +456,15 @@ body {
                     background-color: rgba(0,0,0,0.5);
                     position: absolute;
                     top: 100%;
-                    padding: 0 60px;
+                    padding-top: 70px;
                     z-index: 7;
 
                     .about-page-expand-content {
                         border-bottom: 1px solid;
                         border-image: linear-gradient(to right, $Primary500 75%, $Primary700 25% );
                         border-image-slice: 1;
+                        padding-left: 60px;
+                        padding-right: 60px;
 
                         p {
                             font-family: 'Space Grotesk';
@@ -475,6 +484,8 @@ body {
                         display: flex;
                         flex-direction: row;
                         padding: 28px 0;
+                        padding-left: 60px;
+                        padding-right: 60px;
 
                         p:first-child {
                             display: flex;
@@ -504,18 +515,19 @@ body {
     .about-running-text {
         font-size: 2vw;
         font-family: 'Courier New', Courier, monospace;
-        height: 2.5vw;
         overflow: hidden;
         background-color: #000;
         position: relative;
+        height: 50px;
 
         div {
             display: block;
             width: max-content;
             position: absolute;
             width: 100%;
-            /*overflow: hidden;*/
-
+            height: 100%;
+            display: flex;
+            align-items: center;
 
             .marquee__line {
                 font-family: "Space Grotesk";
@@ -535,6 +547,7 @@ body {
                     background-position: left;
                     -webkit-background-clip: text;
                     background-clip: text;
+                    margin-bottom: 0;
                 }
             }
 
@@ -620,12 +633,16 @@ body {
                     left: 0;
                     bottom: 20%;
                     padding: 0 60px;
+                    width: 100%;
 
                     h3 {
                         font-family: 'Satoshi', sans-serif;
                         font-size: 92px;
                         font-weight: 500;
                         line-height: 1.4;
+                        border-bottom: 1px solid #FFFEFC;
+                        padding-bottom: 15px;
+                        margin-bottom: 25px;
                     }
 
                     p {
@@ -664,9 +681,12 @@ body {
             }
 
             .see-all-projects {
+                background-color: rgba(0,0,0,0.9);
+                padding-left: 60px;
+                padding-right: 60px;
                 position: absolute;
-                width: calc(100% - 60* 2px);
-                bottom: 0;
+                width: 100%;
+                bottom: 50px;
                 left: 50%;
                 transform: translateX(-50%);
                 border-top: 1px solid;

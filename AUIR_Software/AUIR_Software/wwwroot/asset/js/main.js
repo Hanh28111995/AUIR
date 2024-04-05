@@ -6,7 +6,7 @@ $(document).ready(function () {
         var find_child = $(this).find(".page-expand");
         if (find_child.length) {
             // found!
-            section = $(this).closest(".section");            
+            section = $(this).closest(".section");
             section.animate({
                 scrollTop: section.scrollTop() + find_child.height() + fix_for_click
             }, 700);
@@ -15,7 +15,7 @@ $(document).ready(function () {
         }
         else {
             var find_chil = $(this).find(".page-expanded");
-            
+
             if (find_chil.length != 0) {
                 let x = find_chil.offset().top + find_chil.height() + parseInt(find_chil.closest('.page').next().css('margin-top'), 10);
 
@@ -156,21 +156,26 @@ function horizontalBlinds(elementSelector) {
         // Append the new slat to the container
         $(elementSelector).append(newSlat);
         // Animate the new slat's height
-        newSlat.animate({ height: slatHeight }, 0);
-    }    
-    
+        newSlat.css("height", slatHeight);
+    }
+
     $(elementSelector + ">.paralax").css('display', 'none');
     $(elementSelector + " .projects-detail-item-content").hide();
     $(".see-all-projects").hide();
 
-    var horizalPieces = $(elementSelector + ">.slat");    
-    for (var count = 0; count < (horizalPieces.length); count++) {
-        if (count) {
-            $(horizalPieces[count]).animate({ height: "0px" }, 1000)
-        }
-        
-    }                 
+    var horizalPieces = $(elementSelector + " > .slat");
+    var animationDuration = 100; // Adjust as needed
+    for (let x = horizalPieces.length - 1; x >= 0; x--) {        
+        slatBlinds(x);
+    }
+
+    function slatBlinds(x) {
+        setTimeout(function () {
+            $(horizalPieces[x]).animate({ top: (x+1) * (-10) + "%" }, (slatCount - x) * animationDuration);
+        }, (slatCount - x) * animationDuration)
+    }
 }
+
 
 $(document).ready(function () {
     $('#blindbox').on('click', function () {
