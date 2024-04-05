@@ -1,4 +1,5 @@
-﻿var fix_for_click = 35;
+﻿/////////////////// click to scroll next page /////////////////////////
+var fix_for_click = 35;
 
 $(document).ready(function () {
     $(".page").click(function () {
@@ -29,19 +30,7 @@ $(document).ready(function () {
                     scrollTop: section.scrollTop() + fuller.height()
                 }, 700);
             }
-        }
-
-
-
-        //if ($(this).closest('.page').height() > fuller.height()) {
-        //    console.log($(this).closest('.page').offset().top)
-        //    section = $(this).closest('.section');
-        //    section.animate({
-        //        scrollTop: section.scrollTop() + $(this).closest('.page').height() - fuller.height()
-        //    }, 700);
-        //    fuller.addClass("page-expand").removeClass("page");
-        //}
-
+        }       
     });
 });
 
@@ -50,23 +39,23 @@ $(document).ready(function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     var navLinks = document.querySelectorAll('.nav-link');
-
-    navLinks.forEach(function (navLink) {
-
-        navLink.addEventListener('click', function (event) {
+    navLinks.forEach(function (navLink) {        
+        navLink.addEventListener('click', function (event) {            
             event.preventDefault();
             var targetId = this.getAttribute('href').substring(1);
-            var targetElement = document.getElementById(targetId);
-
+            console.log(targetId)
+            var targetElement = document.getElementById(targetId);            
             if (targetElement) {
                 var targetOffsetTop = targetElement.offsetTop - 150;
-
-                window.scrollTo({
+                var element = document.getElementById("section");
+                element.scrollTo({
                     top: targetOffsetTop,
                     behavior: 'smooth'
                 });
+                                
                 var navL = document.querySelector('.nav-item a[href*=' + targetId + ']');
                 if (navL) {
+                    $('.nav-item').removeClass('active');
                     navL.closest('li').classList.add('active');
                 }
             }
@@ -111,51 +100,17 @@ document.addEventListener('DOMContentLoaded', function () {
 //})
 
 
-
+//////////////// slats blind ////////////////////////////
 var slatCount = 10;
-
-//function horizontalBlinds(elementSelector) {
-//    var currentTop = 0; // Start from the top of the container
-//    var count;
-//    var containerHeight = $(elementSelector).height();
-
-//    // Determine height of each blind slat
-//    var slatHeight = Math.floor(containerHeight / slatCount);
-//    var slatLeftOverHeight = containerHeight - slatHeight * slatCount;
-
-//    // Animate each slat to 'shut' the blind
-//    for (var count = 0; count < slatCount; count++) {
-//        var slat = $(elementSelector + ' .slat').eq(count); // Select existing slats
-//        var actualHeight;
-//        if (count == slatCount - 1)
-//            actualHeight = slatHeight + slatLeftOverHeight;
-//        else
-//            actualHeight = slatHeight;
-
-//        // Delay each animation by count times 500 milliseconds
-//        slat.delay((slatCount - count - 1) * 500).animate({ height: actualHeight + 'px', top: (containerHeight - actualHeight) + 'px' });
-//    }
-//}
-
 
 function horizontalBlinds(elementSelector) {
     var containerHeight = $(elementSelector).height();
-    var slatHeight = containerHeight / slatCount;
+    var slatHeight = containerHeight / slatCount;    
 
-    // Animate each slat to reveal the absolute element below it
-    //for (var count = 0; count < slatCount; count++) {
-    //    var slat = $(elementSelector + '#blindbox');
-    //    slat.animate({ height: slatHeight * (count + 1) }, 500);
-    //}
-
-    for (var count = 0; count < slatCount; count++) {
-        // Create new slat element
-        var newSlat = $('<div class="slat"></div>');
-        // Clone content from the original element and append it to the new slat
-        $(elementSelector).children().clone().appendTo(newSlat);
-        // Append the new slat to the container
-        $(elementSelector).append(newSlat);
-        // Animate the new slat's height
+    for (var count = 0; count < slatCount; count++) {        
+        var newSlat = $('<div class="slat"></div>');        
+        $(elementSelector).children().clone().appendTo(newSlat);        
+        $(elementSelector).append(newSlat);        
         newSlat.css("height", slatHeight);
     }
 
@@ -170,12 +125,12 @@ function horizontalBlinds(elementSelector) {
     }
 
     function slatBlinds(x) {
-        setTimeout(function () {
-            $(horizalPieces[x]).animate({ top: (x+1) * (-10) + "%" }, (slatCount - x) * animationDuration);
+        
+        setTimeout(function () {            
+                $(horizalPieces[x]).animate({ top: (x + 1) * (-10) + "%" }, (slatCount - (x + 1)) * animationDuration);                               
         }, (slatCount - x) * animationDuration)
     }
 }
-
 
 $(document).ready(function () {
     $('#blindbox').on('click', function () {

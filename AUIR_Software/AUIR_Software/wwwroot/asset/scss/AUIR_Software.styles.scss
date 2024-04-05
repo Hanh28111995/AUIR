@@ -12,7 +12,7 @@ body {
         overflow: hidden;
         border: none;
         position: relative;
-        transition: ease-in-out all 0.3s;        
+        transition: ease-in-out all 0.3s;
     }
 
 
@@ -60,6 +60,11 @@ body {
                     font-weight: 400;
                     line-height: 1.2;
                 }
+            }
+
+            .nav-item.active a{
+                color: $Primary;
+               font-weight:bold;
             }
         }
 
@@ -120,34 +125,39 @@ body {
         z-index: 100;
         background-color: black;
 
-        .navbar-nav {
-            height: 70px;
+        .navbar {
+            padding-top: 0;
+            padding-bottom: 0;
 
-            .nav-item .btn-chatbox {
-                background-color: $Primary500;
-                color: black;
-                border-radius: 40px;
-                padding: 18px 28px;
-                border: 1.48px solid transparent;
-                position: relative;
-                font-family: "Space Grotesk", sans-serif;
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 1.2;
+            .navbar-nav {
+                height: 70px;
 
-                &:after {
-                    content: '';
-                    position: absolute;
-                    width: calc(100% + 8px);
-                    height: calc(100% + 8px);
-                    top: -4px;
-                    right: -4px;
-                    background-image: url("../../asset/img/color_border.png");
-                    background-size: cover;
-                    background-position: left 0px top 0px;
-                    background-repeat: no-repeat;
-                    border-radius: 38px;
-                    z-index: -1;
+                .nav-item .btn-chatbox {
+                    background-color: $Primary500;
+                    color: black;
+                    border-radius: 40px;
+                    padding: 11px 28px;
+                    border: 1.48px solid transparent;
+                    position: relative;
+                    font-family: "Space Grotesk", sans-serif;
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 1.2;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        width: calc(100% + 8px);
+                        height: calc(100% + 8px);
+                        top: -4px;
+                        right: -4px;
+                        background-image: url("../../asset/img/color_border.png");
+                        background-size: cover;
+                        background-position: left 0px top 0px;
+                        background-repeat: no-repeat;
+                        border-radius: 38px;
+                        z-index: -1;
+                    }
                 }
             }
         }

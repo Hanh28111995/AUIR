@@ -48,6 +48,10 @@ body #navbarNavDropdown ul .nav-item .nav-link {
   font-weight: 400;
   line-height: 1.2;
 }
+body #navbarNavDropdown ul .nav-item.active a {
+  color: #FF9E00;
+  font-weight: bold;
+}
 body #navbarNavDropdown .nav-input label {
   font-family: inherit;
   font-size: 20px;
@@ -92,14 +96,18 @@ body header {
   z-index: 100;
   background-color: black;
 }
-body header .navbar-nav {
+body header .navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+body header .navbar .navbar-nav {
   height: 70px;
 }
-body header .navbar-nav .nav-item .btn-chatbox {
+body header .navbar .navbar-nav .nav-item .btn-chatbox {
   background-color: #FDBB4F;
   color: black;
   border-radius: 40px;
-  padding: 18px 28px;
+  padding: 11px 28px;
   border: 1.48px solid transparent;
   position: relative;
   font-family: "Space Grotesk", sans-serif;
@@ -107,7 +115,7 @@ body header .navbar-nav .nav-item .btn-chatbox {
   font-size: 20px;
   line-height: 1.2;
 }
-body header .navbar-nav .nav-item .btn-chatbox:after {
+body header .navbar .navbar-nav .nav-item .btn-chatbox:after {
   content: "";
   position: absolute;
   width: calc(100% + 8px);
