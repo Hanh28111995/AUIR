@@ -1,7 +1,9 @@
 ﻿@import './variables.scss';
 
 body {
-    width: 100vw;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
 
     .container-fluid {
         padding-left: 0;
@@ -197,34 +199,19 @@ body {
         }
     }
 
-    .section {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        overflow: scroll;
-    }
-
-
-
     #video-background {
-        transform: translateY(-50%);
-        position: relative;
-        top: 50%;
-        left: 0;
         width: 100%;
-        z-index: 1;
-        background-color: transparent;
         height: 100vh;
+        background-color: transparent;
+        position: relative;
+        z-index: 1;
     }
 
     .page {
-        color: $LightText;
-        height: 100vh;
-        width: 100vw;
         position: relative;
-        scroll-margin-block: 0;
+        color: $LightText;
+        width: 100%;
+        height: 100%;
     }
 
     .about-page-expand, .home-page-expand {
@@ -250,10 +237,10 @@ body {
             height: 100vh;
             top: 0;
             left: 0;
-            z-index: 3;
             display: flex;
             padding: 70px 60px;
             flex-flow: column;
+            z-index: 3;
 
             .wrap-limit-p {
                 position: relative;
@@ -328,6 +315,7 @@ body {
                 img {
                     width: 80px;
                     height: 40px;
+                    mix-blend-mode: hard-light;
                 }
 
                 .wrap-limit-p {
@@ -342,42 +330,41 @@ body {
                 }
             }
         }
+    }
 
-        .home-page-expand {
-            background-color: $Gray900;
-            position: relative;
-            z-index: 3;
-            padding: 0px 60px;
+    .home-page-expand {
+        background-color: $Gray900;
+        position: relative;
+        padding: 0px 60px;
 
-            a {
-                color: $Primary;
-                text-decoration: underline;
-                font-size: 24px;
+        a {
+            color: $Primary;
+            text-decoration: underline;
+            font-size: 24px;
 
-                &:hover {
-                    color: inherit;
-                }
+            &:hover {
+                color: inherit;
             }
+        }
 
-            .home-page-expand-content {
-                border-bottom: 1px solid;
-                border-image: linear-gradient(to right, $Primary500 75%, $Primary700 25% );
-                border-image-slice: 1;
-                margin-bottom: 30px;
+        .home-page-expand-content {
+            border-bottom: 1px solid;
+            border-image: linear-gradient(to right, $Primary500 75%, $Primary700 25% );
+            border-image-slice: 1;
+            margin-bottom: 30px;
 
 
-                p {
-                    font-family: 'Space Grotesk';
-                    font-size: 42px;
-                    font-weight: 400;
-                    line-height: 1.2;
-                    padding: 50px 0;
-                    color: $LightText;
-                    margin-bottom: 0;
+            p {
+                font-family: 'Space Grotesk';
+                font-size: 42px;
+                font-weight: 400;
+                line-height: 1.2;
+                padding: 50px 0;
+                color: $LightText;
+                margin-bottom: 0;
 
-                    span {
-                        color: $Primary500;
-                    }
+                span {
+                    color: $Primary500;
                 }
             }
         }
@@ -385,7 +372,6 @@ body {
 
 
     .about-page {
-        margin-top: 310px;
         background-color: black;
         mix-blend-mode: color;
 
@@ -449,13 +435,13 @@ body {
 
                         &:first-of-type {
                             opacity: 1;
-                            transform: translateX(0%);
+                            transform: translateX(50%);
                             max-width: 525px;
                         }
 
                         &:last-of-type {
                             opacity: 0;
-                            transform: translateX(100%);
+                            transform: translateX(50%);
                             max-width: 525px;
                         }
                     }
@@ -486,65 +472,64 @@ body {
                     top: 50%;
                     transform: translate(-100%,50%);
                     z-index: 11;
-                    opacity: 0;
+                    opacity: 0;                    
                 }
+            }
+        }
+    }
 
-                .about-page-expand {
-                    background-color: rgba(0,0,0,0.5);
-                    position: absolute;
-                    top: 100%;
-                    padding-top: 70px;
-                    z-index: 7;
+    .about-page-expand {
+        background-color: rgba(0,0,0,0.5);
+        position: absolute;
+        top: 100%;        
+        z-index: 7;
 
-                    .about-page-expand-content {
-                        border-bottom: 1px solid;
-                        border-image: linear-gradient(to right, $Primary500 75%, $Primary700 25% );
-                        border-image-slice: 1;
-                        padding-left: 60px;
-                        padding-right: 60px;
+        .about-page-expand-content {
+            border-bottom: 1px solid;
+            border-image: linear-gradient(to right, $Primary500 75%, $Primary700 25% );
+            border-image-slice: 1;
+            padding-left: 60px;
+            padding-right: 60px;
 
-                        p {
-                            font-family: 'Space Grotesk';
-                            font-size: 42px;
-                            font-weight: 400;
-                            line-height: 1.2;
-                            padding: 60px 0;
-                            color: $LightText;
+            p {
+                font-family: 'Space Grotesk';
+                font-size: 42px;
+                font-weight: 400;
+                line-height: 1.2;
+                padding: 60px 0;
+                color: $LightText;
 
-                            span {
-                                color: $Primary500;
-                            }
-                        }
-                    }
-
-                    .about-content-text {
-                        display: flex;
-                        flex-direction: row;
-                        padding: 28px 0;
-                        padding-left: 60px;
-                        padding-right: 60px;
-
-                        p:first-child {
-                            display: flex;
-                            font-family: 'Satoshi', sans-serif;
-                            font-size: 24px;
-                            font-weight: 700;
-                            line-height: 1.2;
-                            color: $Gray500;
-                            white-space: nowrap;
-                            margin-right: 135px;
-                        }
-
-                        p:last-child {
-                            display: flex;
-                            font-family: 'Space Grotesk';
-                            font-size: 24px;
-                            font-weight: 400;
-                            line-height: 1.3;
-                            color: white;
-                        }
-                    }
+                span {
+                    color: $Primary500;
                 }
+            }
+        }
+
+        .about-content-text {
+            display: flex;
+            flex-direction: row;
+            padding: 28px 0;
+            padding-left: 60px;
+            padding-right: 60px;
+
+            p:first-child {
+                display: flex;
+                font-family: 'Satoshi', sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 1.2;
+                color: $Gray500;
+                white-space: nowrap;
+                margin-right: 135px;
+            }
+
+            p:last-child {
+                display: flex;
+                font-family: 'Space Grotesk';
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 1.3;
+                color: white;
             }
         }
     }
