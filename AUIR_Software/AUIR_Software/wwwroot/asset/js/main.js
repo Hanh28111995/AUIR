@@ -10,8 +10,6 @@ $(document).ready(function () {
         indx = 0,
         Anim;
 
-
-
     document.addEventListener("mousewheel", Go);
     document.addEventListener("DOMMouseScroll", Go);
     window.addEventListener("load", GoTop);
@@ -167,24 +165,11 @@ $(document).ready(function () {
 
 
 
-////////////gsap setting //////////////////////////////
-
-//gsap.to(".text-existed", {
-//    y: "-100%", delay: 0, duration: 1,
-//})
-//gsap.to(".text-removed", {
-//    y: "0", delay: 0, duration: 1,
-//})
-//gsap.to(".text-existed-s", {
-//    y: "-100%", delay: 0, duration: 1,
-//})
-//gsap.to(".text-removed-s", {
-//    y: "-100%", delay: 0, duration: 1,
-//})
 let initialAnimationCompleted = false;
 let initialAnimationCompleted1 = false;
 let initialAnimationCompleted2 = false;
 let initialAnimationCompleted3 = false;
+let initialAnimationCompleted4 = false;
 let EndAnimateOfPage = false;
 
 
@@ -240,122 +225,170 @@ const HomeAnimation = (direct, indx) => {
 }
 
 const AboutAnimation = (direct, indx) => {
-    console.log(EndAnimateOfPage)
     let box = document.querySelectorAll('.box')
 
     function animateAboutPage() {
-        let ExpandDis = $(".about-page").next('.page-expand').height();
-        tl.to(".about-page", 1, { y: (-1) * ExpandDis, ease: Power1.easeInOut });
-        tl.to(".about-page-expand", 1, { y: (-1) * ExpandDis, ease: Power1.easeInOut }, 0);
     }
     function animateAboutDefault() {
-        tl.to(".about-page", 1, { y: 0, ease: Power1.easeInOut });
-        tl.to(".about-page-expand", 1, { y: 0, ease: Power1.easeInOut }, 0);
     }
 
     var tl = new TimelineLite();
 
     if (EndAnimateOfPage === true) {
-        if (direct < 0) {
+        if (direct < 0 && (initialAnimationCompleted3 && initialAnimationCompleted2 && initialAnimationCompleted1)) {
             $(box[indx]).find('.page').data('action', 1);
             $(box[indx + 1]).find('.page').data('action', 0);
+        }
+    }
+    if (EndAnimateOfPage === false) {
+        if (direct > 0 && (!initialAnimationCompleted3 && !initialAnimationCompleted2 && !initialAnimationCompleted1)) {
+            $(box[indx - 1]).find('.page').data('action', 0);
+            $(box[indx]).find('.page').data('action', 1);
         }
     }
 
 
     if (direct < 0) {
-        if (!(initialAnimationCompleted1 && initialAnimationCompleted2 && initialAnimationCompleted3)) {
-            if (!initialAnimationCompleted1) {
-                tl.to(".img-right", 1, { right: "90%", opacity: 1, ease: Power1.easeInOut })
-                    .to(".img-left", 1, { left: "80%", opacity: 1, ease: Power1.easeInOut }, 0)
-                    .to(".img-ct", 1, { scale: 0.3, ease: Power1.easeInOut }, 0)
-                    .to(".bg-img", 1, { scale: 2, ease: Power1.easeInOut }, 0)
-                    .call(() => {
-                        initialAnimationCompleted1 = true;
-                    })
-            }
 
-            if (!initialAnimationCompleted2 && initialAnimationCompleted1) {
-                tl.to(".img-right", 0.5, { top: "45%", ease: Power1.easeInOut })
-                    .to(".img-left", 0.5, { top: "55%", ease: Power1.easeInOut }, 0)
-                    .to(".img-ct", 0.5, { y: "-100%", opacity: 0, ease: Power1.easeInOut }, 0)
-                    .to(".hor-wrap", 0.5, { bottom: "50%", opacity: 1, ease: Power1.easeInOut }, 0)                    
-                    .call(() => {
-                        initialAnimationCompleted2 = true;
-                    })
-            }
-            if (!initialAnimationCompleted3 && initialAnimationCompleted2 && initialAnimationCompleted1) {
-                tl.to(".hor-wrap p:first-of-type", 1, { x: "-50%", opacity: 0, ease: Power1.easeInOut })
-                    .to(".hor-wrap p:last-of-type", 1, { x: "-50%", opacity: 1, ease: Power1.easeInOut }, 0)
-                    .call(() => {
-                        initialAnimationCompleted3 = true;
-                    })
-            }
-        }
-        else {
-            console.log('check')
+        if (initialAnimationCompleted3 && initialAnimationCompleted2 && initialAnimationCompleted1) {
             animateAboutPage();
             EndAnimateOfPage = true;
         }
-    } 
+
+        if (initialAnimationCompleted3 && !initialAnimationCompleted1 && !initialAnimationCompleted2) {
+            tl.to(".hor-wrap p:first-of-type", 1, { x: "-50%", opacity: 0, ease: Power1.easeInOut })
+                .to(".hor-wrap p:last-of-type", 1, { x: "-50%", opacity: 1, ease: Power1.easeInOut }, 0);
+            initialAnimationCompleted3 = true;
+            initialAnimationCompleted2 = true;
+            initialAnimationCompleted1 = true;
+        }
+
+        if (initialAnimationCompleted2 && !initialAnimationCompleted1 && !initialAnimationCompleted3) {
+            tl.to(".img-right", 0.5, { top: "45%", ease: Power1.easeInOut })
+                .to(".img-left", 0.5, { top: "55%", ease: Power1.easeInOut }, 0)
+                .to(".img-ct", 0.5, { y: "-100%", opacity: 0, ease: Power1.easeInOut }, 0)
+                .to(".hor-wrap", 0.5, { bottom: "50%", opacity: 1, ease: Power1.easeInOut }, 0);
+            initialAnimationCompleted2 = false;
+            initialAnimationCompleted1 = false;
+            initialAnimationCompleted3 = true;
+        }
+
+        if (!initialAnimationCompleted1 && !initialAnimationCompleted3 && !initialAnimationCompleted2) {
+            console.log('v-1 :' + initialAnimationCompleted1, 'v-2 :' + initialAnimationCompleted2, 'v-3 :' + initialAnimationCompleted3)
+            tl.to(".img-right", 1, { right: "90%", opacity: 1, ease: Power1.easeInOut })
+                .to(".img-left", 1, { left: "80%", opacity: 1, ease: Power1.easeInOut }, 0)
+                .to(".img-ct", 1, { scale: 0.3, ease: Power1.easeInOut }, 0)
+                .to(".bg-img", 1, { scale: 2, ease: Power1.easeInOut }, 0);
+            initialAnimationCompleted1 = false;
+            initialAnimationCompleted2 = true;
+            initialAnimationCompleted3 = false;
+        }
+
+    }
 
 
     if (direct > 0) {
-        if (initialAnimationCompleted1 && initialAnimationCompleted2 && initialAnimationCompleted3) {
-            animateAboutDefault();
+        console.log('v-1 :' + initialAnimationCompleted1, 'v-2 :' + initialAnimationCompleted2, 'v-3 :' + initialAnimationCompleted3)
+
+        if (!initialAnimationCompleted2 && initialAnimationCompleted1 && !initialAnimationCompleted3) {
+            tl.to(".img-right", 1, { right: "0%", opacity: 0, ease: Power1.easeInOut })
+                .to(".img-left", 1, { left: "0%", opacity: 0, ease: Power1.easeInOut }, 0)
+                .to(".img-ct", 1, { scale: 1, y: 0, opacity: 1, ease: Power1.easeInOut }, 0)
+                .to(".hor-wrap", 1, { bottom: "0", opacity: 0, ease: Power1.easeInOut }, 0)
+                .to(".bg-img", 1, { scale: 1, ease: Power1.easeInOut }, 0);
+            initialAnimationCompleted1 = false;
+            initialAnimationCompleted2 = false;
             initialAnimationCompleted3 = false;
-            EndAnimateOfPage = false;
+        }
+
+        if (initialAnimationCompleted2 && !initialAnimationCompleted1 && !initialAnimationCompleted3) {
+            tl.to(".img-right", 1, { right: "90%", opacity: 1, ease: Power1.easeInOut })
+                .to(".img-left", 1, { left: "80%", opacity: 1, ease: Power1.easeInOut }, 0)
+                .to(".img-ct", 1, { scale: 0.3, ease: Power1.easeInOut }, 0)
+                .to(".bg-img", 1, { scale: 2, ease: Power1.easeInOut }, 0);
+            initialAnimationCompleted1 = true;
+            initialAnimationCompleted2 = false;
+            initialAnimationCompleted3 = false;
+        }
+
+        if (initialAnimationCompleted3 && !initialAnimationCompleted1 && !initialAnimationCompleted2) {
+            tl.to(".img-right", 0.5, { top: "50%", ease: Power1.easeInOut })
+                .to(".img-left", 0.5, { top: "50%", ease: Power1.easeInOut }, 0)
+                .to(".img-ct", 0.5, { y: "0%", opacity: 1, ease: Power1.easeInOut }, 0)
+                .to(".hor-wrap", 0.5, { bottom: "-50%", opacity: 1, ease: Power1.easeInOut }, 0);
+            initialAnimationCompleted1 = false;
+            initialAnimationCompleted2 = true;
+            initialAnimationCompleted3 = false;
+        }
+
+        if (initialAnimationCompleted3 && initialAnimationCompleted2 && initialAnimationCompleted1) {
+            if (EndAnimateOfPage === false) {
+                tl.to(".hor-wrap p:first-of-type", 1, { x: "50%", opacity: 1, ease: Power1.easeInOut })
+                    .to(".hor-wrap p:last-of-type", 1, { x: "50%", opacity: 0, ease: Power1.easeInOut }, 0)
+                    .call(() => {
+                        initialAnimationCompleted2 = false;
+                        initialAnimationCompleted1 = false;
+                        initialAnimationCompleted3 = true;
+                    })
+            }
+            else {
+                animateAboutDefault();
+                EndAnimateOfPage = false;
+            }
+        }
+
+    }
+    //}
+
+}
+
+const ProAnimation = (direct, indx) => {
+    let box = document.querySelectorAll('.box')
+    let ExpandDis = $(".pr-title-page").find('.page-expand').height();
+    var tl = new TimelineLite();
+
+    if (EndAnimateOfPage === true) {
+        if (direct < 0 && initialAnimationCompleted4) {
+            $(box[indx]).find('.page').data('action', 1);
+            $(box[indx + 1]).find('.page').data('action', 0);
+        }
+    }
+    if (EndAnimateOfPage === false) {
+        if (direct > 0 && !initialAnimationCompleted4) {
+            $(box[indx - 1]).find('.page').data('action', 0);
+            $(box[indx]).find('.page').data('action', 1);
+        }
+    }
+
+    if (direct < 0) {
+        if (!initialAnimationCompleted4) {
+            tl.to(".projects-title", 1, { scale: 1, ease: Power1.easeInOut })
+                .to(".about-page-expand", 1, { y: (-1) * ExpandDis, ease: Power1.easeInOut }, 0)
+                .to(".projects-title", 1, { y: (-1) * ExpandDis, ease: Power1.easeInOut }, 0);
+            initialAnimationCompleted4 = true;
+        } else {
+            EndAnimateOfPage = true;
+        }
+    }
+    if (direct > 0) {
+        if (initialAnimationCompleted4) {
+            initialAnimationCompleted4 = false;
+            tl.to(".projects-title", 1, { scale: 1.3, ease: Power1.easeInOut })
+                .to(".about-page-expand", 1, { y: 0, ease: Power1.easeInOut }, 0)
+                .to(".projects-title", 1, { y: 0, ease: Power1.easeInOut }, 0);
         }
         else {
-            tl.to(".img-right", 1, { right: "0", opacity: 0, ease: Power1.easeInOut })
-                .to(".img-left", 1, { left: "0", opacity: 0, ease: Power1.easeInOut }, 0)
-                .to(".img-ct", 1, { scale: 1, ease: Power1.easeInOut }, 0)
-                .to(".bg-img", 1, { scale: 1, ease: Power1.easeInOut }, 0)
+            EndAnimateOfPage = false;
         }
 
     }
 
 }
 
-
-
-    //})
-    //gsap.to(".img-left", {
-    //    left: "80%", delay: 0, duration: 1.5, opacity: 1
-    //})
-    //gsap.to(".img-ct", {
-    //    scale: 0.3, delay: 0, duration: 1.5
-    //})
-    //gsap.to(".bg-img", {
-    //    scale: 2, delay: 0, duration: 1.5,
-    //    onComplete: function () {
-    //        ele.addEventListener("click", function () {
-    //            gsap.to(".img-right", {
-    //                top: "45%", delay: 0, duration: 1,
-    //            })
-    //            gsap.to(".img-left", {
-    //                top: "55%", delay: 0, duration: 1,
-    //            })
-    //            gsap.to(".img-ct", {
-    //                y: "-100%", delay: 0, opacity: 0, duration: 1,
-    //            })
-    //            gsap.to(".hor-wrap", {
-    //                bottom: "50%", delay: 0, opacity: 1, duration: 1,
-    //                onComplete: function () {
-    //                    ele.addEventListener("click", function () {
-    //                        gsap.to(".hor-wrap p:first-of-type", {
-    //                            x: "-100%", delay: 0, opacity: 0, duration: 1
-    //                        })
-    //                        gsap.to(".hor-wrap p:last-of-type", {
-    //                            x: "0%", delay: 0, opacity: 1, duration: 1
-    //                        })
-    //                    })
-    //                }
-    //            })
-    //        })
-    //    }
-    //})
-//}
+const ProjectAnimation = (direct, indx) => {
+  
+    }
+}
 
 
 //////////////// slats blind ////////////////////////////

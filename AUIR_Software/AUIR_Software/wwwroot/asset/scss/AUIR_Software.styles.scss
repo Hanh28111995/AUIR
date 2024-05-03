@@ -351,8 +351,6 @@ body {
             border-bottom: 1px solid;
             border-image: linear-gradient(to right, $Primary500 75%, $Primary700 25% );
             border-image-slice: 1;
-            margin-bottom: 30px;
-
 
             p {
                 font-family: 'Space Grotesk';
@@ -472,67 +470,13 @@ body {
                     top: 50%;
                     transform: translate(-100%,50%);
                     z-index: 11;
-                    opacity: 0;                    
+                    opacity: 0;
                 }
             }
         }
     }
 
-    .about-page-expand {
-        background-color: rgba(0,0,0,0.5);
-        position: absolute;
-        top: 100%;        
-        z-index: 7;
 
-        .about-page-expand-content {
-            border-bottom: 1px solid;
-            border-image: linear-gradient(to right, $Primary500 75%, $Primary700 25% );
-            border-image-slice: 1;
-            padding-left: 60px;
-            padding-right: 60px;
-
-            p {
-                font-family: 'Space Grotesk';
-                font-size: 42px;
-                font-weight: 400;
-                line-height: 1.2;
-                padding: 60px 0;
-                color: $LightText;
-
-                span {
-                    color: $Primary500;
-                }
-            }
-        }
-
-        .about-content-text {
-            display: flex;
-            flex-direction: row;
-            padding: 28px 0;
-            padding-left: 60px;
-            padding-right: 60px;
-
-            p:first-child {
-                display: flex;
-                font-family: 'Satoshi', sans-serif;
-                font-size: 24px;
-                font-weight: 700;
-                line-height: 1.2;
-                color: $Gray500;
-                white-space: nowrap;
-                margin-right: 135px;
-            }
-
-            p:last-child {
-                display: flex;
-                font-family: 'Space Grotesk';
-                font-size: 24px;
-                font-weight: 400;
-                line-height: 1.3;
-                color: white;
-            }
-        }
-    }
 
     .about-running-text {
         font-size: 2vw;
@@ -580,10 +524,68 @@ body {
         }
     }
 
-    .projects-page {
-        margin-top: 450px;
+    .pr-title-page {
+        transform-origin: 0% 0%;
+        background-color: black;
+
+        .about-page-expand {
+            background-color: rgba(0,0,0,0.5);
+            position: relative;
+            padding-top: 60px;
+
+            .about-page-expand-content {
+                border-bottom: 1px solid;
+                border-image: linear-gradient(to right, $Primary500 75%, $Primary700 25% );
+                border-image-slice: 1;
+                padding-left: 60px;
+                padding-right: 60px;
+
+                p {
+                    font-family: 'Space Grotesk';
+                    font-size: 42px;
+                    font-weight: 400;
+                    line-height: 1.2;
+                    padding: 60px 0;
+                    color: $LightText;
+
+                    span {
+                        color: $Primary500;
+                    }
+                }
+            }
+
+            .about-content-text {
+                display: flex;
+                flex-direction: row;
+                padding: 28px 0;
+                padding-left: 60px;
+                padding-right: 60px;
+
+                p:first-child {
+                    display: flex;
+                    font-family: 'Satoshi', sans-serif;
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 1.2;
+                    color: $Gray500;
+                    white-space: nowrap;
+                    margin-right: 135px;
+                }
+
+                p:last-child {
+                    display: flex;
+                    font-family: 'Space Grotesk';
+                    font-size: 24px;
+                    font-weight: 400;
+                    line-height: 1.3;
+                    color: white;
+                }
+            }
+        }
 
         .projects-title {
+            transform-origin: 0% 0%;
+            transform: scale(1.3);
             padding: 60px;
             height: 100vh;
 
@@ -634,6 +636,13 @@ body {
                 }
             }
         }
+    }
+
+    .projects-page {        
+
+        ::-webkit-scrollbar {
+            display: none !important; 
+        }
 
         .projects-detail {
             position: relative;
@@ -653,7 +662,7 @@ body {
                 .projects-detail-item-content {
                     position: absolute;
                     left: 0;
-                    bottom: 20%;
+                    bottom: 35px;
                     padding: 0 60px;
                     width: 100%;
 

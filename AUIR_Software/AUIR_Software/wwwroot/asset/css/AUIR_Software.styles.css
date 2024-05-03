@@ -288,7 +288,6 @@ body .home-page-expand .home-page-expand-content {
   border-bottom: 1px solid;
   border-image: linear-gradient(to right, #FDBB4F 75%, #E27726 25%);
   border-image-slice: 1;
-  margin-bottom: 30px;
 }
 body .home-page-expand .home-page-expand-content p {
   font-family: "Space Grotesk";
@@ -393,55 +392,6 @@ body .about-page .about-bg .about-image img:last-of-type {
   z-index: 11;
   opacity: 0;
 }
-body .about-page-expand {
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 100%;
-  z-index: 7;
-}
-body .about-page-expand .about-page-expand-content {
-  border-bottom: 1px solid;
-  border-image: linear-gradient(to right, #FDBB4F 75%, #E27726 25%);
-  border-image-slice: 1;
-  padding-left: 60px;
-  padding-right: 60px;
-}
-body .about-page-expand .about-page-expand-content p {
-  font-family: "Space Grotesk";
-  font-size: 42px;
-  font-weight: 400;
-  line-height: 1.2;
-  padding: 60px 0;
-  color: #FFFEFC;
-}
-body .about-page-expand .about-page-expand-content p span {
-  color: #FDBB4F;
-}
-body .about-page-expand .about-content-text {
-  display: flex;
-  flex-direction: row;
-  padding: 28px 0;
-  padding-left: 60px;
-  padding-right: 60px;
-}
-body .about-page-expand .about-content-text p:first-child {
-  display: flex;
-  font-family: "Satoshi", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #6B6A69;
-  white-space: nowrap;
-  margin-right: 135px;
-}
-body .about-page-expand .about-content-text p:last-child {
-  display: flex;
-  font-family: "Space Grotesk";
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.3;
-  color: white;
-}
 body .about-running-text {
   font-size: 2vw;
   font-family: "Courier New", Courier, monospace;
@@ -483,24 +433,75 @@ body .about-running-text div .marquee__line:last-child {
   animation: marquee1 10s linear infinite;
   animation-delay: -10s;
 }
-body .projects-page {
-  margin-top: 450px;
+body .pr-title-page {
+  transform-origin: 0% 0%;
+  background-color: black;
 }
-body .projects-page .projects-title {
+body .pr-title-page .about-page-expand {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  padding-top: 60px;
+}
+body .pr-title-page .about-page-expand .about-page-expand-content {
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, #FDBB4F 75%, #E27726 25%);
+  border-image-slice: 1;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+body .pr-title-page .about-page-expand .about-page-expand-content p {
+  font-family: "Space Grotesk";
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.2;
+  padding: 60px 0;
+  color: #FFFEFC;
+}
+body .pr-title-page .about-page-expand .about-page-expand-content p span {
+  color: #FDBB4F;
+}
+body .pr-title-page .about-page-expand .about-content-text {
+  display: flex;
+  flex-direction: row;
+  padding: 28px 0;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+body .pr-title-page .about-page-expand .about-content-text p:first-child {
+  display: flex;
+  font-family: "Satoshi", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #6B6A69;
+  white-space: nowrap;
+  margin-right: 135px;
+}
+body .pr-title-page .about-page-expand .about-content-text p:last-child {
+  display: flex;
+  font-family: "Space Grotesk";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: white;
+}
+body .pr-title-page .projects-title {
+  transform-origin: 0% 0%;
+  transform: scale(1.3);
   padding: 60px;
   height: 100vh;
 }
-body .projects-page .projects-title .content-left {
+body .pr-title-page .projects-title .content-left {
   padding: 10px;
   padding-left: 50px;
   display: flex;
   flex-direction: column;
 }
-body .projects-page .projects-title .content-left img {
+body .pr-title-page .projects-title .content-left img {
   max-width: 740px;
   height: fit-content;
 }
-body .projects-page .projects-title .content-left h5 {
+body .pr-title-page .projects-title .content-left h5 {
   color: #FDBB4F;
   font-family: "Space Grotesk";
   font-size: 32px;
@@ -508,27 +509,30 @@ body .projects-page .projects-title .content-left h5 {
   line-height: 1.4;
   padding-top: 20px;
 }
-body .projects-page .projects-title .content-left h5 span {
+body .pr-title-page .projects-title .content-left h5 span {
   color: #E27726;
 }
-body .projects-page .projects-title .content-right {
+body .pr-title-page .projects-title .content-right {
   padding-right: 50px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-items: right;
 }
-body .projects-page .projects-title .content-right img {
+body .pr-title-page .projects-title .content-right img {
   max-width: 424px;
   height: fit-content;
 }
-body .projects-page .projects-title .content-right h5 {
+body .pr-title-page .projects-title .content-right h5 {
   color: #AFAEAB;
   font-family: "Space Grotesk";
   font-size: 32px;
   font-weight: 400;
   line-height: 1.4;
   padding-top: 20px;
+}
+body .projects-page ::-webkit-scrollbar {
+  display: none !important;
 }
 body .projects-page .projects-detail {
   position: relative;
@@ -547,7 +551,7 @@ body .projects-page .projects-detail .projects-detail-item .paralax {
 body .projects-page .projects-detail .projects-detail-item .projects-detail-item-content {
   position: absolute;
   left: 0;
-  bottom: 20%;
+  bottom: 35px;
   padding: 0 60px;
   width: 100%;
 }
