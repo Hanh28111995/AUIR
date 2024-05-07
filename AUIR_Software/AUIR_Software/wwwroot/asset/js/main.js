@@ -3,16 +3,14 @@
 
 
 /////////////////////////////////////////// scroll page slider /////////////////////////////////////////////
-
+var OneActionOneScroll = false;
 $(document).ready(function () {
 
     var box = document.querySelectorAll('.box'),
         indx = 0,
         Anim;
-
-    document.addEventListener("mousewheel", Go);
-    document.addEventListener("DOMMouseScroll", Go);
-    window.addEventListener("load", GoTop);
+    var numSliders = document.querySelectorAll('.projects-detail-item'),
+        numS = 0;
 
     function getScaleY_FromMatrix(matrix) {
         let matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
@@ -32,7 +30,6 @@ $(document).ready(function () {
         var activePage = $(box[indx]).find(".page").attr('id') + "Animation";
 
         if (activeStatus === 0) {
-            console.log(activePage)
             eval(activePage)(SD, indx);
         }
         else {
@@ -57,8 +54,23 @@ $(document).ready(function () {
                 }
             }
         }
+        OneActionOneScroll = true;
+        setTimeout(function () {
+            OneActionOneScroll = false;
+        }, 200); // Adjust the delay as needed
     }
 
+    document.addEventListener("mousewheel", function (e) {
+        if (!OneActionOneScroll) {
+            Go(e);
+        }
+    });
+    document.addEventListener("DOMMouseScroll", function (e) {
+        if (!OneActionOneScroll) {
+            Go(e);
+        }
+    });
+    window.addEventListener("load", GoTop);
 
     //$('#up').click(function () {
     //    indx++;
@@ -77,319 +89,307 @@ $(document).ready(function () {
     //    }
     //    indx--;
     //})
-});
+
+
+    ////////////////event click navlink ////////////////////
+
+    //document.addEventListener('DOMContentLoaded', function () {
+    //    var navLinks = document.querySelectorAll('.nav-link');
+    //    navLinks.forEach(function (navLink) {
+    //        navLink.addEventListener('click', function (event) {
+    //            event.preventDefault();
+    //            var targetId = this.getAttribute('href').substring(1);
+
+    //            var targetElement = document.getElementById(targetId);
+    //            if (targetElement) {
+    //                var targetOffsetTop = targetElement.offsetTop - 150;
+    //                var element = document.getElementById("section");
+    //                element.scrollTo({
+    //                    top: targetOffsetTop,
+    //                    behavior: 'smooth'
+    //                });
+
+    //                var navL = document.querySelector('.nav-item a[href*=' + targetId + ']');
+    //                if (navL) {
+    //                    $('.nav-item').removeClass('active');
+    //                    navL.closest('li').classList.add('active');
+    //                }
+    //            }
+    //        });
+    //    });
+    //});
 
 
 
+    let initialAnimationCompleted = false;
+    let initialAnimationCompleted1 = false;
+    let initialAnimationCompleted2 = false;
+    let initialAnimationCompleted3 = false;
+    let initialAnimationCompleted4 = false;
+    let EndAnimateOfPage = false;
 
 
-/////////////////// click to scroll next page /////////////////////////
-//var fix_for_click = 35;
+    const HomeAnimation = (direct, indx) => {
+        console.log(EndAnimateOfPage)
+        let box = document.querySelectorAll('.box')
+        function animateHomePage() {
+            let ExpandDis = $(".home-page").next('.page-expand').height();
+            tl.to(".home-page", 1, { y: (-1) * ExpandDis, ease: Power1.easeInOut });
+            tl.to(".home-page-expand", 1, { y: (-1) * ExpandDis, ease: Power1.easeInOut }, 0);
+        }
+        function animateHomePageDefault() {
+            tl.to(".home-page", 1, { y: 0, ease: Power1.easeInOut });
+            tl.to(".home-page-expand", 1, { y: 0, ease: Power1.easeInOut }, 0);
+        }
 
-//$(document).ready(function () {
-//    $(".section").click(function ()
-//    {
-//        const dataActionValue = this.getAttribute('data-action');
-//        const idValue = this.getAttribute('id');
-//        console.log(idValue);
-//        if (dataActionValue == 0 ) {
-//            if (idValue == 'Home') {
-//            HomeAnimation(this);
-//                this.setAttribute('data-action', 1);
-//            }
-//            if (idValue == 'About') {
-//                AboutAnimation(this);
-//            }
-//        }
-//        else {
-//            var fuller = $(this).closest(".page");
-//            var find_child = $(this).find(".page-expand");
-//            if (find_child.length) {
-//                // found!
-//                section = $(this).closest(".section");
-//                section.animate({
-//                    scrollTop: section.scrollTop() + find_child.height() + fix_for_click
-//                }, 700);
+        var tl = new TimelineLite();
 
-//                $(this).find(".page-expand").removeClass("page-expand").addClass("page-expanded");
-//            }
-//            else {
-//                var find_chil = $(this).find(".page-expanded");
+        if (EndAnimateOfPage === true) {
+            if (direct < 0) {
+                $(box[indx]).find('.page').data('action', 1);
+                $(box[indx + 1]).find('.page').data('action', 0);
+            }
+        }
 
-//                if (find_chil.length != 0) {
-//                    let x = find_chil.offset().top + find_chil.height() + parseInt(find_chil.closest('.page').next().css('margin-top'), 10);
-
-//                    $('.section').animate({
-//                        scrollTop: section.scrollTop() + find_chil.offset().top + parseInt(find_chil.closest('.page').next().css('margin-top') || '0', 10)
-//                    }, 700);
-//                }
-//                else {
-//                    section = $(this).closest(".section");
-//                    section.animate({
-//                        scrollTop: section.scrollTop() + fuller.height()
-//                    }, 700);
-//                }
-//            }
-//        }
-//    });
-//});
-
-
-////////////////event click navlink ////////////////////
-
-//document.addEventListener('DOMContentLoaded', function () {
-//    var navLinks = document.querySelectorAll('.nav-link');
-//    navLinks.forEach(function (navLink) {
-//        navLink.addEventListener('click', function (event) {
-//            event.preventDefault();
-//            var targetId = this.getAttribute('href').substring(1);
-
-//            var targetElement = document.getElementById(targetId);
-//            if (targetElement) {
-//                var targetOffsetTop = targetElement.offsetTop - 150;
-//                var element = document.getElementById("section");
-//                element.scrollTo({
-//                    top: targetOffsetTop,
-//                    behavior: 'smooth'
-//                });
-
-//                var navL = document.querySelector('.nav-item a[href*=' + targetId + ']');
-//                if (navL) {
-//                    $('.nav-item').removeClass('active');
-//                    navL.closest('li').classList.add('active');
-//                }
-//            }
-//        });
-//    });
-//});
-
-
-
-let initialAnimationCompleted = false;
-let initialAnimationCompleted1 = false;
-let initialAnimationCompleted2 = false;
-let initialAnimationCompleted3 = false;
-let initialAnimationCompleted4 = false;
-let EndAnimateOfPage = false;
-
-
-const HomeAnimation = (direct, indx) => {
-    console.log(EndAnimateOfPage)
-    let box = document.querySelectorAll('.box')
-    function animateHomePage() {
-        let ExpandDis = $(".home-page").next('.page-expand').height();
-        tl.to(".home-page", 1, { y: (-1) * ExpandDis, ease: Power1.easeInOut });
-        tl.to(".home-page-expand", 1, { y: (-1) * ExpandDis, ease: Power1.easeInOut }, 0);
-    }
-    function animateHomePageDefault() {
-        tl.to(".home-page", 1, { y: 0, ease: Power1.easeInOut });
-        tl.to(".home-page-expand", 1, { y: 0, ease: Power1.easeInOut }, 0);
-    }
-
-    var tl = new TimelineLite();
-
-    if (EndAnimateOfPage === true) {
         if (direct < 0) {
-            $(box[indx]).find('.page').data('action', 1);
-            $(box[indx + 1]).find('.page').data('action', 0);
+            if (!initialAnimationCompleted) {
+                tl.to(".text-existed", 1, { y: "-100%", ease: Power1.easeInOut })
+                    .to(".text-removed", 1, { y: "0%", ease: Power1.easeInOut }, 0)
+                    .to(".text-existed-s", 1, { y: "-100%", ease: Power1.easeInOut }, 0)
+                    .to(".text-removed-s", 1, { y: "-100%", ease: Power1.easeInOut }, 0);
+                initialAnimationCompleted = true;
+            } else {
+                animateHomePage();
+                EndAnimateOfPage = true;
+            }
         }
-    }
-
-    if (direct < 0) {
-        if (!initialAnimationCompleted) {
-            tl.to(".text-existed", 1, { y: "-100%", ease: Power1.easeInOut })
-                .to(".text-removed", 1, { y: "0%", ease: Power1.easeInOut }, 0)
-                .to(".text-existed-s", 1, { y: "-100%", ease: Power1.easeInOut }, 0)
-                .to(".text-removed-s", 1, { y: "-100%", ease: Power1.easeInOut }, 0);
-            initialAnimationCompleted = true;
-        } else {
-            animateHomePage();
-            EndAnimateOfPage = true;
-        }
-    }
-    if (direct > 0) {
-        if (initialAnimationCompleted) {
-            animateHomePageDefault();
-            initialAnimationCompleted = false;
-            EndAnimateOfPage = false;
-        }
-        else {
-            tl.to(".text-existed", 1, { y: "0%", ease: Power1.easeInOut })
-                .to(".text-removed", 1, { y: "100%", ease: Power1.easeInOut }, 0)
-                .to(".text-existed-s", 1, { y: "0%", ease: Power1.easeInOut }, 0)
-                .to(".text-removed-s", 1, { y: "0%", ease: Power1.easeInOut }, 0);
-        }
-
-    }
-
-}
-
-const AboutAnimation = (direct, indx) => {
-    let box = document.querySelectorAll('.box')
-
-    function animateAboutPage() {
-    }
-    function animateAboutDefault() {
-    }
-
-    var tl = new TimelineLite();
-
-    if (EndAnimateOfPage === true) {
-        if (direct < 0 && (initialAnimationCompleted3 && initialAnimationCompleted2 && initialAnimationCompleted1)) {
-            $(box[indx]).find('.page').data('action', 1);
-            $(box[indx + 1]).find('.page').data('action', 0);
-        }
-    }
-    if (EndAnimateOfPage === false) {
-        if (direct > 0 && (!initialAnimationCompleted3 && !initialAnimationCompleted2 && !initialAnimationCompleted1)) {
-            $(box[indx - 1]).find('.page').data('action', 0);
-            $(box[indx]).find('.page').data('action', 1);
-        }
-    }
-
-
-    if (direct < 0) {
-
-        if (initialAnimationCompleted3 && initialAnimationCompleted2 && initialAnimationCompleted1) {
-            animateAboutPage();
-            EndAnimateOfPage = true;
-        }
-
-        if (initialAnimationCompleted3 && !initialAnimationCompleted1 && !initialAnimationCompleted2) {
-            tl.to(".hor-wrap p:first-of-type", 1, { x: "-50%", opacity: 0, ease: Power1.easeInOut })
-                .to(".hor-wrap p:last-of-type", 1, { x: "-50%", opacity: 1, ease: Power1.easeInOut }, 0);
-            initialAnimationCompleted3 = true;
-            initialAnimationCompleted2 = true;
-            initialAnimationCompleted1 = true;
-        }
-
-        if (initialAnimationCompleted2 && !initialAnimationCompleted1 && !initialAnimationCompleted3) {
-            tl.to(".img-right", 0.5, { top: "45%", ease: Power1.easeInOut })
-                .to(".img-left", 0.5, { top: "55%", ease: Power1.easeInOut }, 0)
-                .to(".img-ct", 0.5, { y: "-100%", opacity: 0, ease: Power1.easeInOut }, 0)
-                .to(".hor-wrap", 0.5, { bottom: "50%", opacity: 1, ease: Power1.easeInOut }, 0);
-            initialAnimationCompleted2 = false;
-            initialAnimationCompleted1 = false;
-            initialAnimationCompleted3 = true;
-        }
-
-        if (!initialAnimationCompleted1 && !initialAnimationCompleted3 && !initialAnimationCompleted2) {
-            console.log('v-1 :' + initialAnimationCompleted1, 'v-2 :' + initialAnimationCompleted2, 'v-3 :' + initialAnimationCompleted3)
-            tl.to(".img-right", 1, { right: "90%", opacity: 1, ease: Power1.easeInOut })
-                .to(".img-left", 1, { left: "80%", opacity: 1, ease: Power1.easeInOut }, 0)
-                .to(".img-ct", 1, { scale: 0.3, ease: Power1.easeInOut }, 0)
-                .to(".bg-img", 1, { scale: 2, ease: Power1.easeInOut }, 0);
-            initialAnimationCompleted1 = false;
-            initialAnimationCompleted2 = true;
-            initialAnimationCompleted3 = false;
-        }
-
-    }
-
-
-    if (direct > 0) {
-        console.log('v-1 :' + initialAnimationCompleted1, 'v-2 :' + initialAnimationCompleted2, 'v-3 :' + initialAnimationCompleted3)
-
-        if (!initialAnimationCompleted2 && initialAnimationCompleted1 && !initialAnimationCompleted3) {
-            tl.to(".img-right", 1, { right: "0%", opacity: 0, ease: Power1.easeInOut })
-                .to(".img-left", 1, { left: "0%", opacity: 0, ease: Power1.easeInOut }, 0)
-                .to(".img-ct", 1, { scale: 1, y: 0, opacity: 1, ease: Power1.easeInOut }, 0)
-                .to(".hor-wrap", 1, { bottom: "0", opacity: 0, ease: Power1.easeInOut }, 0)
-                .to(".bg-img", 1, { scale: 1, ease: Power1.easeInOut }, 0);
-            initialAnimationCompleted1 = false;
-            initialAnimationCompleted2 = false;
-            initialAnimationCompleted3 = false;
-        }
-
-        if (initialAnimationCompleted2 && !initialAnimationCompleted1 && !initialAnimationCompleted3) {
-            tl.to(".img-right", 1, { right: "90%", opacity: 1, ease: Power1.easeInOut })
-                .to(".img-left", 1, { left: "80%", opacity: 1, ease: Power1.easeInOut }, 0)
-                .to(".img-ct", 1, { scale: 0.3, ease: Power1.easeInOut }, 0)
-                .to(".bg-img", 1, { scale: 2, ease: Power1.easeInOut }, 0);
-            initialAnimationCompleted1 = true;
-            initialAnimationCompleted2 = false;
-            initialAnimationCompleted3 = false;
-        }
-
-        if (initialAnimationCompleted3 && !initialAnimationCompleted1 && !initialAnimationCompleted2) {
-            tl.to(".img-right", 0.5, { top: "50%", ease: Power1.easeInOut })
-                .to(".img-left", 0.5, { top: "50%", ease: Power1.easeInOut }, 0)
-                .to(".img-ct", 0.5, { y: "0%", opacity: 1, ease: Power1.easeInOut }, 0)
-                .to(".hor-wrap", 0.5, { bottom: "-50%", opacity: 1, ease: Power1.easeInOut }, 0);
-            initialAnimationCompleted1 = false;
-            initialAnimationCompleted2 = true;
-            initialAnimationCompleted3 = false;
-        }
-
-        if (initialAnimationCompleted3 && initialAnimationCompleted2 && initialAnimationCompleted1) {
-            if (EndAnimateOfPage === false) {
-                tl.to(".hor-wrap p:first-of-type", 1, { x: "50%", opacity: 1, ease: Power1.easeInOut })
-                    .to(".hor-wrap p:last-of-type", 1, { x: "50%", opacity: 0, ease: Power1.easeInOut }, 0)
-                    .call(() => {
-                        initialAnimationCompleted2 = false;
-                        initialAnimationCompleted1 = false;
-                        initialAnimationCompleted3 = true;
-                    })
+        if (direct > 0) {
+            if (initialAnimationCompleted) {
+                animateHomePageDefault();
+                initialAnimationCompleted = false;
+                EndAnimateOfPage = false;
             }
             else {
-                animateAboutDefault();
+                tl.to(".text-existed", 1, { y: "0%", ease: Power1.easeInOut })
+                    .to(".text-removed", 1, { y: "100%", ease: Power1.easeInOut }, 0)
+                    .to(".text-existed-s", 1, { y: "0%", ease: Power1.easeInOut }, 0)
+                    .to(".text-removed-s", 1, { y: "0%", ease: Power1.easeInOut }, 0);
+            }
+
+        }
+
+    }
+
+    const AboutAnimation = (direct, indx) => {
+        let box = document.querySelectorAll('.box')
+
+        function animateAboutPage() {
+        }
+        function animateAboutDefault() {
+        }
+
+        var tl = new TimelineLite();
+
+        if (EndAnimateOfPage === true) {
+            if (direct < 0 && (initialAnimationCompleted3 && initialAnimationCompleted2 && initialAnimationCompleted1)) {
+                $(box[indx]).find('.page').data('action', 1);
+                $(box[indx + 1]).find('.page').data('action', 0);
+            }
+        }
+        if (EndAnimateOfPage === false) {
+            if (direct > 0 && (!initialAnimationCompleted3 && !initialAnimationCompleted2 && !initialAnimationCompleted1)) {
+                $(box[indx - 1]).find('.page').data('action', 0);
+                $(box[indx]).find('.page').data('action', 1);
+            }
+        }
+
+
+        if (direct < 0) {
+
+            if (initialAnimationCompleted3 && initialAnimationCompleted2 && initialAnimationCompleted1) {
+                animateAboutPage();
+                EndAnimateOfPage = true;
+            }
+
+            if (initialAnimationCompleted3 && !initialAnimationCompleted1 && !initialAnimationCompleted2) {
+                tl.to(".hor-wrap p:first-of-type", 1, { x: "-50%", opacity: 0, ease: Power1.easeInOut })
+                    .to(".hor-wrap p:last-of-type", 1, { x: "-50%", opacity: 1, ease: Power1.easeInOut }, 0);
+                initialAnimationCompleted3 = true;
+                initialAnimationCompleted2 = true;
+                initialAnimationCompleted1 = true;
+            }
+
+            if (initialAnimationCompleted2 && !initialAnimationCompleted1 && !initialAnimationCompleted3) {
+                tl.to(".img-right", 0.5, { top: "45%", ease: Power1.easeInOut })
+                    .to(".img-left", 0.5, { top: "55%", ease: Power1.easeInOut }, 0)
+                    .to(".img-ct", 0.5, { y: "-100%", opacity: 0, ease: Power1.easeInOut }, 0)
+                    .to(".hor-wrap", 0.5, { bottom: "50%", opacity: 1, ease: Power1.easeInOut }, 0);
+                initialAnimationCompleted2 = false;
+                initialAnimationCompleted1 = false;
+                initialAnimationCompleted3 = true;
+            }
+
+            if (!initialAnimationCompleted1 && !initialAnimationCompleted3 && !initialAnimationCompleted2) {
+                console.log('v-1 :' + initialAnimationCompleted1, 'v-2 :' + initialAnimationCompleted2, 'v-3 :' + initialAnimationCompleted3)
+                tl.to(".img-right", 1, { right: "90%", opacity: 1, ease: Power1.easeInOut })
+                    .to(".img-left", 1, { left: "80%", opacity: 1, ease: Power1.easeInOut }, 0)
+                    .to(".img-ct", 1, { scale: 0.3, ease: Power1.easeInOut }, 0)
+                    .to(".bg-img", 1, { scale: 2, ease: Power1.easeInOut }, 0);
+                initialAnimationCompleted1 = false;
+                initialAnimationCompleted2 = true;
+                initialAnimationCompleted3 = false;
+            }
+
+        }
+
+
+        if (direct > 0) {
+            if (!initialAnimationCompleted2 && initialAnimationCompleted1 && !initialAnimationCompleted3) {
+                tl.to(".img-right", 1, { right: "0%", opacity: 0, ease: Power1.easeInOut })
+                    .to(".img-left", 1, { left: "0%", opacity: 0, ease: Power1.easeInOut }, 0)
+                    .to(".img-ct", 1, { scale: 1, y: 0, opacity: 1, ease: Power1.easeInOut }, 0)
+                    .to(".hor-wrap", 1, { bottom: "0", opacity: 0, ease: Power1.easeInOut }, 0)
+                    .to(".bg-img", 1, { scale: 1, ease: Power1.easeInOut }, 0);
+                initialAnimationCompleted1 = false;
+                initialAnimationCompleted2 = false;
+                initialAnimationCompleted3 = false;
+            }
+
+            if (initialAnimationCompleted2 && !initialAnimationCompleted1 && !initialAnimationCompleted3) {
+                tl.to(".img-right", 1, { right: "90%", opacity: 1, ease: Power1.easeInOut })
+                    .to(".img-left", 1, { left: "80%", opacity: 1, ease: Power1.easeInOut }, 0)
+                    .to(".img-ct", 1, { scale: 0.3, ease: Power1.easeInOut }, 0)
+                    .to(".bg-img", 1, { scale: 2, ease: Power1.easeInOut }, 0);
+                initialAnimationCompleted1 = true;
+                initialAnimationCompleted2 = false;
+                initialAnimationCompleted3 = false;
+            }
+
+            if (initialAnimationCompleted3 && !initialAnimationCompleted1 && !initialAnimationCompleted2) {
+                tl.to(".img-right", 0.5, { top: "50%", ease: Power1.easeInOut })
+                    .to(".img-left", 0.5, { top: "50%", ease: Power1.easeInOut }, 0)
+                    .to(".img-ct", 0.5, { y: "0%", opacity: 1, ease: Power1.easeInOut }, 0)
+                    .to(".hor-wrap", 0.5, { bottom: "-50%", opacity: 1, ease: Power1.easeInOut }, 0);
+                initialAnimationCompleted1 = false;
+                initialAnimationCompleted2 = true;
+                initialAnimationCompleted3 = false;
+            }
+
+            if (initialAnimationCompleted3 && initialAnimationCompleted2 && initialAnimationCompleted1) {
+                if (EndAnimateOfPage === false) {
+                    tl.to(".hor-wrap p:first-of-type", 1, { x: "50%", opacity: 1, ease: Power1.easeInOut })
+                        .to(".hor-wrap p:last-of-type", 1, { x: "50%", opacity: 0, ease: Power1.easeInOut }, 0)
+                        .call(() => {
+                            initialAnimationCompleted2 = false;
+                            initialAnimationCompleted1 = false;
+                            initialAnimationCompleted3 = true;
+                        })
+                }
+                else {
+                    animateAboutDefault();
+                    EndAnimateOfPage = false;
+                }
+            }
+
+        }
+        //}
+
+    }
+
+    const ProAnimation = (direct, indx) => {
+        let box = document.querySelectorAll('.box')
+        let ExpandDis = $(".pr-title-page").find('.page-expand').height();
+        var tl = new TimelineLite();
+
+        if (EndAnimateOfPage === true) {
+            if (direct < 0 && initialAnimationCompleted4) {
+                $(box[indx]).find('.page').data('action', 1);
+                $(box[indx + 1]).find('.page').data('action', 0);
+            }
+        }
+        if (EndAnimateOfPage === false) {
+            if (direct > 0 && !initialAnimationCompleted4) {
+                $(box[indx - 1]).find('.page').data('action', 0);
+                $(box[indx]).find('.page').data('action', 1);
+            }
+        }
+
+        if (direct < 0) {
+            if (!initialAnimationCompleted4) {
+                tl.to(".projects-title", 1, { scale: 1, ease: Power1.easeInOut })
+                    .to(".about-page-expand", 1, { y: (-1) * ExpandDis, ease: Power1.easeInOut }, 0)
+                    .to(".projects-title", 1, { y: (-1) * ExpandDis, ease: Power1.easeInOut }, 0);
+                initialAnimationCompleted4 = true;
+            } else {
+                EndAnimateOfPage = true;
+            }
+        }
+        if (direct > 0) {
+            if (initialAnimationCompleted4) {
+                initialAnimationCompleted4 = false;
+                tl.to(".projects-title", 1, { scale: 1.3, ease: Power1.easeInOut })
+                    .to(".about-page-expand", 1, { y: 0, ease: Power1.easeInOut }, 0)
+                    .to(".projects-title", 1, { y: 0, ease: Power1.easeInOut }, 0);
+            }
+            else {
                 EndAnimateOfPage = false;
             }
         }
-
-    }
-    //}
-
-}
-
-const ProAnimation = (direct, indx) => {
-    let box = document.querySelectorAll('.box')
-    let ExpandDis = $(".pr-title-page").find('.page-expand').height();
-    var tl = new TimelineLite();
-
-    if (EndAnimateOfPage === true) {
-        if (direct < 0 && initialAnimationCompleted4) {
-            $(box[indx]).find('.page').data('action', 1);
-            $(box[indx + 1]).find('.page').data('action', 0);
-        }
-    }
-    if (EndAnimateOfPage === false) {
-        if (direct > 0 && !initialAnimationCompleted4) {
-            $(box[indx - 1]).find('.page').data('action', 0);
-            $(box[indx]).find('.page').data('action', 1);
-        }
     }
 
-    if (direct < 0) {
-        if (!initialAnimationCompleted4) {
-            tl.to(".projects-title", 1, { scale: 1, ease: Power1.easeInOut })
-                .to(".about-page-expand", 1, { y: (-1) * ExpandDis, ease: Power1.easeInOut }, 0)
-                .to(".projects-title", 1, { y: (-1) * ExpandDis, ease: Power1.easeInOut }, 0);
-            initialAnimationCompleted4 = true;
-        } else {
-            EndAnimateOfPage = true;
-        }
-    }
-    if (direct > 0) {
-        if (initialAnimationCompleted4) {
-            initialAnimationCompleted4 = false;
-            tl.to(".projects-title", 1, { scale: 1.3, ease: Power1.easeInOut })
-                .to(".about-page-expand", 1, { y: 0, ease: Power1.easeInOut }, 0)
-                .to(".projects-title", 1, { y: 0, ease: Power1.easeInOut }, 0);
-        }
-        else {
+    const ProjectAnimation = (direct, indx) => {
+        const throttledUp = function () {
+            for (var i = 0; i < numSliders.length; i++) {
+                let position = getScaleY_FromMatrix($(numSliders[i]).css('transform'));
+                tl.to(numSliders[i], 0.7, { yPercent: position - 100 }, 0);
+            }
+        };
+        const throttledDown = function () {
+            for (var i = 0; i < numSliders.length; i++) {
+                let position = getScaleY_FromMatrix($(numSliders[i]).css('transform'));
+                tl.to(numSliders[i], 0.7, { yPercent: position + 100 }, 0);
+            }
+        };
+
+        var tl = new TimelineLite();
+
+        if (numS >= 0) {
             EndAnimateOfPage = false;
         }
+        if (numS >= numSliders.length - 1) {
+            EndAnimateOfPage = true;
+        }
 
+        if (EndAnimateOfPage === true && numS === numSliders.length - 1) {
+            if (direct < 0) {
+                $(box[indx]).find('.page').data('action', 1);
+                $(box[indx + 1]).find('.page').data('action', 0);
+            }
+        }
+        if (EndAnimateOfPage === false && numS === 0) {
+            if (direct > 0) {
+                $(box[indx - 1]).find('.page').data('action', 0);
+                $(box[indx]).find('.page').data('action', 1);
+            }
+        }
+
+
+        if (direct < 0) {
+            if (numS < numSliders.length - 1) {
+                throttledUp();
+                numS++;
+            }
+
+        }
+
+        if (direct > 0) {
+            if (numS > 0) {
+                numS--;
+                throttledDown();
+            }
+        }
     }
-
-}
-
-const ProjectAnimation = (direct, indx) => {
-  
-    }
-}
-
+});
 
 //////////////// slats blind ////////////////////////////
 //var slatCount = 10;
@@ -427,7 +427,6 @@ const ProjectAnimation = (direct, indx) => {
 //    $('#blindbox').on('click', function () {
 //        horizontalBlinds('#blindbox');
 //    });
-//});
 
 
 

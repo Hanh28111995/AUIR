@@ -638,17 +638,17 @@ body {
         }
     }
 
-    .projects-page {        
-
-        ::-webkit-scrollbar {
-            display: none !important; 
-        }
+    .projects-page {
 
         .projects-detail {
             position: relative;
 
             .projects-detail-item {
                 position: relative;
+                transform: translate(0,0);
+                color: #FFFEFC;
+                width: 100%;
+                height: 100%;
 
                 .paralax {
                     height: 100vh;
