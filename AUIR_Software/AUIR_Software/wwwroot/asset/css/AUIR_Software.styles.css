@@ -7,14 +7,13 @@ body .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
-body .projects-last-item > .slat {
-  overflow: hidden;
+body .projects-detail-item > .slat {
   border: none;
   position: relative;
   transition: ease-in-out all 0.3s;
 }
-body #navbarNavDropdown.show {
-  right: 0px;
+body .unset {
+  overflow: unset !important;
 }
 body #navbarNavDropdown {
   background-color: #050505;
@@ -531,6 +530,34 @@ body .pr-title-page .projects-title .content-right h5 {
   line-height: 1.4;
   padding-top: 20px;
 }
+body .projects-page .service-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFFEFC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+body .projects-page .service-page .service-title {
+  color: #545352;
+  text-align: center;
+}
+body .projects-page .service-page .service-title h5 {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+}
+body .projects-page .service-page .service-title h3 {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.2;
+}
 body .projects-page .projects-detail {
   position: relative;
 }
@@ -585,22 +612,13 @@ body .projects-page .projects-detail .projects-detail-item .projects-detail-item
   font-weight: 500;
   margin-left: 10px;
 }
-body .projects-page .projects-detail .projects-detail-item .projects-last-item {
-  z-index: 2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-body .projects-page .projects-detail .see-all-projects {
+body .projects-page .projects-detail .projects-detail-item .see-all-projects {
   background-color: rgba(0, 0, 0, 0.9);
   padding-left: 60px;
   padding-right: 60px;
   position: absolute;
   width: 100%;
-  bottom: 50px;
+  bottom: -100%;
   left: 50%;
   transform: translateX(-50%);
   border-top: 1px solid;
@@ -612,7 +630,7 @@ body .projects-page .projects-detail .see-all-projects {
   justify-content: end;
   z-index: 3;
 }
-body .projects-page .projects-detail .see-all-projects a {
+body .projects-page .projects-detail .projects-detail-item .see-all-projects a {
   text-decoration: none;
   font-family: "Satoshi", sans-serif;
   font-size: 72px;
@@ -620,32 +638,55 @@ body .projects-page .projects-detail .see-all-projects a {
   line-height: 1.4;
   color: #FFFEFC;
 }
-body .projects-page .projects-detail .see-all-projects a svg {
+body .projects-page .projects-detail .projects-detail-item .see-all-projects a svg {
   height: 100px;
   width: 100px;
   color: #FF9E00;
 }
-body .service-page {
+body .projects-page .projects-detail .projects-detail-item .projects-last-item {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+body .vertical-scroll-list-page {
   background-color: #FFFEFC;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
 }
-body .service-page .service-title {
-  color: #545352;
-  text-align: center;
+body .vertical-scroll-list-page .js-vertical-scroll-list {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 35px 0;
 }
-body .service-page .service-title h5 {
-  font-family: "Satoshi", sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.4;
+body .vertical-scroll-list-page .js-vertical-scroll-list ul {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
-body .service-page .service-title h3 {
-  font-family: "Satoshi", sans-serif;
-  font-weight: 400;
-  font-size: 44px;
+body .vertical-scroll-list-page .js-vertical-scroll-list ul li {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 92px;
+  color: #AFAEAB;
   line-height: 1.2;
+  letter-spacing: 0.2rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  padding: 55px 0;
 }
 @keyframes marquee0 {
   0% {

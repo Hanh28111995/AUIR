@@ -10,19 +10,14 @@ body {
         padding-right: 0;
     }
 
-    .projects-last-item > .slat {
-        overflow: hidden;
+    .projects-detail-item > .slat {
         border: none;
         position: relative;
         transition: ease-in-out all 0.3s;
     }
 
-
-
-
-
-    #navbarNavDropdown.show {
-        right: 0px;
+    .unset {
+        overflow: unset !important;
     }
 
     #navbarNavDropdown {
@@ -639,6 +634,37 @@ body {
     }
 
     .projects-page {
+        .service-page {
+            width: 100vw;
+            height: 100vh;
+            background-color: $LightBg;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+
+            .service-title {
+                color: $DarkText;
+                text-align: center;
+
+                h5 {
+                    font-family: 'Satoshi',sans-serif;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 1.4;
+                }
+
+                h3 {
+                    font-family: 'Satoshi',sans-serif;
+                    font-weight: 400;
+                    font-size: 44px;
+                    line-height: 1.2;
+                }
+            }
+        }
 
         .projects-detail {
             position: relative;
@@ -699,6 +725,40 @@ body {
                         }
                     }
                 }
+
+                .see-all-projects {
+                    background-color: rgba(0,0,0,0.9);
+                    padding-left: 60px;
+                    padding-right: 60px;
+                    position: absolute;
+                    width: 100%;
+                    bottom: -100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-top: 1px solid;
+                    border-bottom: 1px solid;
+                    border-image: linear-gradient(to right, #FDBB4F 75%, #E27726 25%);
+                    border-image-slice: 1;
+                    margin-bottom: 10px;
+                    display: flex;
+                    justify-content: end;
+                    z-index: 3;
+
+                    a {
+                        text-decoration: none;
+                        font-family: 'Satoshi', sans-serif;
+                        font-size: 72px;
+                        font-weight: 500;
+                        line-height: 1.4;
+                        color: $LightText;
+
+                        svg {
+                            height: 100px;
+                            width: 100px;
+                            color: $Primary;
+                        }
+                    }
+                }
             }
 
             .projects-detail-item .projects-last-item {
@@ -710,68 +770,52 @@ body {
                 height: 100vh;
                 overflow: hidden;
             }
+        }
+    }
 
-            .see-all-projects {
-                background-color: rgba(0,0,0,0.9);
-                padding-left: 60px;
-                padding-right: 60px;
+
+    .vertical-scroll-list-page {
+        background-color: $LightBg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+
+        .js-vertical-scroll-list {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 35px 0;
+
+            ul {
                 position: absolute;
+                display: block;
                 width: 100%;
-                bottom: 50px;
-                left: 50%;
-                transform: translateX(-50%);
-                border-top: 1px solid;
-                border-bottom: 1px solid;
-                border-image: linear-gradient(to right, #FDBB4F 75%, #E27726 25%);
-                border-image-slice: 1;
-                margin-bottom: 10px;
-                display: flex;
-                justify-content: end;
-                z-index: 3;
+                height: auto;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
 
-                a {
-                    text-decoration: none;
-                    font-family: 'Satoshi', sans-serif;
-                    font-size: 72px;
+                li {
+                    font-family: "Space Grotesk", sans-serif;
                     font-weight: 500;
-                    line-height: 1.4;
-                    color: $LightText;
-
-                    svg {
-                        height: 100px;
-                        width: 100px;
-                        color: $Primary;
-                    }
+                    font-size: 92px;
+                    color: $Gray400;
+                    line-height: 1.2;
+                    letter-spacing: 0.2rem;
+                    display:flex;
+                    align-items:baseline;
+                    justify-content:center;
+                    padding: 55px 0;
                 }
             }
         }
     }
 
-    .service-page {
-        background-color: $LightText;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
-        .service-title {
-            color: $DarkText;
-            text-align: center;
 
-            h5 {
-                font-family: 'Satoshi',sans-serif;
-                font-weight: 700;
-                font-size: 16px;
-                line-height: 1.4;
-            }
-
-            h3 {
-                font-family: 'Satoshi',sans-serif;
-                font-weight: 400;
-                font-size: 44px;
-                line-height: 1.2;
-            }
-        }
-    }
 
     @keyframes marquee0 {
         0% {

@@ -2,55 +2,57 @@
     ViewData["Title"] = "Home Page";
 }
 
-@* <section class="contact-page page" id="Contact">
-        <div class="contact-1">
-            <div class="contact-content">
-                <h4>
-                    They said we’re good for a reason
-                </h4>
-                <div class="col-12 customer-cmt">
-                    <div class="col-4">
-                        <h5>Clients testimonial</h5>
-                        <div class="col-12">
-                            <div class="col-5">
-                                <h5>9.9/10</h5>
-                            </div>
-                            <div class="col-7">
-                                <p>
-                                    Our clients rate us excellent
-                                    We scored 9.9/10 based on 20 reviews
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-8">
-                        <div class="col-12">
-                            <p>This is the part where customer tell them how amazing we are. And we'll get to that. Your ideas, we generate the code — for everything from fully custom layouts to complex animations.</p>
-                            <div class="avatar">
-                                <img src="" alt="" />
-                                <div class="d-flex flex-column">
-                                    <div class="start"></div>
-                                    <p class="name"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
+
+@*<section class="contact-page page" id="Contact">
+    <div class="contact-1">
+        <div class="contact-content">
+            <h4>
+                They said we’re good for a reason
+            </h4>
+            <div class="col-12 customer-cmt">
+                <div class="col-4">
+                    <h5>Clients testimonial</h5>
+                    <div class="col-12">
+                        <div class="col-5">
+                            <h5>9.9/10</h5>
+                        </div>
+                        <div class="col-7">
+                            <p>
+                                Our clients rate us excellent
+                                We scored 9.9/10 based on 20 reviews
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="col-8">
+                    <div class="col-12">
+                        <p>This is the part where customer tell them how amazing we are. And we'll get to that. Your ideas, we generate the code — for everything from fully custom layouts to complex animations.</p>
+                        <div class="avatar">
+                            <img src="" alt="" />
+                            <div class="d-flex flex-column">
+                                <div class="start"></div>
+                                <p class="name"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
         </div>
-        <div class="contact-2"></div>
-        <div class="contact-3"></div>
-    </section>*@
+
+    </div>
+    <div class="contact-2"></div>
+    <div class="contact-3"></div>
+</section>*@
+
 
 
 <div class="box">
     <div class="box-content">
-        <section class="home-page page" id="Home" data-action=0>
+        <section class="home-page page" id="Home">
             <div class="home-page-overlay">
             </div>
-
             <div class="home-page-content">
                 <div class="wrap-limit-p">
                     <h1>
@@ -116,7 +118,7 @@
 
 <div class="box">
     <div class="box-content">
-        <section class="about-page page" id="About" data-action=1>
+        <section class="about-page page" id="About">
             <div class="about-bg">
                 <div class="bg-img">
                     <img class="mx-auto" src="./asset/img/item/curve text.png" />
@@ -149,7 +151,7 @@
 
 <div class="box">
     <div class="box-content">
-        <section class="pr-title-page page" id="Pro" data-action=1>
+        <section class="pr-title-page page" id="Pro" >
 
             <div class="about-page-expand page-expand">
                 <div class="about-page-expand-content">
@@ -198,12 +200,10 @@
 
 <div class="box">
     <div class="box-content">
-        <section class="projects-page page" id="Project" data-action=1>
-
-
+        <section class="projects-page page" id="Project" >
             <div class="projects-detail">
 
-                <div class="projects-detail-item" data-action=0>
+                <div class="projects-detail-item" >
                     <div class="paralax" style="background-image: url(./asset/img/bg/Project/LLC.png)"></div>
                     <div class="projects-detail-item-content">
                         <h3>Worldcraft Logistics</h3>
@@ -225,7 +225,7 @@
                     </div>
                 </div>
 
-                <div class="projects-detail-item" data-action=1>
+                <div class="projects-detail-item" >
                     <div class="paralax" style="background-image: url(./asset/img/bg/Project/Acexus.png)"></div>
                     <div class="projects-detail-item-content">
                         <h3>ACEXUS</h3>
@@ -241,7 +241,7 @@
                     </div>
                 </div>
 
-                <div class="projects-detail-item" data-action=1>
+                <div class="projects-detail-item" >
                     <div class="paralax" style="background-image: url(./asset/img/bg/Project/KAVIK.png)"></div>
                     <div class="projects-detail-item-content">
                         <h3>Kavik</h3>
@@ -257,8 +257,8 @@
                     </div>
                 </div>
 
-                <div class="projects-detail-item" data-action=1>
-                    @*<div class="projects-last-item" id="blindbox" data-action="0">*@
+                <div class="projects-detail-item " id="last-item" >
+
                     <div class="paralax" style="background-image: url(./asset/img/bg/Project/FLOORING.jpg); background-position:center"></div>
                     <div class="projects-detail-item-content">
                         <h3>Prestige Floors LTD</h3>
@@ -272,19 +272,46 @@
                             </div>
                         </div>
                     </div>
-                    @*</div>*@
 
+                    <div class="see-all-projects">
+                        <a href="#">
+                            <span>See all projects</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                            </svg>
+                        </a>
+                    </div>
 
                 </div>
+            </div>
 
-                <div class="see-all-projects">
-                    <a href="#">
-                        <span>See all projects</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                        </svg>
-                    </a>
+            <section class="service-page ">
+                <div class="service-title">
+                    <h5>OUR SERVICE</h5>
+                    <h3>Get your business online with our expertises</h3>
                 </div>
+                <div class="service-list-1"></div>
+                <div class="service-list-2"></div>
+                <div class="service-feature-title"></div>
+                <div class="service-feature-list-1"></div>
+                <div class="service-feature-list-2"></div>
+            </section>
+        </section>
+
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-content">
+        <section class="vertical-scroll-list-page page" id="PjList">
+            <div class="js-vertical-scroll-list">
+                <ul>
+                    <li class="js-vertical-scroll-list-item">Web design</li>
+                    <li class="js-vertical-scroll-list-item">Product design</li>
+                    <li class="js-vertical-scroll-list-item">Development</li>
+                    <li class="js-vertical-scroll-list-item">SEO</li>
+                    <li class="js-vertical-scroll-list-item">Technical support</li>
+                </ul>
             </div>
         </section>
     </div>
@@ -292,18 +319,6 @@
 
 <div class="box">
     <div class="box-content">
-        <section class="service-page page">
-            <div class="service-title">
-                <h5>OUR SERVICE</h5>
-                <h3>Get your business online with our expertises</h3>
-            </div>
-            <div class="service-list-1"></div>
-            <div class="service-list-2"></div>
-            <div class="service-feature-title"></div>
-            <div class="service-feature-list-1"></div>
-            <div class="service-feature-list-2"></div>
-        </section>
     </div>
 </div>
-@*<div class="box">Slide 4</div>
-<div class="box">END</div>    *@                      
+                
