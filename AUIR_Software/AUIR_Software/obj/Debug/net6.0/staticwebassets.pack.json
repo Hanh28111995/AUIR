@@ -449,6 +449,14 @@
       "PackagePath": "staticwebassets\\asset\\css\\AUIR_Software.styles.min.css"
     },
     {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\fonts\\Sequel\\ab80d41fb980ff40273bb0028779b41e.eot",
+      "PackagePath": "staticwebassets\\asset\\fonts\\Sequel\\ab80d41fb980ff40273bb0028779b41e.eot"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\bg\\0001.jpg",
+      "PackagePath": "staticwebassets\\asset\\img\\bg\\0001.jpg"
+    },
+    {
       "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\bg\\Project\\Acexus.png",
       "PackagePath": "staticwebassets\\asset\\img\\bg\\Project\\Acexus.png"
     },
@@ -475,6 +483,10 @@
     {
       "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\icon\\AUIR.svg",
       "PackagePath": "staticwebassets\\asset\\img\\icon\\AUIR.svg"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\icon\\Group.svg",
+      "PackagePath": "staticwebassets\\asset\\img\\icon\\Group.svg"
     },
     {
       "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\icon\\Star.svg",
@@ -533,6 +545,14 @@
       "PackagePath": "staticwebassets\\asset\\img\\item\\AIUR.png"
     },
     {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\item\\Arrow.png",
+      "PackagePath": "staticwebassets\\asset\\img\\item\\Arrow.png"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\item\\BACK TO THE TOP.png",
+      "PackagePath": "staticwebassets\\asset\\img\\item\\BACK TO THE TOP.png"
+    },
+    {
       "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\item\\Laptop.png",
       "PackagePath": "staticwebassets\\asset\\img\\item\\Laptop.png"
     },
@@ -551,6 +571,30 @@
     {
       "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\item\\logo.png",
       "PackagePath": "staticwebassets\\asset\\img\\item\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list1.png",
+      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list1.png"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list2.png",
+      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list2.png"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list3.png",
+      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list3.png"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list4.png",
+      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list4.png"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list5.png",
+      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list5.png"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list6.png",
+      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list6.png"
     },
     {
       "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\js\\main.js",
@@ -803,6 +847,62 @@
     {
       "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\lib\\slick\\ajax-loader.gif"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\config.rb",
+      "PackagePath": "staticwebassets\\lib\\slick\\config.rb"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\fonts\\slick.eot",
+      "PackagePath": "staticwebassets\\lib\\slick\\fonts\\slick.eot"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\fonts\\slick.svg",
+      "PackagePath": "staticwebassets\\lib\\slick\\fonts\\slick.svg"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\fonts\\slick.ttf",
+      "PackagePath": "staticwebassets\\lib\\slick\\fonts\\slick.ttf"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\fonts\\slick.woff",
+      "PackagePath": "staticwebassets\\lib\\slick\\fonts\\slick.woff"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\slick-theme.css",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick-theme.css"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\slick-theme.less",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick-theme.less"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\slick-theme.scss",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick-theme.scss"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\slick.css",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.css"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\slick.js",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.js"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\slick.less",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.less"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\slick.min.js",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\slick\\slick.scss",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.scss"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.AUIR_Software.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -16,8 +16,7 @@
     @*<link rel="icon" href="/cropped-favicon-32x32.png" sizes="32x32">*@
 
     @*<link rel="preload" as="image" href="" />*@
-
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
+    
 
     <!-- font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +24,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link href="https://db.onlinewebfonts.com/c/ab80d41fb980ff40273bb0028779b41e?family=Sequel100Black-45" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
+
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="./lib/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="./lib/slick/slick-theme.css" />
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -44,11 +47,7 @@
                     <ul class="navbar-nav d-flex align-items-center">
                         <li class="nav-item">
                             <a class="btn-chatbox" id="scroll-btn">Let's talk</a>
-                        </li>
-                        <li>
-                            <button id="up" class="custom-collapse-btn">up</button>
-                            <button id="down" class="custom-collapse-btn">down</button>
-                        </li>
+                        </li>                        
                         <li class="nav-item">
                             <button class="navbar-toggler d-block custom-collapse-btn" type="button" data-toggle="collapse"
                                     data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -68,16 +67,19 @@
                     </button>
                     <ul class="navbar-nav" style="height: unset;">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#Home">Home </a>
+                            <a class="nav-link" href="#Home" >Home </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#About">About us </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#Project">Projects </a>
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Services1">Services </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#Careers">Careers </a>
+                            <a class="nav-link" href="#Clients">Clients </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#Contact">Contact </a>
@@ -95,36 +97,36 @@
                         </div>
                     </div>
                     <div class="tag-list">
-                        <div class="col-12 d-flex flex-row row">
-                            <div class="col-3 d-flex justify-content-start">
+                        <div class="col-12 d-flex flex-row row p-0">
+                            <div class="d-inline-flex justify-content-start">
                                 <div class="tag-list-item">
                                     <span>
                                         Linkedin
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-3 d-flex justify-content-start">
+                            <div class="d-inline-flex justify-content-start">
                                 <div class="tag-list-item">
                                     <span>
                                         Facebook
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-3 d-flex justify-content-start">
+                            <div class="d-inline-flex justify-content-start">
                                 <div class="tag-list-item">
                                     <span>
                                         Youtube
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-3 d-flex justify-content-start">
+                            <div class="d-inline-flex justify-content-start">
                                 <div class="tag-list-item">
                                     <span>
                                         Tiktok
                                     </span>
                                 </div>
                             </div>
-                            <div class="col-3 d-flex justify-content-start">
+                            <div class="d-inline-flex justify-content-start">
                                 <div class="tag-list-item">
                                     <span>
                                         Instagram
@@ -143,9 +145,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.usebootstrap.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
             crossorigin="anonymous"></script>
@@ -154,10 +154,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     @*<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/utils/Draggable.min.js"></script>*@
-    
 
+    <script type="text/javascript" src="./lib/slick/slick.min.js"></script>
 
-    <script src="/asset/js/main.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/asset/js/main.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
