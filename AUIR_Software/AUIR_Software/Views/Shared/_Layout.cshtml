@@ -29,17 +29,15 @@
     <link rel="stylesheet" type="text/css" href="./lib/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="./lib/slick/slick-theme.css" />
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-
+    <!-- bootstrap -->    
+    <link rel="stylesheet" href="./lib/bootstrap/ver431/css/bootstrap.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="./asset/css/AUIR_Software.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-transparent">
-            <div class="container-fluid">
+            <div class="container-fluid align-items-center">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img class="logo img-fluid" src="./asset/img/item/logo.png" alt="" />
                 </a>
@@ -141,22 +139,13 @@
     </header>
     @RenderBody()
 
-
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.usebootstrap.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./lib/bootstrap/ver431/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/utils/Draggable.min.js"></script>*@
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"></script>
     <script type="text/javascript" src="./lib/slick/slick.min.js"></script>
-
     <script type="text/javascript" src="/asset/js/main.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)

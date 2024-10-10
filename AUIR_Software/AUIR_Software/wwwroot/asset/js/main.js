@@ -1,7 +1,18 @@
 ﻿
 document.addEventListener('DOMContentLoaded', function () {
-    /////////////////////////////////////////// scroll page slider /////////////////////////////////////////////
 
+
+    /////////////////////////////////////////// scroll page slider /////////////////////////////////////////////
+    let HomeAnimationCompleted = false;
+    let AboutAnimationCompleted1 = false;
+    let AboutAnimationCompleted2 = false;
+    let AboutAnimationCompleted3 = false;
+    let ProAnimationCompleted = false;
+    let ProjectAnimationCompleted1 = false;
+    let ProjectAnimationCompleted2 = false;
+    let ServicesAnimationCompleted = false;
+    let ContactAnimationCompleted = false;
+    let EndAnimateOfPage = false;
     var OneActionOneScroll = false;
 
     $(document).ready(function () {
@@ -45,11 +56,11 @@ document.addEventListener('DOMContentLoaded', function () {
         ////////////////    event click navlink     ////////////////////    
 
         var navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(function (navLink) {
+        navLinks.forEach(function (navLink, id) {
             navLink.addEventListener('click', function (event) {
                 event.preventDefault();
                 let targetIndex;
-                var targetId = this.getAttribute('href').substring(1);                
+                var targetId = this.getAttribute('href').substring(1);
                 var targetElement = document.getElementById(targetId);
                 if (targetElement) {
                     var numSlidesMove;
@@ -77,7 +88,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         let position = Math.round(getScaleY_FromMatrix($(box[i]).css('transform')) / 100);
                         Anim = TweenLite.to(box[i], 0.0, { yPercent: position * 100 + 100 * numSlidesMove });
                     }
+
+
                     indx = targetIndex;
+
                     var navL = document.querySelector('.nav-item a[href*=' + targetId + ']');
                     if (navL) {
                         $('.nav-item').removeClass('active');
@@ -91,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         $('.back-to-top').click(function () {
             document.querySelector("a[href*=Home]").click()
-        });        
+        });
 
 
         var OneActionOneScroll = true;
@@ -101,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 box[i].anim = TweenLite.to(box[i], 0.7, { yPercent: i * 100, pause: true });
             }
         }
-        function Go(e) {
+        function Go(e) {            
             if (OneActionOneScroll) {
                 OneActionOneScroll = false;
 
@@ -131,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
                 }
+
                 navLinks.forEach(function (navLink) {
                     $(navLink).closest('.nav-item').removeClass('active')
                     if ($(navLink).attr('href').replace('#', '') == $(box[indx]).find(".page").attr('id')) {
@@ -142,6 +157,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 200);
             }
         }
+
+        ///// call Go function by drag /////        
+        function isTouchDevice() {
+            return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        }
+        if (isTouchDevice()) {
+            console.log("Touch device detected. Activating drag functionality.");
+            var d = document.createElement('div');
+            document.querySelector('body').appendChild(d);
+            Draggable.create(d, {
+                trigger: ".box",
+                type: 'y',
+                minimumMovement: box.length,
+                cursor: 'auto',
+                onDrag: function () { var x = this.getDirection("start") == 'up' ? -1 : 1; Go(x); }
+            });
+        }
+        /////////////////////////
 
         document.addEventListener("mousewheel", Go);
 
@@ -164,17 +197,16 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .on('ux.vScrollList.setHeight', function () {
                 let itemHeight = parseFloat(getComputedStyle(item, null).height.replace("px", ""));
-
-                $(this).css('height', itemHeight * 3);
+                $(this).css('height', "100%");
             })
 
         ////////init b scroll list ////////
 
         let depthb = 0;
-        let itemb = bScrollList.querySelector('.vertical-scroll-list-more-page .js-vertical-scroll-list-item');
-        let itemsb = bScrollList.querySelectorAll('.vertical-scroll-list-more-page .js-vertical-scroll-list-item');
+        let itemb = bScrollList.querySelector('.js-vertical-scroll-list-item');
+        let itemsb = bScrollList.querySelectorAll('.js-vertical-scroll-list-item');
         let itemHeightb = parseFloat(getComputedStyle(itemsb[itemsb.length - 1], null).height.replace("px", ""));
-        $(bScrollList).css('height', itemHeightb * 2);
+        $(bScrollList).css('height', '100vh');
 
         $(bScrollList)
             .on('ux.bScrollList.init', function () {
@@ -187,16 +219,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 $(this).css('height', itemHeightb * 1);
             })
 
-        let HomeAnimationCompleted = false;
-        let AboutAnimationCompleted1 = false;
-        let AboutAnimationCompleted2 = false;
-        let AboutAnimationCompleted3 = false;
-        let ProAnimationCompleted = false;
-        let ProjectAnimationCompleted1 = false;
-        let ProjectAnimationCompleted2 = false;
-        let ServicesAnimationCompleted = false;
-        let ContactAnimationCompleted = false;
-        let EndAnimateOfPage = false;
 
         const HomeAnimation = (direct, indx, nav) => {
             var tl = new TimelineLite();
@@ -269,16 +291,16 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             return false
 
-        }        
+        }
 
         const AboutAnimation = (direct, indx, nav) => {
             var tl = new TimelineLite();
 
             if (nav >= 0) {
                 tl.to(".hor-wrap p:first-of-type", 0, { x: "50%", opacity: 1, ease: Power1.easeInOut })
-                    .to(".hor-wrap p:last-of-type", 0, { x: "50%", opacity: 0, ease: Power1.easeInOut }, 0);
-                tl.to(".img-right", 0, { top: "50%", right: "0%", opacity: 0, ease: Power1.easeInOut })
-                    .to(".img-left", 0, { top: "50%", left: "0%", opacity: 0, ease: Power1.easeInOut }, 0)
+                    .to(".hor-wrap p:last-of-type", 0, { x: "0", opacity: 0, ease: Power1.easeInOut }, 0);
+                tl.to(".img-right", 0, { bottom: "50%", right: "0%", opacity: 0, ease: Power1.easeInOut })
+                    .to(".img-left", 0, { bottom: "50%", left: "0%", opacity: 0, ease: Power1.easeInOut }, 0)
                     .to(".img-ct", 0, { y: "0%", scale: 1, opacity: 1, ease: Power1.easeInOut }, 0)
                     .to(".hor-wrap", 0, { bottom: "0%", opacity: 0, ease: Power1.easeInOut }, 0)
                     .to(".bg-img", 0, { scale: 1, ease: Power1.easeInOut }, 0);
@@ -287,10 +309,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 AboutAnimationCompleted3 = false;
             }
             if (nav < 0) {
-                tl.to(".hor-wrap p:first-of-type", 0, { x: "-50%", opacity: 0, ease: Power1.easeInOut })
-                    .to(".hor-wrap p:last-of-type", 0, { x: "-50%", opacity: 1, ease: Power1.easeInOut }, 0);
-                tl.to(".img-right", 0, { right: "90%", opacity: 1, top: "45%", ease: Power1.easeInOut })
-                    .to(".img-left", 0, { left: "80%", opacity: 1, top: "55%", ease: Power1.easeInOut }, 0)
+                tl.to(".hor-wrap p:first-of-type", 0, { x: "50", opacity: 0, ease: Power1.easeInOut })
+                    .to(".hor-wrap p:last-of-type", 0, { x: "100", opacity: 1, ease: Power1.easeInOut }, 0);
+                tl.to(".img-right", 0, { right: "90%", opacity: 1, bottom: "calc(50% + 25px)", ease: Power1.easeInOut })
+                    .to(".img-left", 0, { left: "80%", opacity: 1, bottom: "calc(50% - 25px)", ease: Power1.easeInOut }, 0)
                     .to(".img-ct", 0, { scale: 0.3, y: "-100%", opacity: 0, ease: Power1.easeInOut }, 0)
                     .to(".hor-wrap", 0, { bottom: "50%", opacity: 1, ease: Power1.easeInOut }, 0)
                     .to(".bg-img", 0, { scale: 2, ease: Power1.easeInOut }, 0);
@@ -317,8 +339,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             if (direct < 0) {
                 if (AboutAnimationCompleted3 && !AboutAnimationCompleted1 && !AboutAnimationCompleted2) {
-                    tl.to(".hor-wrap p:first-of-type", 0.5, { x: "-50%", opacity: 0, ease: Power1.easeInOut })
-                        .to(".hor-wrap p:last-of-type", 0.5, { x: "-50%", opacity: 1, ease: Power1.easeInOut }, 0);
+                    tl.to(".hor-wrap p:first-of-type", 0.5, { opacity: 0, xPercent: '0', ease: Power1.easeInOut })
+                        .to(".hor-wrap p:last-of-type", 0.5, { opacity: 1, xPercent: '-50', ease: Power1.easeInOut }, 0);
                     AboutAnimationCompleted3 = true;
                     AboutAnimationCompleted2 = true;
                     AboutAnimationCompleted1 = true;
@@ -326,8 +348,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 if (AboutAnimationCompleted2 && !AboutAnimationCompleted1 && !AboutAnimationCompleted3) {
-                    tl.to(".img-right", 0.5, { top: "45%", ease: Power1.easeInOut })
-                        .to(".img-left", 0.5, { top: "55%", ease: Power1.easeInOut }, 0)
+                    tl.to(".img-right", 0.5, { bottom: "calc(50% + 25px)", ease: Power1.easeInOut })
+                        .to(".img-left", 0.5, { bottom: "calc(50% - 25px)", ease: Power1.easeInOut }, 0)
                         .to(".img-ct", 0.5, { y: "-100%", opacity: 0, ease: Power1.easeInOut }, 0)
                         .to(".hor-wrap", 0.5, { bottom: "50%", opacity: 1, ease: Power1.easeInOut }, 0);
 
@@ -362,8 +384,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 if (AboutAnimationCompleted3 && !AboutAnimationCompleted1 && !AboutAnimationCompleted2) {
-                    tl.to(".img-right", 0.5, { top: "50%", ease: Power1.easeInOut })
-                        .to(".img-left", 0.5, { top: "50%", ease: Power1.easeInOut }, 0)
+                    tl.to(".img-right", 0.5, { bottom: "50%", ease: Power1.easeInOut })
+                        .to(".img-left", 0.5, { bottom: "50%", ease: Power1.easeInOut }, 0)
                         .to(".img-ct", 0.5, { y: "0%", opacity: 1, ease: Power1.easeInOut }, 0)
                         .to(".hor-wrap", 0.5, { bottom: "-50%", opacity: 1, ease: Power1.easeInOut }, 0);
                     AboutAnimationCompleted1 = false;
@@ -374,8 +396,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (AboutAnimationCompleted3 && AboutAnimationCompleted2 && AboutAnimationCompleted1) {
                     EndAnimateOfPage = false;
                     if (EndAnimateOfPage === false) {
-                        tl.to(".hor-wrap p:first-of-type", 0.5, { x: "50%", opacity: 1, ease: Power1.easeInOut })
-                            .to(".hor-wrap p:last-of-type", 0.5, { x: "50%", opacity: 0, ease: Power1.easeInOut }, 0);
+                        tl.to(".hor-wrap p:first-of-type", 0.5, { opacity: 1, xPercent: '0', ease: Power1.easeInOut })
+                            .to(".hor-wrap p:last-of-type", 0.5, { opacity: 0, xPercent: '0', ease: Power1.easeInOut }, 0);
                         AboutAnimationCompleted2 = false;
                         AboutAnimationCompleted1 = false;
                         AboutAnimationCompleted3 = true;
@@ -385,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             }
             return false
-        }        
+        }
 
         const ProAnimation = (direct, indx, nav) => {
             var tl = new TimelineLite();
@@ -445,7 +467,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             return false
-        }        
+        }
 
         const ProjectAnimation = (direct, indx, nav) => {
             var tl = new TimelineLite();
@@ -591,7 +613,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             }
             return false
-        }        
+        }
 
         const Services1Animation = (direct, indx, nav) => {
             var tl = new TimelineLite();
@@ -652,7 +674,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 EndAnimateOfPage = false;
             }
             return false
-        }        
+        }
 
         const Services2Animation = (direct, indx, nav) => {
 
@@ -725,7 +747,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             return false
-        }        
+        }
 
         const ClientsAnimation = (direct, indx, nav) => {
             var tl = new TimelineLite();
@@ -771,7 +793,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             return false
-        }        
+        }
 
         const ContactAnimation = (direct, indx, nav) => {
 
@@ -781,7 +803,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return true
             }
             return false
-        }        
+        }
     });
 
     //////////////// slats blind ////////////////////////////

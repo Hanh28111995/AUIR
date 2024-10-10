@@ -3,7 +3,8 @@
 
 @font-face {
     font-family: "Sequel100Black-45";
-    src: url("../asset/fonts/Sequel/ab80d41fb980ff40273bb0028779b41e.eot");   
+    src: url("https://db.onlinewebfonts.com/t/ab80d41fb980ff40273bb0028779b41e.eot");
+    src: url("https://db.onlinewebfonts.com/t/ab80d41fb980ff40273bb0028779b41e.eot?#iefix")format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/ab80d41fb980ff40273bb0028779b41e.woff2")format("woff2"), url("https://db.onlinewebfonts.com/t/ab80d41fb980ff40273bb0028779b41e.woff")format("woff"), url("https://db.onlinewebfonts.com/t/ab80d41fb980ff40273bb0028779b41e.ttf")format("truetype"), url("https://db.onlinewebfonts.com/t/ab80d41fb980ff40273bb0028779b41e.svg#Sequel100Black-45")format("svg");
 }
 
 
@@ -25,7 +26,10 @@ html {
 
 
 body {
+    position: relative;
     background-color: #333;
+    width: 100vw;
+    height: 100vh;
     padding: 0px;
     margin: 0px;
     overflow: hidden;
@@ -58,14 +62,13 @@ body {
     font-family: 'Oswald', arial;
 }
 
-    .box .box-content {
-        height: 100vh;
-        width: 100vw;
-    }
+
+.box .box-content {
+    height: 100vh;
+    width: 100vw;
+}
 
 
 #DiacoDesignLink, #pens {
     color: #fff;
 }
-
-

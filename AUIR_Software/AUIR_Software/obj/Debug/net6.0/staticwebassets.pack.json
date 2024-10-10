@@ -801,6 +801,86 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\bootstrap\\ver431\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\ver431\\js\\bootstrap.min.js.map"
+    },
+    {
       "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
