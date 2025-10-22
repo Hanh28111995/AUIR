@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1M/e9NO2Mgpo0iDUd7o688ujGL+leN6aVkuq7IltId4=",
+  "Hash": "iHvBmEdnQS7nZW5cnqWc0HleU8gHeJTKexMomJtA+VI=",
   "Source": "AUIR_Software",
   "BasePath": "_content/AUIR_Software",
   "Mode": "Default",
@@ -3181,8 +3181,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "pwrshdloek",
-      "Integrity": "ty49J2eF06i7Il3+XvT5ogzHrDxMdoFNuhWQmtxaj8c=",
+      "Fingerprint": "tn4k2c7bw9",
+      "Integrity": "Z4mEm5rRfqfW9ez0pg9ysbhftA8pEwAHH5AzTdUM5+4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\asset\\js\\main.js"
@@ -3244,8 +3244,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "z5jqwv1u4w",
-      "Integrity": "eZCA9vQQlNrVHMB++y2mCE2XNGkfZhBaP9PPKJcbh80=",
+      "Fingerprint": "6lbvkyillz",
+      "Integrity": "lvej8xhqZgu5hDv4xW6UFgtyMDb3Q7zbIBlWlZEghR0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -3270,6 +3270,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\js\\gsap-drag-fix.js",
+      "SourceId": "AUIR_Software",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\",
+      "BasePath": "_content/AUIR_Software",
+      "RelativePath": "js/gsap-drag-fix#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bxcphj0heo",
+      "Integrity": "UdV/sZquxva6xfd7xR9tg1ND49gahG+06XPGB7D1xvk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\gsap-drag-fix.js"
     },
     {
       "Identity": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\js\\site.js",
@@ -8414,7 +8435,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "41015"
+          "Value": "43256"
         },
         {
           "Name": "Content-Type",
@@ -8422,11 +8443,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ty49J2eF06i7Il3+XvT5ogzHrDxMdoFNuhWQmtxaj8c=\""
+          "Value": "\"Z4mEm5rRfqfW9ez0pg9ysbhftA8pEwAHH5AzTdUM5+4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 22 Oct 2025 08:57:45 GMT"
+          "Value": "Wed, 22 Oct 2025 14:10:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8436,12 +8457,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ty49J2eF06i7Il3+XvT5ogzHrDxMdoFNuhWQmtxaj8c="
+          "Value": "sha256-Z4mEm5rRfqfW9ez0pg9ysbhftA8pEwAHH5AzTdUM5+4="
         }
       ]
     },
     {
-      "Route": "asset/js/main.pwrshdloek.js",
+      "Route": "asset/js/main.tn4k2c7bw9.js",
       "AssetFile": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\js\\main.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -8451,7 +8472,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "41015"
+          "Value": "43256"
         },
         {
           "Name": "Content-Type",
@@ -8459,11 +8480,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ty49J2eF06i7Il3+XvT5ogzHrDxMdoFNuhWQmtxaj8c=\""
+          "Value": "\"Z4mEm5rRfqfW9ez0pg9ysbhftA8pEwAHH5AzTdUM5+4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 22 Oct 2025 08:57:45 GMT"
+          "Value": "Wed, 22 Oct 2025 14:10:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8473,7 +8494,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "pwrshdloek"
+          "Value": "tn4k2c7bw9"
         },
         {
           "Name": "label",
@@ -8481,7 +8502,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ty49J2eF06i7Il3+XvT5ogzHrDxMdoFNuhWQmtxaj8c="
+          "Value": "sha256-Z4mEm5rRfqfW9ez0pg9ysbhftA8pEwAHH5AzTdUM5+4="
         }
       ]
     },
@@ -8814,6 +8835,51 @@
       ]
     },
     {
+      "Route": "css/site.6lbvkyillz.css",
+      "AssetFile": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1678"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lvej8xhqZgu5hDv4xW6UFgtyMDb3Q7zbIBlWlZEghR0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 12:09:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6lbvkyillz"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lvej8xhqZgu5hDv4xW6UFgtyMDb3Q7zbIBlWlZEghR0="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -8824,7 +8890,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1653"
+          "Value": "1678"
         },
         {
           "Name": "Content-Type",
@@ -8832,11 +8898,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"eZCA9vQQlNrVHMB++y2mCE2XNGkfZhBaP9PPKJcbh80=\""
+          "Value": "\"lvej8xhqZgu5hDv4xW6UFgtyMDb3Q7zbIBlWlZEghR0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Oct 2024 04:42:52 GMT"
+          "Value": "Wed, 22 Oct 2025 12:09:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8846,52 +8912,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-eZCA9vQQlNrVHMB++y2mCE2XNGkfZhBaP9PPKJcbh80="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.z5jqwv1u4w.css",
-      "AssetFile": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1653"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"eZCA9vQQlNrVHMB++y2mCE2XNGkfZhBaP9PPKJcbh80=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 09 Oct 2024 04:42:52 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "z5jqwv1u4w"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-eZCA9vQQlNrVHMB++y2mCE2XNGkfZhBaP9PPKJcbh80="
+          "Value": "sha256-lvej8xhqZgu5hDv4xW6UFgtyMDb3Q7zbIBlWlZEghR0="
         }
       ]
     },
@@ -9958,6 +9979,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-+UW802wgVfnjaSbdwyHLlU7AVplb0WToOlvN1CnzIac="
+        }
+      ]
+    },
+    {
+      "Route": "js/gsap-drag-fix.bxcphj0heo.js",
+      "AssetFile": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\js\\gsap-drag-fix.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2545"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UdV/sZquxva6xfd7xR9tg1ND49gahG+06XPGB7D1xvk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 11:39:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bxcphj0heo"
+        },
+        {
+          "Name": "label",
+          "Value": "js/gsap-drag-fix.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UdV/sZquxva6xfd7xR9tg1ND49gahG+06XPGB7D1xvk="
+        }
+      ]
+    },
+    {
+      "Route": "js/gsap-drag-fix.js",
+      "AssetFile": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\js\\gsap-drag-fix.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2545"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UdV/sZquxva6xfd7xR9tg1ND49gahG+06XPGB7D1xvk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 11:39:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UdV/sZquxva6xfd7xR9tg1ND49gahG+06XPGB7D1xvk="
         }
       ]
     },

@@ -617,6 +617,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\js\\gsap-drag-fix.js",
+      "PackagePath": "staticwebassets\\js\\gsap-drag-fix.js"
+    },
+    {
       "Id": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

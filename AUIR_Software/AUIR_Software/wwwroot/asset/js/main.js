@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 box[i].anim = TweenLite.to(box[i], 0.7, { yPercent: i * 100, pause: true });
             }
         }
-        function Go(e) {            
+        function Go(e) {
             if (OneActionOneScroll) {
                 OneActionOneScroll = false;
 
@@ -158,29 +158,109 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        ///// call Go function by drag /////        
+        /////    call Go function by drag    /////              
+
         function isTouchDevice() {
             return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
         }
+
         if (isTouchDevice()) {
-            console.log("Touch device detected. Activating drag functionality.");
-            var d = document.createElement('div');
-            document.querySelector('body').appendChild(d);
-            Draggable.create(d, {
-                trigger: ".box",
-                type: 'y',
-                minimumMovement: box.length,
-                cursor: 'auto',
-                onDrag: function () { var x = this.getDirection("start") == 'up' ? -1 : 1; Go(x); }
-            });
+            const THRESHOLD = 60; // px: chỉ gọi Go nếu kéo vượt ngưỡng
+            const target = document; // hoặc document.querySelector('.your-container') 
+            let startY = null;
+            let activePointerId = null;
+            let didCall = false;
+
+            function onPointerDown(e) {
+                // chỉ xử lý nút chính khi là chuột (optional)
+                if (e.pointerType === 'mouse' && e.button !== 0) return;
+                startY = e.clientY;
+                activePointerId = e.pointerId;
+                didCall = false;
+                // capture để nhận pointerup dù pointer ra khỏi phần tử
+                if (e.target.setPointerCapture) try { e.target.setPointerCapture(e.pointerId); } catch (_) { }
+            }
+
+            function onPointerMove(e) {
+                if (startY === null || e.pointerId !== activePointerId) return;
+                // optional: visual follow using e.clientY - startY
+                // const dy = e.clientY - startY;
+                // someElement.style.transform = `translateY(${dy}px)`;
+            }
+
+            function onPointerUp(e) {
+                if (startY === null || e.pointerId !== activePointerId) return;
+                const dy = e.clientY - startY;
+                // release capture
+                if (e.target.releasePointerCapture) try { e.target.releasePointerCapture(e.pointerId); } catch (_) { }
+                startY = null;
+                activePointerId = null;
+
+                if (Math.abs(dy) < THRESHOLD) {
+                 
+                    return;
+                }
+
+                if (didCall) return;
+                didCall = true;
+                const dir = dy < 0 ? -1 : 1;
+                
+                if (OneActionOneScroll) {
+                    OneActionOneScroll = false;                   
+                    var activePage = $(box[indx]).find(".page").attr('id') + "Animation";
+                    var x = eval(activePage)(dir, indx, undefined);
+                    if (x === true) {
+                        if (dir > 0 && indx > 0) {
+                            if (!Anim || !Anim.isActive()) {
+                                for (var i = 0; i < box.length; i++) {
+                                    let position = Math.round(getScaleY_FromMatrix($(box[i]).css('transform')) / 100);
+                                    Anim = TweenLite.to(box[i], 0.7, { yPercent: position * 100 + 100 });
+                                }
+                                indx--;
+                                if (EndAnimateOfPage === false) EndAnimateOfPage = true;
+                            }
+                        }
+
+                        else if (dir < 0 && indx < box.length - 1) {
+                            if (!Anim || !Anim.isActive()) {
+                                indx++;
+                                for (var i = 0; i < box.length; i++) {
+                                    let position = Math.round(getScaleY_FromMatrix($(box[i]).css('transform')) / 100);
+                                    Anim = TweenLite.to(box[i], 0.7, { yPercent: position * 100 - 100 });
+                                }
+                                if (EndAnimateOfPage === true) EndAnimateOfPage = false;
+                            }
+                        }
+                    }
+
+                    navLinks.forEach(function (navLink) {
+                        $(navLink).closest('.nav-item').removeClass('active')
+                        if ($(navLink).attr('href').replace('#', '') == $(box[indx]).find(".page").attr('id')) {
+                            $(navLink).closest('.nav-item').addClass('active')
+                        }
+                    })
+                    setTimeout(function () {
+                        OneActionOneScroll = true;
+                    }, 200);
+                }
+                     
+            }
+
+            target.addEventListener('pointerdown', onPointerDown, { passive: true });
+            target.addEventListener('pointermove', onPointerMove, { passive: true });
+            target.addEventListener('pointerup', onPointerUp, { passive: true });
+            target.addEventListener('pointercancel', onPointerUp, { passive: true });
+            
         }
-        /////////////////////////
+
 
         document.addEventListener("mousewheel", Go);
 
         document.addEventListener("DOMMouseScroll", Go);
 
         window.addEventListener("load", GoTop);
+
+
 
         ////////init scroll list ////////
         let depth = 0;

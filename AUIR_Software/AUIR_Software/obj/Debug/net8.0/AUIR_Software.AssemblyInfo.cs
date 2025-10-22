@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AUIR_Software")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5884cd11bb6ec8f96a78c5ff28d2fe475f188175")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+728c51cc37692ee9a7665db9319ae8754047d39b")]
 [assembly: System.Reflection.AssemblyProductAttribute("AUIR_Software")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AUIR_Software")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

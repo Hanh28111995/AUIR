@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|c:\\users\\gmtra\\onedrive\\desktop\\workplace\\auir\\auir_software\\auir_software\\gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|c:\\users\\gmtra\\onedrive\\desktop\\workplace\\auir\\auir_software\\auir_software\\wwwroot\\asset\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\wwwroot\\asset\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|c:\\users\\gmtra\\onedrive\\desktop\\workplace\\auir\\auir_software\\auir_software\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|c:\\users\\gmtra\\onedrive\\desktop\\workplace\\auir\\auir_software\\auir_software\\wwwroot\\asset\\scss\\auir_software.styles.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\wwwroot\\asset\\scss\\auir_software.styles.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|c:\\users\\gmtra\\onedrive\\desktop\\workplace\\auir\\auir_software\\auir_software\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|c:\\users\\gmtra\\onedrive\\desktop\\workplace\\auir\\auir_software\\auir_software\\gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|c:\\users\\gmtra\\onedrive\\desktop\\workplace\\auir\\auir_software\\auir_software\\compilerconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -19,24 +31,8 @@
       "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|c:\\users\\gmtra\\onedrive\\desktop\\workplace\\auir\\auir_software\\auir_software\\wwwroot\\asset\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\wwwroot\\asset\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|c:\\users\\gmtra\\onedrive\\desktop\\workplace\\auir\\auir_software\\auir_software\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|c:\\users\\gmtra\\onedrive\\desktop\\workplace\\auir\\auir_software\\auir_software\\wwwroot\\asset\\scss\\auir_software.styles.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
-      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\wwwroot\\asset\\scss\\auir_software.styles.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|c:\\users\\gmtra\\onedrive\\desktop\\workplace\\auir\\auir_software\\auir_software\\wwwroot\\asset\\scss\\variables.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
       "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\wwwroot\\asset\\scss\\variables.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|c:\\users\\gmtra\\onedrive\\desktop\\workplace\\auir\\auir_software\\auir_software\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,32 +47,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "main.js",
+              "DocumentMoniker": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\js\\main.js",
+              "RelativeDocumentMoniker": "AUIR_Software\\wwwroot\\asset\\js\\main.js",
+              "ToolTip": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\js\\main.js",
+              "RelativeToolTip": "AUIR_Software\\wwwroot\\asset\\js\\main.js",
+              "ViewState": "AgIAACkBAAAAAAAAAAAkwEkBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-22T11:46:34.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "gitignore",
               "DocumentMoniker": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\gitignore",
               "RelativeDocumentMoniker": "AUIR_Software\\gitignore",
               "ToolTip": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\gitignore",
               "RelativeToolTip": "AUIR_Software\\gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-22T09:58:14.964Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T10:45:00.205Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "compilerconfig.json",
               "DocumentMoniker": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\compilerconfig.json",
               "RelativeDocumentMoniker": "AUIR_Software\\compilerconfig.json",
               "ToolTip": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\compilerconfig.json",
               "RelativeToolTip": "AUIR_Software\\compilerconfig.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-22T09:24:14.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T09:24:14.421Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\Program.cs",
               "RelativeDocumentMoniker": "AUIR_Software\\Program.cs",
@@ -100,49 +107,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "main.js",
-              "DocumentMoniker": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\js\\main.js",
-              "RelativeDocumentMoniker": "AUIR_Software\\wwwroot\\asset\\js\\main.js",
-              "ToolTip": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\js\\main.js",
-              "RelativeToolTip": "AUIR_Software\\wwwroot\\asset\\js\\main.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-04-23T17:07:35.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "AUIR_Software\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "AUIR_Software\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADUAAABKAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-23T20:25:40.893Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "AUIR_Software\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "AUIR_Software\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAADQAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-06-11T15:33:03.213Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "AUIR_Software.styles.scss",
               "DocumentMoniker": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\scss\\AUIR_Software.styles.scss",
               "RelativeDocumentMoniker": "AUIR_Software\\wwwroot\\asset\\scss\\AUIR_Software.styles.scss",
               "ToolTip": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\wwwroot\\asset\\scss\\AUIR_Software.styles.scss",
               "RelativeToolTip": "AUIR_Software\\wwwroot\\asset\\scss\\AUIR_Software.styles.scss",
-              "ViewState": "AQIAAOIEAAAAAAAAAAAMwPgEAAAwAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPgEAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
               "WhenOpened": "2024-05-14T10:41:03.278Z"
             },
@@ -154,10 +137,9 @@
               "RelativeDocumentMoniker": "AUIR_Software\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\gmtra\\OneDrive\\Desktop\\workplace\\AUIR\\AUIR_Software\\AUIR_Software\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "AUIR_Software\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAAEwAAABPAAAAAAAAAA==",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAAAJUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-23T17:07:35.309Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-23T17:07:35.309Z"
             }
           ]
         }

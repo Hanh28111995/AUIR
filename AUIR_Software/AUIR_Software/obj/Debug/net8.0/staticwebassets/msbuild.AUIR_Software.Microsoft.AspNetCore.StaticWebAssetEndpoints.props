@@ -471,14 +471,14 @@
     <StaticWebAssetEndpoint Include="_content/AUIR_Software/asset/js/main.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\js\main.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ty49J2eF06i7Il3\u002BXvT5ogzHrDxMdoFNuhWQmtxaj8c="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"41015"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022ty49J2eF06i7Il3\u002BXvT5ogzHrDxMdoFNuhWQmtxaj8c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 08:57:45 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Z4mEm5rRfqfW9ez0pg9ysbhftA8pEwAHH5AzTdUM5\u002B4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"43256"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Z4mEm5rRfqfW9ez0pg9ysbhftA8pEwAHH5AzTdUM5\u002B4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 14:10:34 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/AUIR_Software/asset/js/main.pwrshdloek.js">
+    <StaticWebAssetEndpoint Include="_content/AUIR_Software/asset/js/main.tn4k2c7bw9.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\js\main.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"pwrshdloek"},{"Name":"integrity","Value":"sha256-ty49J2eF06i7Il3\u002BXvT5ogzHrDxMdoFNuhWQmtxaj8c="},{"Name":"label","Value":"_content/AUIR_Software/asset/js/main.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"41015"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022ty49J2eF06i7Il3\u002BXvT5ogzHrDxMdoFNuhWQmtxaj8c=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 08:57:45 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"tn4k2c7bw9"},{"Name":"integrity","Value":"sha256-Z4mEm5rRfqfW9ez0pg9ysbhftA8pEwAHH5AzTdUM5\u002B4="},{"Name":"label","Value":"_content/AUIR_Software/asset/js/main.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"43256"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Z4mEm5rRfqfW9ez0pg9ysbhftA8pEwAHH5AzTdUM5\u002B4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 14:10:34 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AUIR_Software/asset/scss/AUIR_Software.styles.8mhyl45itf.scss">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\scss\AUIR_Software.styles.scss'))</AssetFile>
@@ -516,17 +516,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"nml4vhoplz"},{"Name":"integrity","Value":"sha256-f2kBgL3/WV9m5zjCQ/4v/duB9vzfF3ysh9/6QXpmin4="},{"Name":"label","Value":"_content/AUIR_Software/AUIR_Software.bundle.scp.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1130"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022f2kBgL3/WV9m5zjCQ/4v/duB9vzfF3ysh9/6QXpmin4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 08:53:07 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AUIR_Software/css/site.6lbvkyillz.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"6lbvkyillz"},{"Name":"integrity","Value":"sha256-lvej8xhqZgu5hDv4xW6UFgtyMDb3Q7zbIBlWlZEghR0="},{"Name":"label","Value":"_content/AUIR_Software/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1678"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022lvej8xhqZgu5hDv4xW6UFgtyMDb3Q7zbIBlWlZEghR0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 12:09:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AUIR_Software/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-eZCA9vQQlNrVHMB\u002B\u002By2mCE2XNGkfZhBaP9PPKJcbh80="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1653"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022eZCA9vQQlNrVHMB\u002B\u002By2mCE2XNGkfZhBaP9PPKJcbh80=\u0022"},{"Name":"Last-Modified","Value":"Wed, 09 Oct 2024 04:42:52 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/AUIR_Software/css/site.z5jqwv1u4w.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"z5jqwv1u4w"},{"Name":"integrity","Value":"sha256-eZCA9vQQlNrVHMB\u002B\u002By2mCE2XNGkfZhBaP9PPKJcbh80="},{"Name":"label","Value":"_content/AUIR_Software/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1653"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022eZCA9vQQlNrVHMB\u002B\u002By2mCE2XNGkfZhBaP9PPKJcbh80=\u0022"},{"Name":"Last-Modified","Value":"Wed, 09 Oct 2024 04:42:52 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-lvej8xhqZgu5hDv4xW6UFgtyMDb3Q7zbIBlWlZEghR0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1678"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022lvej8xhqZgu5hDv4xW6UFgtyMDb3Q7zbIBlWlZEghR0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 12:09:15 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AUIR_Software/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>
@@ -683,6 +683,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"notf2xhcfb"},{"Name":"integrity","Value":"sha256-\u002BUW802wgVfnjaSbdwyHLlU7AVplb0WToOlvN1CnzIac="},{"Name":"label","Value":"_content/AUIR_Software/js/bootstrap.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"145401"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022\u002BUW802wgVfnjaSbdwyHLlU7AVplb0WToOlvN1CnzIac=\u0022"},{"Name":"Last-Modified","Value":"Wed, 21 Feb 2024 17:42:26 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AUIR_Software/js/gsap-drag-fix.bxcphj0heo.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\gsap-drag-fix.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bxcphj0heo"},{"Name":"integrity","Value":"sha256-UdV/sZquxva6xfd7xR9tg1ND49gahG\u002B06XPGB7D1xvk="},{"Name":"label","Value":"_content/AUIR_Software/js/gsap-drag-fix.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2545"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022UdV/sZquxva6xfd7xR9tg1ND49gahG\u002B06XPGB7D1xvk=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 11:39:52 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AUIR_Software/js/gsap-drag-fix.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\gsap-drag-fix.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-UdV/sZquxva6xfd7xR9tg1ND49gahG\u002B06XPGB7D1xvk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2545"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022UdV/sZquxva6xfd7xR9tg1ND49gahG\u002B06XPGB7D1xvk=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 11:39:52 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AUIR_Software/js/site.6b9nfc4n3r.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>

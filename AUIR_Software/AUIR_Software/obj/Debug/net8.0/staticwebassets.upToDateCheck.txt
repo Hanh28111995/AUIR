@@ -151,6 +151,7 @@ wwwroot\asset\scss\AUIR_Software.styles.scss
 wwwroot\asset\scss\variables.scss
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\js\gsap-drag-fix.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
