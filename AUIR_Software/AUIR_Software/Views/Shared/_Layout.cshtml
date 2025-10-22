@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AUIR_Software</title>
+
+
+    <meta name="description" content="AIUR Software">
+    @*<meta property="og:url" content="https://">*@
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AIUR Software , Digital Agency">
+    <meta property="og:description" content="AIUR Software , Digital Agency">
+    @*<meta property="og:image" content="https://">*@
+
+    @*<link rel="icon" href="/cropped-favicon-32x32.png" sizes="32x32">*@
+
+    @*<link rel="preload" as="image" href="" />*@
+    
+
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/ab80d41fb980ff40273bb0028779b41e?family=Sequel100Black-45" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
+
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="./lib/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="./lib/slick/slick-theme.css" />
+
+    <!-- bootstrap -->    
+    <link rel="stylesheet" href="./lib/bootstrap/ver431/css/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="./asset/css/AUIR_Software.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-transparent">
+            <div class="container-fluid align-items-center">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img class="logo img-fluid" src="./asset/img/item/logo.png" alt="" />
+                </a>
+                <div class=" d-inline-flex justify-content-between ml-auto">
+                    <ul class="navbar-nav d-flex align-items-center">
+                        <li class="nav-item">
+                            <a class="btn-chatbox" id="scroll-btn">Let's talk</a>
+                        </li>                        
+                        <li class="nav-item">
+                            <button class="navbar-toggler d-block custom-collapse-btn" type="button" data-toggle="collapse"
+                                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                <img src="./asset/img/icon/collapse-menu.svg" alt="" />
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <button class="navbar-toggler d-block text-light" type="button" data-toggle="collapse"
+                            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </button>
+                    <ul class="navbar-nav" style="height: unset;">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#Home" >Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#About">About us </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Project">Projects </a>
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Services1">Services </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Clients">Clients </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Contact">Contact </a>
+                        </li>
+                    </ul>
+                    <div class="nav-input">
+                        <label>Subscribe to our newsletter</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Insert your email" aria-label="" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary custom-collapse-btn" type="button" id="button-addon2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tag-list">
+                        <div class="col-12 d-flex flex-row row p-0">
+                            <div class="d-inline-flex justify-content-start">
+                                <div class="tag-list-item">
+                                    <span>
+                                        Linkedin
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-inline-flex justify-content-start">
+                                <div class="tag-list-item">
+                                    <span>
+                                        Facebook
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-inline-flex justify-content-start">
+                                <div class="tag-list-item">
+                                    <span>
+                                        Youtube
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-inline-flex justify-content-start">
+                                <div class="tag-list-item">
+                                    <span>
+                                        Tiktok
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="d-inline-flex justify-content-start">
+                                <div class="tag-list-item">
+                                    <span>
+                                        Instagram
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    @RenderBody()
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="./lib/bootstrap/ver431/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"></script>
+    <script type="text/javascript" src="./lib/slick/slick.min.js"></script>
+    <script type="text/javascript" src="/asset/js/main.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
