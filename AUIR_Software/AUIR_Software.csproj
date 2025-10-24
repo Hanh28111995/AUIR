@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AUIR_Software\**" />
+    <Content Remove="AUIR_Software\**" />
+    <EmbeddedResource Remove="AUIR_Software\**" />
+    <None Remove="AUIR_Software\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\asset\css\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+    <None Include="wwwroot\lib\bootstrap\ver431\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\ver431\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\ver431\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\ver431\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\ver431\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\ver431\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\ver431\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\ver431\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\ver431\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\ver431\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\ver431\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\ver431\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\ver431\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\ver431\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\slick\config.rb" />
+    <None Include="wwwroot\lib\slick\fonts\slick.svg" />
+    <None Include="wwwroot\lib\slick\slick-theme.less" />
+    <None Include="wwwroot\lib\slick\slick-theme.scss" />
+    <None Include="wwwroot\lib\slick\slick.js" />
+    <None Include="wwwroot\lib\slick\slick.less" />
+    <None Include="wwwroot\lib\slick\slick.min.js" />
+    <None Include="wwwroot\lib\slick\slick.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bootstrap.sass" Version="5.3.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\asset\img\bg\0001.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

@@ -1,2 +1,0 @@
-# AUIR
-SoftWare
