@@ -1,0 +1,7 @@
+version: '3.9'
+services:
+  auir_software:
+    build: .
+    container_name: auir_software
+    ports:
+      - "8080:8080"
