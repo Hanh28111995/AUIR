@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let EndAnimateOfPage = false;
     var OneActionOneScroll = false;
 
-    $(document).ready(function () {
+    $(function () {
         var box = document.querySelectorAll('.box'),
             indx = 0,
             Anim;
@@ -103,8 +103,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         ////////////////    back to top     ////////////////////
 
-        $('.back-to-top').click(function () {
-            document.querySelector("a[href*=Home]").click()
+        $('.back-to-top').on('click', function (e) {
+            e.preventDefault(); // Ngăn chặn trang bị nhảy giật cục
+            $('a[href*="Home"]').get(0).click(); // .get(0) để lấy phần tử DOM thực tế
         });
 
 
@@ -159,107 +160,131 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         /////    call Go function by drag    /////              
-
         function isTouchDevice() {
-            return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            return (('ontouchstart' in window) ||
+                (navigator.maxTouchPoints > 0) ||
+                (navigator.msMaxTouchPoints > 0));
         }
+                
+        $(function () {            
 
-        if (isTouchDevice()) {
-            const THRESHOLD = 60; // px: chỉ gọi Go nếu kéo vượt ngưỡng
-            const target = document; // hoặc document.querySelector('.your-container') 
-            let startY = null;
-            let activePointerId = null;
-            let didCall = false;
+            if (isTouchDevice()) {
+                $('img, a ').on('dragstart', function (event) {
+                    event.preventDefault();
+                });
+                const THRESHOLD = 60; // px: chỉ gọi Go nếu kéo vượt ngưỡng
+                const target = document; // hoặc document.querySelector('.your-container') 
+                let startY = null;
+                let activePointerId = null;
+                let didCall = false;
 
-            function onPointerDown(e) {
-                // chỉ xử lý nút chính khi là chuột (optional)
-                if (e.pointerType === 'mouse' && e.button !== 0) return;
-                startY = e.clientY;
-                activePointerId = e.pointerId;
-                didCall = false;
-                // capture để nhận pointerup dù pointer ra khỏi phần tử
-                if (e.target.setPointerCapture) try { e.target.setPointerCapture(e.pointerId); } catch (_) { }
-            }
-
-            function onPointerMove(e) {
-                if (startY === null || e.pointerId !== activePointerId) return;
-                // optional: visual follow using e.clientY - startY
-                // const dy = e.clientY - startY;
-                // someElement.style.transform = `translateY(${dy}px)`;
-            }
-
-            function onPointerUp(e) {
-                if (startY === null || e.pointerId !== activePointerId) return;
-                const dy = e.clientY - startY;
-                // release capture
-                if (e.target.releasePointerCapture) try { e.target.releasePointerCapture(e.pointerId); } catch (_) { }
-                startY = null;
-                activePointerId = null;
-
-                if (Math.abs(dy) < THRESHOLD) {
-                 
-                    return;
+                function onPointerDown(e) {
+                    // chỉ xử lý nút chính khi là chuột (optional)
+                    if (e.pointerType === 'mouse' && e.button !== 0) return;
+                    startY = e.clientY;
+                    activePointerId = e.pointerId;
+                    didCall = false;
+                    // capture để nhận pointerup dù pointer ra khỏi phần tử
+                    if (e.target.setPointerCapture) try { e.target.setPointerCapture(e.pointerId); } catch (_) { }
                 }
 
-                if (didCall) return;
-                didCall = true;
-                const dir = dy < 0 ? -1 : 1;
-                
-                if (OneActionOneScroll) {
-                    OneActionOneScroll = false;                   
-                    var activePage = $(box[indx]).find(".page").attr('id') + "Animation";
-                    var x = eval(activePage)(dir, indx, undefined);
-                    if (x === true) {
-                        if (dir > 0 && indx > 0) {
-                            if (!Anim || !Anim.isActive()) {
-                                for (var i = 0; i < box.length; i++) {
-                                    let position = Math.round(getScaleY_FromMatrix($(box[i]).css('transform')) / 100);
-                                    Anim = TweenLite.to(box[i], 0.7, { yPercent: position * 100 + 100 });
-                                }
-                                indx--;
-                                if (EndAnimateOfPage === false) EndAnimateOfPage = true;
-                            }
-                        }
+                function onPointerMove(e) {
+                    if (startY === null || e.pointerId !== activePointerId) return;
+                    // optional: visual follow using e.clientY - startY
+                    // const dy = e.clientY - startY;
+                    // someElement.style.transform = `translateY(${dy}px)`;
+                }
 
-                        else if (dir < 0 && indx < box.length - 1) {
-                            if (!Anim || !Anim.isActive()) {
-                                indx++;
-                                for (var i = 0; i < box.length; i++) {
-                                    let position = Math.round(getScaleY_FromMatrix($(box[i]).css('transform')) / 100);
-                                    Anim = TweenLite.to(box[i], 0.7, { yPercent: position * 100 - 100 });
-                                }
-                                if (EndAnimateOfPage === true) EndAnimateOfPage = false;
-                            }
-                        }
+                function onPointerUp(e) {
+                    if (startY === null || e.pointerId !== activePointerId) return;
+                    const dy = e.clientY - startY;
+                    // release capture
+                    if (e.target.releasePointerCapture) try { e.target.releasePointerCapture(e.pointerId); } catch (_) { }
+                    startY = null;
+                    activePointerId = null;
+
+                    if (Math.abs(dy) < THRESHOLD) {
+
+                        return;
                     }
 
-                    navLinks.forEach(function (navLink) {
-                        $(navLink).closest('.nav-item').removeClass('active')
-                        if ($(navLink).attr('href').replace('#', '') == $(box[indx]).find(".page").attr('id')) {
-                            $(navLink).closest('.nav-item').addClass('active')
+                    if (didCall) return;
+                    didCall = true;
+                    const dir = dy < 0 ? -1 : 1;
+
+                    if (OneActionOneScroll) {
+                        OneActionOneScroll = false;
+                        var activePage = $(box[indx]).find(".page").attr('id') + "Animation";
+                        var x = eval(activePage)(dir, indx, undefined);
+                        if (x === true) {
+                            if (dir > 0 && indx > 0) {
+                                if (!Anim || !Anim.isActive()) {
+                                    for (var i = 0; i < box.length; i++) {
+                                        let position = Math.round(getScaleY_FromMatrix($(box[i]).css('transform')) / 100);
+                                        Anim = TweenLite.to(box[i], 0.7, { yPercent: position * 100 + 100 });
+                                    }
+                                    indx--;
+                                    if (EndAnimateOfPage === false) EndAnimateOfPage = true;
+                                }
+                            }
+
+                            else if (dir < 0 && indx < box.length - 1) {
+                                if (!Anim || !Anim.isActive()) {
+                                    indx++;
+                                    for (var i = 0; i < box.length; i++) {
+                                        let position = Math.round(getScaleY_FromMatrix($(box[i]).css('transform')) / 100);
+                                        Anim = TweenLite.to(box[i], 0.7, { yPercent: position * 100 - 100 });
+                                    }
+                                    if (EndAnimateOfPage === true) EndAnimateOfPage = false;
+                                }
+                            }
                         }
-                    })
-                    setTimeout(function () {
-                        OneActionOneScroll = true;
-                    }, 200);
+
+                        navLinks.forEach(function (navLink) {
+                            $(navLink).closest('.nav-item').removeClass('active')
+                            if ($(navLink).attr('href').replace('#', '') == $(box[indx]).find(".page").attr('id')) {
+                                $(navLink).closest('.nav-item').addClass('active')
+                            }
+                        })
+                        setTimeout(function () {
+                            OneActionOneScroll = true;
+                        }, 200);
+                    }
+
                 }
-                     
+
+                target.addEventListener('pointerdown', onPointerDown, { passive: true });
+                target.addEventListener('pointermove', onPointerMove, { passive: true });
+                target.addEventListener('pointerup', onPointerUp, { passive: true });
+                target.addEventListener('pointercancel', onPointerUp, { passive: true });
+
             }
-
-            target.addEventListener('pointerdown', onPointerDown, { passive: true });
-            target.addEventListener('pointermove', onPointerMove, { passive: true });
-            target.addEventListener('pointerup', onPointerUp, { passive: true });
-            target.addEventListener('pointercancel', onPointerUp, { passive: true });
-            
-        }
-
-
+        });
+        
         document.addEventListener("mousewheel", Go);
 
         document.addEventListener("DOMMouseScroll", Go);
 
         window.addEventListener("load", GoTop);
 
+        document.addEventListener("keydown", function (e) {
+            if (OneActionOneScroll) {
+                // Sử dụng e.key để so sánh trực tiếp
+                switch (e.key) {
+                    case "ArrowUp":
+                    case "PageUp":
+                        e.preventDefault();
+                        Go(120); // Gọi hàm Go để cuộn lên
+                        break;
+                    case "ArrowDown":
+                    case "PageDown":
+                    case " ": // Phím Space
+                        e.preventDefault();
+                        Go(-120); // Gọi hàm Go để cuộn xuống
+                        break;
+                }
+            }
+        });
 
 
         ////////init scroll list ////////
