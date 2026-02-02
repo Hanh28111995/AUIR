@@ -1,0 +1,19 @@
+﻿app = "auir"
+primary_region = "hkg" # Chọn Hong Kong cho gần Việt Nam
+
+[build]
+  # Fly.io sẽ tự tìm Dockerfile trong thư mục gốc
+  dockerfile = "Dockerfile"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  memory = "1gb" # ASP.NET cần ít nhất 512MB-1GB để chạy mượt
+  cpu_kind = "shared"
+  cpus = 1

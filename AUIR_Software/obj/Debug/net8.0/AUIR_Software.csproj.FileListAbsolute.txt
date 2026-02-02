@@ -1107,10 +1107,10 @@ D:\Project\AUIR\AUIR_Software\obj\Debug\net8.0\staticwebassets\msbuild.build.AUI
 D:\Project\AUIR\AUIR_Software\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.AUIR_Software.props
 D:\Project\AUIR\AUIR_Software\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.AUIR_Software.props
 D:\Project\AUIR\AUIR_Software\obj\Debug\net8.0\staticwebassets.pack.json
-D:\Project\AUIR\AUIR_Software\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Project\AUIR\AUIR_Software\obj\Debug\net8.0\AUIR_Sof.81D58773.Up2Date
 D:\Project\AUIR\AUIR_Software\obj\Debug\net8.0\AUIR_Software.dll
 D:\Project\AUIR\AUIR_Software\obj\Debug\net8.0\refint\AUIR_Software.dll
 D:\Project\AUIR\AUIR_Software\obj\Debug\net8.0\AUIR_Software.pdb
 D:\Project\AUIR\AUIR_Software\obj\Debug\net8.0\AUIR_Software.genruntimeconfig.cache
 D:\Project\AUIR\AUIR_Software\obj\Debug\net8.0\ref\AUIR_Software.dll
+D:\Project\AUIR\AUIR_Software\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

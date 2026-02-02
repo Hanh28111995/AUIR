@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4iVC7FkwBtY1LJoqWyzgmCgw8TxmU7naB/RLk6lK2Cg=",
+  "Hash": "A/swcnN9lUcrvXMzjZXGvQ8Q5f01RCIzG/mtKXiiyCA=",
   "Source": "AUIR_Software",
   "BasePath": "_content/AUIR_Software",
   "Mode": "Default",
@@ -2362,8 +2362,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "w73aizxiyq",
-      "Integrity": "NIMbgDhyHem9D8UPBv3pzz71as4gdkM3WD1Rn/Z/eb4=",
+      "Fingerprint": "ufd26wvo4r",
+      "Integrity": "dhn3X4uXrjjNG0WTaK/bFhKmMBJnzY+ICxFTOkedZsY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\asset\\css\\AUIR_Software.styles.css"
@@ -3181,8 +3181,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c33wtq9h4p",
-      "Integrity": "WHOLdA9VWHTiapFgWjS3NivFeLtwdEXq1SW7ZRk+kd0=",
+      "Fingerprint": "0giqr6n488",
+      "Integrity": "IN1NyAPQjX6OxFX4SaBuSlAO/3gwieoUj4xvFm1h0gw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\asset\\js\\main.js"
@@ -5216,7 +5216,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "49716"
+          "Value": "51980"
         },
         {
           "Name": "Content-Type",
@@ -5224,11 +5224,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NIMbgDhyHem9D8UPBv3pzz71as4gdkM3WD1Rn/Z/eb4=\""
+          "Value": "\"dhn3X4uXrjjNG0WTaK/bFhKmMBJnzY+ICxFTOkedZsY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 Jan 2026 13:27:38 GMT"
+          "Value": "Sat, 31 Jan 2026 16:11:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5238,7 +5238,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-NIMbgDhyHem9D8UPBv3pzz71as4gdkM3WD1Rn/Z/eb4="
+          "Value": "sha256-dhn3X4uXrjjNG0WTaK/bFhKmMBJnzY+ICxFTOkedZsY="
         }
       ]
     },
@@ -5325,7 +5325,7 @@
       ]
     },
     {
-      "Route": "asset/css/AUIR_Software.styles.w73aizxiyq.css",
+      "Route": "asset/css/AUIR_Software.styles.ufd26wvo4r.css",
       "AssetFile": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\css\\AUIR_Software.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -5335,7 +5335,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "49716"
+          "Value": "51980"
         },
         {
           "Name": "Content-Type",
@@ -5343,11 +5343,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NIMbgDhyHem9D8UPBv3pzz71as4gdkM3WD1Rn/Z/eb4=\""
+          "Value": "\"dhn3X4uXrjjNG0WTaK/bFhKmMBJnzY+ICxFTOkedZsY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 Jan 2026 13:27:38 GMT"
+          "Value": "Sat, 31 Jan 2026 16:11:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5357,7 +5357,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "w73aizxiyq"
+          "Value": "ufd26wvo4r"
         },
         {
           "Name": "label",
@@ -5365,7 +5365,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-NIMbgDhyHem9D8UPBv3pzz71as4gdkM3WD1Rn/Z/eb4="
+          "Value": "sha256-dhn3X4uXrjjNG0WTaK/bFhKmMBJnzY+ICxFTOkedZsY="
         }
       ]
     },
@@ -8404,7 +8404,7 @@
       ]
     },
     {
-      "Route": "asset/js/main.c33wtq9h4p.js",
+      "Route": "asset/js/main.0giqr6n488.js",
       "AssetFile": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\js\\main.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -8414,7 +8414,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "45432"
+          "Value": "46199"
         },
         {
           "Name": "Content-Type",
@@ -8422,11 +8422,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WHOLdA9VWHTiapFgWjS3NivFeLtwdEXq1SW7ZRk+kd0=\""
+          "Value": "\"IN1NyAPQjX6OxFX4SaBuSlAO/3gwieoUj4xvFm1h0gw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 Jan 2026 14:17:34 GMT"
+          "Value": "Sat, 31 Jan 2026 15:02:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8436,7 +8436,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "c33wtq9h4p"
+          "Value": "0giqr6n488"
         },
         {
           "Name": "label",
@@ -8444,7 +8444,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-WHOLdA9VWHTiapFgWjS3NivFeLtwdEXq1SW7ZRk+kd0="
+          "Value": "sha256-IN1NyAPQjX6OxFX4SaBuSlAO/3gwieoUj4xvFm1h0gw="
         }
       ]
     },
@@ -8459,7 +8459,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "45432"
+          "Value": "46199"
         },
         {
           "Name": "Content-Type",
@@ -8467,11 +8467,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WHOLdA9VWHTiapFgWjS3NivFeLtwdEXq1SW7ZRk+kd0=\""
+          "Value": "\"IN1NyAPQjX6OxFX4SaBuSlAO/3gwieoUj4xvFm1h0gw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 31 Jan 2026 14:17:34 GMT"
+          "Value": "Sat, 31 Jan 2026 15:02:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8481,7 +8481,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WHOLdA9VWHTiapFgWjS3NivFeLtwdEXq1SW7ZRk+kd0="
+          "Value": "sha256-IN1NyAPQjX6OxFX4SaBuSlAO/3gwieoUj4xvFm1h0gw="
         }
       ]
     },
