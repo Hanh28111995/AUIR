@@ -1,0 +1,7 @@
+D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\bg\hero_bg.mp4
+D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\listSlides\list1.png
+D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\listSlides\list2.png
+D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\listSlides\list3.png
+D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\listSlides\list4.png
+D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\listSlides\list5.png
+D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\listSlides\list6.png

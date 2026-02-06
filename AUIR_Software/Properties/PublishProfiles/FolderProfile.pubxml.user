@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\Project\AUIR\AUIR_Software\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2026-02-05T04:45:51.4422697Z||;True|2026-02-03T02:20:40.7552320+07:00||;True|2026-02-03T02:17:42.3727582+07:00||;True|2026-02-03T02:12:57.5532583+07:00||;True|2026-02-03T02:12:36.0776351+07:00||;True|2026-02-03T02:05:41.3007640+07:00||;True|2026-02-03T01:41:39.0155914+07:00||;True|2026-02-03T01:39:04.6112704+07:00||;False|2026-02-03T01:38:06.5066608+07:00||;True|2026-02-03T01:23:00.1678574+07:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

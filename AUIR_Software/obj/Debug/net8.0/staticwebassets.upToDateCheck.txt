@@ -140,12 +140,6 @@ wwwroot\asset\img\item\Laptop.png
 wwwroot\asset\img\item\li_icon.jpg
 wwwroot\asset\img\item\logo.png
 wwwroot\asset\img\item\Phone.png
-wwwroot\asset\img\listSlides\list1.png
-wwwroot\asset\img\listSlides\list2.png
-wwwroot\asset\img\listSlides\list3.png
-wwwroot\asset\img\listSlides\list4.png
-wwwroot\asset\img\listSlides\list5.png
-wwwroot\asset\img\listSlides\list6.png
 wwwroot\asset\js\main.js
 wwwroot\asset\scss\AUIR_Software.styles.scss
 wwwroot\asset\scss\variables.scss

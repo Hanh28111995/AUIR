@@ -473,10 +473,6 @@
       "PackagePath": "staticwebassets\\asset\\img\\bg\\Project\\LLC.png"
     },
     {
-      "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\bg\\hero_bg.mp4",
-      "PackagePath": "staticwebassets\\asset\\img\\bg\\hero_bg.mp4"
-    },
-    {
       "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\color_border.png",
       "PackagePath": "staticwebassets\\asset\\img\\color_border.png"
     },
@@ -571,30 +567,6 @@
     {
       "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\item\\logo.png",
       "PackagePath": "staticwebassets\\asset\\img\\item\\logo.png"
-    },
-    {
-      "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list1.png",
-      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list1.png"
-    },
-    {
-      "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list2.png",
-      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list2.png"
-    },
-    {
-      "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list3.png",
-      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list3.png"
-    },
-    {
-      "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list4.png",
-      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list4.png"
-    },
-    {
-      "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list5.png",
-      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list5.png"
-    },
-    {
-      "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list6.png",
-      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list6.png"
     },
     {
       "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\js\\main.js",

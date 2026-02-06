@@ -119,8 +119,8 @@ body {
                     background-image: url("../img/color_border.png");
                     background-size: cover;
                     background-position: left;
-                    -webkit-background-clip: text;
-                    background-clip: text;
+                    -webkit-background-clip:initial ;
+                    background-clip:initial ;
                     margin-bottom: 0;
                 }
             }

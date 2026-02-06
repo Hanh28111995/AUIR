@@ -1403,7 +1403,7 @@ body .vertical-scroll-list-more-page .js-vertical-scroll-list ul li .item-conten
     top: -50px;
   }
   body .home-page .home-page-content .title-3 {
-    bottom: 10%;
+    bottom: 5%;
   }
   body .about-page .about-bg .about-content > h1 {
     font-size: 300px;
@@ -1604,12 +1604,18 @@ body .vertical-scroll-list-more-page .js-vertical-scroll-list ul li .item-conten
   }
 }
 @media (max-width: 540px) {
-  body .pr-title-page .about-page-expand .about-page-expand-content,
-  body .pr-title-page .about-page-expand .about-content-text,
-  body .pr-title-page .projects-title {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+    body .guide-icon {
+        transform: scale(0.5);
+        transform-origin: right;
+        bottom: 1%;
+        right: 1rem;
+    }
+    body .pr-title-page .about-page-expand .about-page-expand-content,
+    body .pr-title-page .about-page-expand .about-content-text,
+    body .pr-title-page .projects-title {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
   body .pr-title-page .projects-title .content-left {
     padding-left: 0;
   }

@@ -111,7 +111,6 @@ wwwroot\asset\css\AUIR_Software.styles.css
 wwwroot\asset\css\AUIR_Software.styles.min.css
 wwwroot\asset\fonts\Sequel\ab80d41fb980ff40273bb0028779b41e.eot
 wwwroot\asset\img\bg\0001.jpg
-wwwroot\asset\img\bg\hero_bg.mp4
 wwwroot\asset\img\bg\Project\Acexus.png
 wwwroot\asset\img\bg\Project\FLOORING.jpg
 wwwroot\asset\img\bg\Project\KAVIK.png
@@ -140,12 +139,6 @@ wwwroot\asset\img\item\Laptop.png
 wwwroot\asset\img\item\li_icon.jpg
 wwwroot\asset\img\item\logo.png
 wwwroot\asset\img\item\Phone.png
-wwwroot\asset\img\listSlides\list1.png
-wwwroot\asset\img\listSlides\list2.png
-wwwroot\asset\img\listSlides\list3.png
-wwwroot\asset\img\listSlides\list4.png
-wwwroot\asset\img\listSlides\list5.png
-wwwroot\asset\img\listSlides\list6.png
 wwwroot\asset\js\main.js
 wwwroot\asset\scss\AUIR_Software.styles.scss
 wwwroot\asset\scss\variables.scss

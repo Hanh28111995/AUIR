@@ -573,30 +573,6 @@
       "PackagePath": "staticwebassets\\asset\\img\\item\\logo.png"
     },
     {
-      "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list1.png",
-      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list1.png"
-    },
-    {
-      "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list2.png",
-      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list2.png"
-    },
-    {
-      "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list3.png",
-      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list3.png"
-    },
-    {
-      "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list4.png",
-      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list4.png"
-    },
-    {
-      "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list5.png",
-      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list5.png"
-    },
-    {
-      "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\img\\listSlides\\list6.png",
-      "PackagePath": "staticwebassets\\asset\\img\\listSlides\\list6.png"
-    },
-    {
       "Id": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\js\\main.js",
       "PackagePath": "staticwebassets\\asset\\js\\main.js"
     },

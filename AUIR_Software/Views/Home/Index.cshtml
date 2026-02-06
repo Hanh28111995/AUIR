@@ -16,11 +16,7 @@
                 </div>
             </div>
             <span>Scroll/Drag</span>
-        </div>
-        <div class="guide-icon">
-            
-            <span>Scroll/Drag</span>
-        </div>
+        </div>        
 
         <section class="home-page page" id="Home">
             <div class="home-page-overlay">
@@ -67,10 +63,9 @@
                 </div>
             </div>
 
-            <video autoplay muted loop id="video-background" style="z-index: 1">
-                <source src="./asset/img/bg/hero_bg.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div id="video-background-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; overflow: hidden; background-color: #000;">
+                <div id="video-background"></div>
+            </div>
 
         </section>
 
@@ -661,3 +656,49 @@
 
     </div>
 </div>
+
+<style>
+    #video-background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100vw;                        
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<script>
+    // Tải thư viện API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('video-background', {
+            videoId: 'PjAGbUCisvc', // ID video của bạn từ ảnh chụp màn hình
+            playerVars: {
+                'autoplay': 1,
+                'mute': 1,
+                'controls': 0,
+                'modestbranding': 1,
+                'rel': 0,
+                'iv_load_policy': 3,
+                'autohide': 1
+            },
+            events: {
+                'onReady': function(e) { e.target.playVideo(); },
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    // Xử lý lặp để tránh nhấp nháy trắng/đen
+    function onPlayerStateChange(event) {
+        if (event.data === YT.PlayerState.ENDED) {
+            player.seekTo(0);
+            player.playVideo();
+        }
+    }
+</script>
