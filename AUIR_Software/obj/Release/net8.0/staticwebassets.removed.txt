@@ -1,7 +1,5 @@
-D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\bg\hero_bg.mp4
-D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\listSlides\list1.png
-D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\listSlides\list2.png
-D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\listSlides\list3.png
-D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\listSlides\list4.png
-D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\listSlides\list5.png
-D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\listSlides\list6.png
+D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\bg\0001.jpg
+D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\bg\Project\Acexus.png
+D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\bg\Project\FLOORING.jpg
+D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\bg\Project\KAVIK.png
+D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\bg\Project\LLC.png

@@ -7,16 +7,172 @@
       "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\wwwroot\\asset\\css\\auir_software.styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\wwwroot\\asset\\css\\auir_software.styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\controllers\\admin\\contentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\controllers\\admin\\contentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\services\\contentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\services\\contentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\models\\content.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\models\\content.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\views\\admin\\_dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\views\\admin\\_dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\helpers\\stringhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\helpers\\stringhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\controllers\\admin\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\controllers\\admin\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\services\\icontentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\services\\icontentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\models\\contentcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\models\\contentcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\services\\contactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\services\\contactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\repositories\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\repositories\\contactrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\services\\icontactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\services\\icontactservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\repositories\\contentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\repositories\\contentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\controllers\\admin\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\controllers\\admin\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\controllers\\admin\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\controllers\\admin\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\controllers\\home\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\controllers\\home\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\wwwroot\\asset\\scss\\auir_software.styles.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\wwwroot\\asset\\scss\\auir_software.styles.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\migrations\\20260223103632_updatetablename.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\migrations\\20260223103632_updatetablename.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\migrations\\20260223103447_initialcreate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\migrations\\20260223103447_initialcreate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103351_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AUIR_Software\\Migrations\\20260223103351_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103253_UpdateTableName.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AUIR_Software\\Migrations\\20260223103253_UpdateTableName.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223102859_UpdateTableName.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AUIR_Software\\Migrations\\20260223102859_UpdateTableName.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\views\\admin\\_loginmodal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\views\\admin\\_loginmodal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223072632_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AUIR_Software\\Migrations\\20260223072632_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223072513_UpdateTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AUIR_Software\\Migrations\\20260223072513_UpdateTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\wwwroot\\asset\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\wwwroot\\asset\\js\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\auir_software.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\auir_software.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260222100240_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AUIR_Software\\Migrations\\20260222100240_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\wwwroot\\asset\\css\\auir_software.styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\wwwroot\\asset\\css\\auir_software.styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\migrations\\20260223103447_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\migrations\\20260223103447_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|d:\\project\\auir\\auir_software\\migrations\\20260223103632_updatetablename.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BAD5F54-5E29-4B39-8AD7-FEE01E443F5B}|AUIR_Software\\AUIR_Software.csproj|solutionrelative:auir_software\\migrations\\20260223103632_updatetablename.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,47 +182,475 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 39,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "main.js",
-              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\js\\main.js",
-              "RelativeDocumentMoniker": "AUIR_Software\\wwwroot\\asset\\js\\main.js",
-              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\js\\main.js",
-              "RelativeToolTip": "AUIR_Software\\wwwroot\\asset\\js\\main.js",
-              "ViewState": "AgIAAP4AAAAAAAAAAAArwAoBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-01-31T13:26:06.842Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "DocumentIndex": 5,
+              "Title": "StringHelper.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Helpers\\StringHelper.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Helpers\\StringHelper.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Helpers\\StringHelper.cs",
+              "RelativeToolTip": "AUIR_Software\\Helpers\\StringHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T15:10:40.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ContentController.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Controllers\\Admin\\ContentController.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Controllers\\Admin\\ContentController.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Controllers\\Admin\\ContentController.cs",
+              "RelativeToolTip": "AUIR_Software\\Controllers\\Admin\\ContentController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAADwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T21:17:45.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Dashboard.cshtml",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Views\\Admin\\_Dashboard.cshtml",
+              "RelativeDocumentMoniker": "AUIR_Software\\Views\\Admin\\_Dashboard.cshtml",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Views\\Admin\\_Dashboard.cshtml",
+              "RelativeToolTip": "AUIR_Software\\Views\\Admin\\_Dashboard.cshtml",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAswHcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-22T14:25:14.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "20260223103447_InitialCreate.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103447_InitialCreate.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Migrations\\20260223103447_InitialCreate.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103447_InitialCreate.cs",
+              "RelativeToolTip": "AUIR_Software\\Migrations\\20260223103447_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T10:34:47.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "AUIR_Software\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "AUIR_Software\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAD4vxYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-22T18:36:53.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AUIR_Software.styles.scss",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\scss\\AUIR_Software.styles.scss",
+              "RelativeDocumentMoniker": "AUIR_Software\\wwwroot\\asset\\scss\\AUIR_Software.styles.scss",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\scss\\AUIR_Software.styles.scss",
+              "RelativeToolTip": "AUIR_Software\\wwwroot\\asset\\scss\\AUIR_Software.styles.scss",
+              "ViewState": "AgIAALYIAAAAAAAAAAAAAL8IAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
+              "WhenOpened": "2026-02-06T03:55:10.459Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ContentService.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Services\\ContentService.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Services\\ContentService.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Services\\ContentService.cs",
+              "RelativeToolTip": "AUIR_Software\\Services\\ContentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T13:25:03.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ContentCreateDto.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Models\\ContentCreateDto.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Models\\ContentCreateDto.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Models\\ContentCreateDto.cs",
+              "RelativeToolTip": "AUIR_Software\\Models\\ContentCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T13:39:09.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Controllers\\Admin\\AdminController.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Controllers\\Admin\\AdminController.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Controllers\\Admin\\AdminController.cs",
+              "RelativeToolTip": "AUIR_Software\\Controllers\\Admin\\AdminController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T15:40:26.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ContentRepository.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Repositories\\ContentRepository.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Repositories\\ContentRepository.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Repositories\\ContentRepository.cs",
+              "RelativeToolTip": "AUIR_Software\\Repositories\\ContentRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAABYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T10:42:21.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IContentService.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Services\\IContentService.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Services\\IContentService.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Services\\IContentService.cs",
+              "RelativeToolTip": "AUIR_Software\\Services\\IContentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T13:25:30.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "20260223103351_InitialCreate.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103351_InitialCreate.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Migrations\\20260223103351_InitialCreate.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103351_InitialCreate.cs",
+              "RelativeToolTip": "AUIR_Software\\Migrations\\20260223103351_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T10:33:51.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Content.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Models\\Content.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Models\\Content.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Models\\Content.cs",
+              "RelativeToolTip": "AUIR_Software\\Models\\Content.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAswBwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T07:21:53.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IContactService.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Services\\IContactService.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Services\\IContactService.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Services\\IContactService.cs",
+              "RelativeToolTip": "AUIR_Software\\Services\\IContactService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T13:24:42.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "20260223103447_InitialCreate.Designer.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103447_InitialCreate.Designer.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Migrations\\20260223103447_InitialCreate.Designer.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103447_InitialCreate.Designer.cs",
+              "RelativeToolTip": "AUIR_Software\\Migrations\\20260223103447_InitialCreate.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T10:35:45.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "AUIR_Software\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T10:36:03.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "20260223103632_UpdateTableName.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103632_UpdateTableName.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Migrations\\20260223103632_UpdateTableName.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103632_UpdateTableName.cs",
+              "RelativeToolTip": "AUIR_Software\\Migrations\\20260223103632_UpdateTableName.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T10:36:32.951Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "20260223103632_UpdateTableName.Designer.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103632_UpdateTableName.Designer.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Migrations\\20260223103632_UpdateTableName.Designer.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103632_UpdateTableName.Designer.cs",
+              "RelativeToolTip": "AUIR_Software\\Migrations\\20260223103632_UpdateTableName.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T10:36:43.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "20260223103253_UpdateTableName.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103253_UpdateTableName.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Migrations\\20260223103253_UpdateTableName.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223103253_UpdateTableName.cs",
+              "RelativeToolTip": "AUIR_Software\\Migrations\\20260223103253_UpdateTableName.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T10:32:53.412Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "20260223102859_UpdateTableName.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223102859_UpdateTableName.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Migrations\\20260223102859_UpdateTableName.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223102859_UpdateTableName.cs",
+              "RelativeToolTip": "AUIR_Software\\Migrations\\20260223102859_UpdateTableName.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T10:28:59.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "20260223072632_InitialCreate.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223072632_InitialCreate.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Migrations\\20260223072632_InitialCreate.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223072632_InitialCreate.cs",
+              "RelativeToolTip": "AUIR_Software\\Migrations\\20260223072632_InitialCreate.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAwwCIAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T07:26:32.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "20260223072513_UpdateTable.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223072513_UpdateTable.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Migrations\\20260223072513_UpdateTable.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260223072513_UpdateTable.cs",
+              "RelativeToolTip": "AUIR_Software\\Migrations\\20260223072513_UpdateTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T07:25:13.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "_LoginModal.cshtml",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Views\\Admin\\_LoginModal.cshtml",
+              "RelativeDocumentMoniker": "AUIR_Software\\Views\\Admin\\_LoginModal.cshtml",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Views\\Admin\\_LoginModal.cshtml",
+              "RelativeToolTip": "AUIR_Software\\Views\\Admin\\_LoginModal.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-22T21:28:41.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Controllers\\Home\\HomeController.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Controllers\\Home\\HomeController.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Controllers\\Home\\HomeController.cs",
+              "RelativeToolTip": "AUIR_Software\\Controllers\\Home\\HomeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAkwBgAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T21:17:58.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Controllers\\Admin\\UserController.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Controllers\\Admin\\UserController.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Controllers\\Admin\\UserController.cs",
+              "RelativeToolTip": "AUIR_Software\\Controllers\\Admin\\UserController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAIwBwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T21:17:50.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "AUIR_Software\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "AUIR_Software\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-22T13:41:52.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Contact.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Models\\Contact.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Models\\Contact.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Models\\Contact.cs",
+              "RelativeToolTip": "AUIR_Software\\Models\\Contact.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T05:49:45.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ContactController.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Controllers\\Admin\\ContactController.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Controllers\\Admin\\ContactController.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Controllers\\Admin\\ContactController.cs",
+              "RelativeToolTip": "AUIR_Software\\Controllers\\Admin\\ContactController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAmwAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T21:14:48.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ContactService.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Services\\ContactService.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Services\\ContactService.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Services\\ContactService.cs",
+              "RelativeToolTip": "AUIR_Software\\Services\\ContactService.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T13:24:50.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Services\\AuthService.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Services\\AuthService.cs",
+              "RelativeToolTip": "AUIR_Software\\Services\\AuthService.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAqwDcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T13:23:54.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Services\\IAuthService.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Services\\IAuthService.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Services\\IAuthService.cs",
+              "RelativeToolTip": "AUIR_Software\\Services\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T13:23:38.523Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ContactRepository.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Repositories\\ContactRepository.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Repositories\\ContactRepository.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Repositories\\ContactRepository.cs",
+              "RelativeToolTip": "AUIR_Software\\Repositories\\ContactRepository.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T10:41:57.247Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Repositories\\UserRepository.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "AUIR_Software\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T10:41:34.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "20260222100240_InitialCreate.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260222100240_InitialCreate.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Migrations\\20260222100240_InitialCreate.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Migrations\\20260222100240_InitialCreate.cs",
+              "RelativeToolTip": "AUIR_Software\\Migrations\\20260222100240_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T10:02:40.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\appsettings.json",
+              "RelativeDocumentMoniker": "AUIR_Software\\appsettings.json",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\appsettings.json",
+              "RelativeToolTip": "AUIR_Software\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-22T09:48:15.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "AUIR_Software.csproj",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\AUIR_Software.csproj",
+              "RelativeDocumentMoniker": "AUIR_Software\\AUIR_Software.csproj",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\AUIR_Software.csproj",
+              "RelativeToolTip": "AUIR_Software\\AUIR_Software.csproj",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-22T09:29:51.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "AUIR_Software\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T08:42:49.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Models\\User.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Models\\User.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Models\\User.cs",
+              "RelativeToolTip": "AUIR_Software\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T05:52:27.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "AUIR_Software\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "AUIR_Software\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAAC0AAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAAAIoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-01-31T14:55:19.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AUIR_Software.styles.css",
-              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\css\\AUIR_Software.styles.css",
-              "RelativeDocumentMoniker": "AUIR_Software\\wwwroot\\asset\\css\\AUIR_Software.styles.css",
-              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\css\\AUIR_Software.styles.css",
-              "RelativeToolTip": "AUIR_Software\\wwwroot\\asset\\css\\AUIR_Software.styles.css",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAHMAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-01-31T13:26:56.043Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T14:55:19.736Z"
             },
             {
               "$type": "Document",
@@ -76,10 +660,46 @@
               "RelativeDocumentMoniker": "AUIR_Software\\Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "AUIR_Software\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAADUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-01-31T13:24:24.218Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "AUIR_Software.styles.css",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\css\\AUIR_Software.styles.css",
+              "RelativeDocumentMoniker": "AUIR_Software\\wwwroot\\asset\\css\\AUIR_Software.styles.css",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\css\\AUIR_Software.styles.css",
+              "RelativeToolTip": "AUIR_Software\\wwwroot\\asset\\css\\AUIR_Software.styles.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-31T13:26:56.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "AUIR_Software\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Properties\\launchSettings.json",
+              "RelativeToolTip": "AUIR_Software\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-05T02:31:50Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Project\\AUIR\\AUIR_Software\\Program.cs",
+              "RelativeDocumentMoniker": "AUIR_Software\\Program.cs",
+              "ToolTip": "D:\\Project\\AUIR\\AUIR_Software\\Program.cs",
+              "RelativeToolTip": "AUIR_Software\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T02:58:31.907Z"
             }
           ]
         }

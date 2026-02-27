@@ -1,0 +1,575 @@
+﻿@using AUIR_Software.Models
+@* Không cần khai báo @model vì dùng ViewBag *@
+@{
+    var contentList = ViewBag.ContentList as IEnumerable<Content>;
+    var userList = ViewBag.UserList as IEnumerable<User>;
+    var contactList = ViewBag.ContactList as IEnumerable<Contact>;
+}
+
+
+<div class="container-fluid mt-4">
+    <h2 class="mb-4">Hệ thống quản trị AUIR</h2>
+
+    <div class="card mb-4 shadow-sm border-0">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center py-3">
+            <span><i class="fas fa-edit me-2"></i>Quản lý nội dung Landing Page (JSON)</span>
+            <small class="badge bg-warning text-dark d-sm-inline">Chỉ sửa giá trị bên trong JSON</small>
+        </div>
+
+        @using Newtonsoft.Json
+        @* Lưu ý: contentList lấy từ ViewBag như file bạn gửi trước đó *@
+
+        <div class="container-fluid p-2">
+            <div class="d-flex justify-content-between align-items-center flex-wrap mb-4">
+                <h2 class="mb-0">Dashboard Content</h2>                
+            </div>
+
+            <div class="row">
+                @foreach (var item in contentList ?? Enumerable.Empty<Content>())
+                {
+                    var sectionData = JsonConvert.DeserializeObject<AUIR_Software.Models.SectionData>(item.RawJson)
+                    ?? new AUIR_Software.Models.SectionData();
+
+                    <div class="col-12 mb-4">
+                        <div class="card shadow-sm section-card border">
+                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                                <h6 class="mb-0 fw-bold">Section: @item.SectionName</h6>
+                                <span class="badge bg-light text-dark">ID: @item.Id</span>
+                            </div>
+
+                            <div class="card-body">                                
+                                <div class="row">
+                                    <div class="col-md-4 col-12 border-end">
+                                        <h6 class="text-secondary small fw-bold text-uppercase mb-3">
+                                            <i class="bi bi-info-circle-fill me-1"></i> Thông tin giới thiệu
+                                        </h6>
+
+                                        <div class="introduction-wrapper">
+                                            @if (sectionData.Introduce != null && sectionData.Introduce.Any())
+                                            {
+                                                @foreach (var intro in sectionData.Introduce)
+                                                {
+                                                    <div class="intro-item mb-3 p-2 border rounded bg-white shadow-sm">
+                                                        @* Hiển thị Title_p như một tiêu đề phụ nhỏ *@
+                                                        <div class="fw-bold text-dark small mb-1">
+                                                            <i class="bi bi-bookmark-star text-warning me-1"></i> @intro.Title_p
+                                                        </div>
+                                                        @* Hiển thị Describe_p *@
+                                                        <div class="text-muted extra-small" style="font-size: 0.8rem; line-height: 1.4;">
+                                                            @intro.Describe_p
+                                                        </div>
+                                                    </div>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <div class="text-center py-4 bg-light rounded">
+                                                    <i class="bi bi-clipboard-x text-muted d-block fs-4"></i>
+                                                    <span class="text-muted small italic">Chưa có thông tin giới thiệu</span>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-8 col-12 mt-3 mt-md-0">
+                                        <h6 class="text-secondary small fw-bold text-uppercase"><i class="bi bi-images"></i> Danh sách Items</h6>
+                                        <div class="items-container d-flex flex-wrap gap-3 mt-2">
+                                            @foreach (var subItem in sectionData.List)
+                                            {
+                                                <div class="card item-card shadow-sm border-0 bg-light" style="width: 140px;">
+                                                    <img src="@subItem.Image" class="card-img p-1 rounded"
+                                                         alt="@subItem.Title_c"
+                                                         style="height: 90px; object-fit: cover;"
+                                                         onerror="this.src='/images/no-image.png'">
+                                                    <div class="card-body p-2 text-center">
+                                                        <p class="card-text small fw-bold text-truncate mb-0">@subItem.Title_c</p>
+                                                    </div>
+                                                </div>
+                                            }
+                                            @if (!sectionData.List.Any())
+                                            {
+                                                <p class="text-muted small ps-1">Chưa có item nào.</p>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-top-0">
+                                <small class="text-muted" style="font-size: 0.7rem;">
+                                    <i class="bi bi-clock"></i> @item.UpdatedAt.ToString("dd/MM/yyyy HH:mm")
+                                </small>
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-danger px-3 fw-bold rounded ms-1"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#createContentModal"                                            
+                                            onclick="openContentModal(@item.Id)">
+                                        Sửa
+                                    </button>
+                                    
+                                    <button class="btn btn-sm btn-primary me-2 rounded ms-1" onclick=" deleteContent(@item.Id)">Xóa</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <button type="button" class="btn btn-success shadow-sm ms-auto d-block" data-bs-toggle="modal" data-bs-target="#createContentModal">
+                <i class="bi bi-plus-circle me-1"></i> Thêm Content mới
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-5 col-12 mb-2">
+            <div class="card border-primary shadow-sm h-100">
+                <div class="card-header bg-primary text-white">Quản trị viên</div>
+                <div class="card-body p-0">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th style="width: 8%;">ID</th>
+                                <th style="width: 22%;">Username</th>
+                                <th style="width: 22%;">PhoneNumber</th>
+                                <th style="width: 28%;">Email</th>
+                                <th class="text-end" style="width: 25%;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var user in userList ?? Enumerable.Empty<User>())
+                            {
+                                <tr>
+                                    <td>@user.Id</td>
+                                    <td><strong>@user.Username</strong></td>
+                                    <td>@user.PhoneNumber</td>
+                                    <td>@user.Email</td>
+                                    <td class="text-end">
+                                        @* Truyền tất cả thông tin vào hàm để hiện lên Modal *@
+                                        <button class="btn btn-sm btn-outline-primary"
+                                                onclick="openUserModal(@user.Id, '@user.Username', '@user.PhoneNumber', '@user.Email' )">
+                                            <i class="fas fa-edit"></i> Sửa
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="deleteUser(@user.Id)">
+                                            <i class="fas fa-trash"></i> Xóa
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7 col-12 mb-2">
+            <div class="card border-info shadow-sm h-100">
+                <div class="card-header bg-info text-white">Tin nhắn khách hàng (Contacts)</div>
+                <div class="card-body p-0">
+                    <table class="table table-striped mb-0 align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Ngày</th>
+                                <th>Email</th>
+                                <th>Nội dung</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var contact in contactList ?? Enumerable.Empty<Contact>())
+                            {
+                                <tr>
+                                    <td class="small">@contact.CreatedAt.ToString("dd/MM/yy")</td>
+                                    <td>@contact.Email</td>
+                                    <td class="text-truncate" style="max-width: 150px;">@contact.Message</td>
+                                    <td class="text-end">
+                                        <button class="btn btn-sm btn-info text-white" onclick="viewContact(@contact.Id)">
+                                            <i class="fas fa-eye"></i> Xem
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="userModalLabel">Cập nhật người dùng</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="userForm">
+                    <input  id="userId" name="Id" value=" ">
+
+                    <div class="mb-3">
+                        <label class="form-label">Tên đăng nhập</label>
+                        <input type="text" class="form-control" id="edit-username" name="Username" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Số điện thoại</label>
+                        <input type="text" class="form-control" id="edit-phone" name="PhoneNumber">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="edit-email" name="Email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Mật khẩu</label>
+                        <input type="password" class="form-control" id="edit-password" name="Password" placeholder="Để trống nếu không muốn đổi">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="saveUser()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="createContentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tạo mới Content Section</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="createContentForm" enctype="multipart/form-data">    
+                    <input id="contentId" name="Id" value="" hidden>
+                    <div class="mb-3">
+                        <label class="form-label font-weight-bold">Tên section</label>
+                        <input type="text" name="sectionName" class="form-control" placeholder="Ví dụ: Services, Project..." value="" required>
+                    </div>
+
+                    <hr>
+                    <h6>Phần Giới thiệu (Introduce)</h6>
+                    <div id="introContainer">
+                        <div class="intro-row border p-2 mb-2 bg-light">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <label class="small">Tiêu đề chính (Title_p)</label>
+                                    <input type="text" name="Title_p" class="form-control form-control-sm" value="">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="small">Mô tả chính (Describe_p)</label>
+                                    <textarea name="Describe_p" class="form-control form-control-sm" rows="1" value=""></textarea>
+                                </div>
+                                <div class="col-md-1 d-flex align-items-end">
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="this.closest('.intro-row').remove()">X</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-secondary btn-sm mb-3" onclick="addIntroRow()">+ Thêm dòng giới thiệu</button>
+
+                    <hr>
+                    <h6>Danh sách Items (Hình ảnh & Tiêu đề)</h6>
+                    <div id="itemsContainer">
+                        <div class="item-row border p-2 mb-2">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="small">Tiêu đề Item (Title_c)</label>
+                                    <input type="text" name="Title_c" class="form-control form-control-sm" value="">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="small">Mô tả Item (Describe_c)</label>
+                                    <input type="text" name="Describe_c" class="form-control form-control-sm" value="">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="small">Ảnh Item</label>
+                                    <input type="file" name="Image" class="form-control form-control-sm" accept="image/*" value="">
+                                </div>
+                                <div class="col-md-1 d-flex align-items-end">
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="this.closest('.item-row').remove()">X</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary btn-sm mt-2" onclick="addItemRow()">+ Thêm Item</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" onclick="submitContent()">Lưu thay đổi</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    {
+     function submitContent(){
+          var formElement = document.getElementById('createContentForm');
+           var idValue = document.getElementById('contentId').value || null;           
+           if(idValue !== null){
+               updateFormContent();
+           }
+           else{
+               submitCreateContent();
+           }
+     }
+      function updateFormContent() {
+        var formData = new FormData();
+
+        // 1. Tạo Object chứa Text theo đúng chuẩn SectionData
+        var sectionData = {
+            Introduce: [],
+            List: []
+        };
+
+        // Gom phần Introduces
+        $('#createContentForm .intro-row').each(function() {
+            sectionData.Introduce.push({
+                Title_p: $(this).find('[name="Title_p"]').val() || "",
+                Describe_p: $(this).find('[name="Describe_p"]').val() || ""
+            });
+        });
+
+        // Gom phần Items và đính kèm File vào FormData
+        $('#createContentForm .item-row').each(function(index, element) {
+            sectionData.List.push({
+                Title_c: $(this).find('[name="Title_c"]').val() || "",
+                Describe_c: $(this).find('[name="Describe_c"]').val() || "",
+                Image: "" // Để trống, Server sẽ dựa vào file gửi lên để quyết định lấy URL cũ hay mới
+            });
+
+            var fileInput = $(this).find('input[type="file"]')[0];
+
+             if (fileInput && fileInput.files && fileInput.files[0]) {
+                formData.append("files", fileInput.files[0]);
+                } else {        
+                 formData.append("files", new File([""], "no-change"));
+                }
+        });
+
+        // 3. Đưa các thông tin bổ sung vào FormData
+        var id = $('#contentId').val();
+        formData.append("id", id ? id.trim() : 0);
+        formData.append("sectionName", $('input[name="sectionName"]').val() || "");
+        formData.append("jsonData", JSON.stringify(sectionData));
+
+        // 4. Gọi AJAX
+        $.ajax({
+            url: '/Admin/Content/Update',
+            type: 'POST',
+            data: formData,
+            processData: false, // Bắt buộc: Không xử lý dữ liệu thành query string
+            contentType: false, // Bắt buộc: Để trình duyệt tự thiết lập boundary cho Multipart
+            success: function(res) {
+                if (res.success) {
+                    location.reload();
+                } else {
+                    alert("Lỗi: " + res.message);
+                }
+            },
+            error: function(err) {
+                console.error("Lỗi AJAX:", err);
+                alert("Có lỗi xảy ra trong quá trình gửi dữ liệu.");
+            }
+        });
+    }
+
+         function addIntroRow(title = '', desc = '') {
+            const html = `
+                <div class="intro-row border p-2 mb-2 bg-light">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <input type="text" name="Title_p" class="form-control form-control-sm" value="${title}">
+                        </div>
+                        <div class="col-md-6">
+                            <textarea name="Describe_p" class="form-control form-control-sm" rows="1">${desc}</textarea>
+                        </div>
+                        <div class="col-md-1 d-flex align-items-end">
+                            <button type="button" class="btn btn-danger btn-sm" onclick="this.closest('.intro-row').remove()">X</button>
+                        </div>
+                    </div>
+                </div>`;
+            $('#introContainer').append(html);
+        }
+
+         function addItemRow(title = '', desc = '', imageUrl = '') {                       
+        const html = `
+            <div class="item-row border p-2 mb-2">
+                <div class="row">
+                    <div class="col-md-3">
+                        <input type="text" name="Title_c" class="form-control form-control-sm" value="${title}">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" name="Describe_c" class="form-control form-control-sm" value="${desc}">
+                    </div>
+                    <div class="col-md-4">
+                        ${imageUrl ? `<img src="${imageUrl}" style="height:30px" class="mb-1 d-block">` : ''}
+                             <input type="file" name=" Image" class="form-control form-control-sm" accept="image/*">
+                    </div>
+                    <div class="col-md-1 d-flex align-items-end">
+                        <button type="button" class="btn btn-danger btn-sm" onclick="$(this).closest('.item-row').remove()">X</button>
+                    </div>
+                </div>
+            </div>`;
+
+        $('#itemsContainer').append(html);
+    }
+
+        function openContentModal(id) {
+        // 1. Dọn dẹp form trước khi nạp dữ liệu mới
+        $('#createContentForm')[0].reset();
+        $('#introContainer').empty();
+        $('#itemsContainer').empty();
+            $('#contentId').val(id);
+
+        // 2. Gọi AJAX lấy dữ liệu chi tiết
+        $.ajax({
+             url: '@Url.Action("GetContentById", "Content")',
+            type: 'GET',
+            data: { id: id },
+            success: function (res) {
+                if (res.success) {
+                    const item = res.data;
+                    $('.modal-title').text('Cập nhật: ' + item.sectionName);
+                    $('input[name="sectionName"]').val(item.sectionName);
+
+                    
+                    try {
+                        
+                    const item = res.data;
+
+    
+                    if (item.introduction && item.introduction.length > 0) {
+                            item.introduction.forEach(i => {
+                            addIntroRow(i.title_p || '', i.describe_p || '');
+        });
+    } 
+    
+    if (item.list && item.list.length > 0) {
+        item.list.forEach(l => {
+            addItemRow(l.title_c || '', l.describe_c || '', l.image || '');
+        });
+    } 
+
+                    } catch (e) {
+                        console.error("Lỗi xử lý JSON:", e);
+                        addIntroRow();
+                        addItemRow();
+                    }
+
+                    // 4. Mở Modal sau khi đã nạp đủ dữ liệu
+                    $('#createContentModal').modal('show');
+                } else {
+                    alert("Lỗi: " + res.message);
+                }
+            },
+            error: function () {
+                alert("Không thể kết nối với máy chủ!");
+            }
+        });
+    }
+           
+
+        function submitCreateContent() {
+         const form = document.getElementById('createContentForm');
+         const formData = new FormData(form);
+
+         // Lưu ý: Tên "sectionName" và các trường trong "dto" phải khớp với Controller
+
+           $.ajax({
+             // URL này phải khớp CHÍNH XÁC với [Route] hoặc tên Action trong Controller
+             url: '@Url.Action("Create", "Content")',
+             type: 'POST',
+             data: formData,
+             processData: false,
+             contentType: false,
+             success: function(res) {
+                 if (res.success) {
+                     alert("Thành công!");
+                     location.reload();
+                 } else {
+                     alert("Lỗi: " + res.message);
+                 }
+             },
+             error: function(xhr) {
+                 console.log(xhr.responseText);
+                 alert("Lỗi kết nối: " + xhr.status);
+             }
+         });
+        }
+
+        function deleteUser(id) {
+        if(confirm("Xác nhận xóa tài khoản quản trị này?")) {
+            // $.post('/Admin/DeleteUser', { id: id }, function(res) { ... });
+        }
+    }
+
+        // 1. Hàm mở Modal và đổ dữ liệu
+        function openUserModal(id, username, phone, email) {
+        // Reset form và ẩn các thông báo lỗi nếu có
+        $('#userForm')[0].reset();
+
+        // Đổ dữ liệu vào các input
+        $('#edit-id').val(id);
+        $('#edit-username').val(username);
+        $('#edit-phone').val(phone);
+        $('#edit-email').val(email);
+
+        // Hiển thị Modal
+        var myModal = new bootstrap.Modal(document.getElementById('userModal'));
+        myModal.show();
+    }
+
+    // 2. Hàm Save (Gửi dữ liệu qua Ajax)
+         function saveUser() {
+        var formData = {
+            Id: $('#edit-id').val(),
+            Username: $('#edit-username').val(),
+            PhoneNumber: $('#edit-phone').val(),
+            Email: $('#edit-email').val(),
+            Password: $('#edit-password').val()
+        };
+
+        $.post('/Admin/UpdateUser', formData, function(res) {
+            if (res.success) {
+                alert("Cập nhật thành công!");
+                location.reload(); // Tải lại trang để thấy dữ liệu mới
+            } else {
+                alert("Lỗi: " + res.message);
+            }
+        });
+    }   
+
+    // Hàm gửi dữ liệu lên Controller    
+
+        function deleteContent(id) {
+        if (confirm("Bạn có chắc chắn muốn xóa mục này? Toàn bộ ảnh liên quan cũng sẽ bị xóa vĩnh viễn.")) {
+
+            // Sử dụng đối tượng dữ liệu đơn giản
+            $.ajax({
+                url: '@Url.Action("Delete", "Content")', // Sửa "Deleta" thành "Delete"
+                type: 'POST',
+                data: { id: id }, // Gửi trực tiếp object chứa id
+                // Bỏ processData và contentType để Ajax gửi dữ liệu theo chuẩn form-urlencoded
+                success: function(res) {
+                    if (res.success) {
+                        alert("Xóa Thành công!");
+                        location.reload();
+                    } else {
+                        alert("Lỗi: " + res.message);
+                    }
+                },
+                error: function(xhr) {
+                    console.log(xhr.responseText);
+                    alert("Lỗi kết nối: " + xhr.status);
+                }
+            });
+        }
+    }
+    }
+</script>

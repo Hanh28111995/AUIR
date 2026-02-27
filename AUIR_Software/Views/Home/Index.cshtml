@@ -1,8 +1,13 @@
-﻿@{
+﻿@using AUIR_Software.Helpers
+@using Newtonsoft.Json
+@{
     ViewData["Title"] = "Home Page";
 }
+@{
+    var contentList = ViewBag.ContentList as IEnumerable<Content>;
+}
 
-<div class="box">    
+<div class="box">
     <div class="box-content">
         <div class="guide-icon">
             <div class="indicator-container">
@@ -16,51 +21,75 @@
                 </div>
             </div>
             <span>Scroll/Drag</span>
-        </div>        
+        </div>
 
         <section class="home-page page" id="Home">
             <div class="home-page-overlay">
             </div>
             <div class="home-page-content">
-                <div class="wrap-limit-p">
-                    <h1>
-                        <span class="text-existed">
-                            AUIR<span class="spec">®</span>
-                        </span>
-                    </h1>                    
-                    <h1>
-                        <span class="text-existed">
-                            SOFTWARE
-                        </span>
-                    </h1>
-                </div>
+                @foreach (var content in contentList)
+                {
+                    if (content.SectionName == "Home")
+                    {
+                        var data = JsonConvert.DeserializeObject<SectionData>(content.RawJson) ?? new SectionData();
 
-                <div class="wrap-limit-p">
-                    <h1>
-                        <span class="text-removed">
-                            DIGITAL
-                        </span>
-                    </h1>
-                    <h1>
-                        <span class="text-removed">
-                            AGENCY
-                        </span>
-                    </h1>
-                </div>
+                        var item = data.Introduce[0];
+                        {
+                            @if (!string.IsNullOrEmpty(item.Title_p))
+                            {
+                                var title = item.Title_p.SplitAndFormat();                                                                
+                                @for (int i = 0 ; i < title.Count(); i++)
+                                {
+                                    var title_break = title[i].Split(" ");
+                                    <div class="wrap-limit-p">                                        
+                                        @for (int j = 0; j < title_break.Count(); j++)
+                                        {
+                                            <h1>
+                                                @if(i == 0){
+                                                    <span class="text-existed">
+                                                        @Html.Raw(title_break[j])
+                                                    </span>
+                                                }
+                                                else{
+                                                    <span class="text-removed">
+                                                        @Html.Raw(title_break[j])
+                                                    </span>
+                                                }
+                                            </h1>
+                                        }
+                                    </div>
+                                }                             
+                            }
+                        }
 
-                <div class="title-3">
-                    <img src="./asset/img/icon/li-icon.png" alt="AIUR Software" class="img-fluid" />
-                    <div class="wrap-limit-p">
-                        <p class="text-existed-s">
-                            Software Agency <br />
-                            based in CA, United State
-                        </p>
-                        <p class="text-removed-s">
-                            Web-studio <br />
-                            based in CA, United State
-                        </p>
-                    </div>
-                </div>
+                        <div class="title-3">
+                            <img src="./asset/img/icon/li-icon.png" alt="AIUR Software" class="img-fluid" />
+                            <div class="wrap-limit-p">                                
+                                @for (int i = 1 ; i < data.Introduce.Count(); i++){
+                                    if (!string.IsNullOrEmpty(data.Introduce[i].Title_p))                                        
+                                        {
+                                            var title = data.Introduce[i].Title_p.SplitAndFormat();                                                                                        
+                                          @for( int j = 0;  j < title.Count(); j++){
+                                            
+                                            if(j%2 == 0) {
+                                                <p class="text-existed-s">
+                                                    @Html.Raw(title[j])
+                                                </p>
+                                                }
+                                            else
+                                            {
+                                                <p class="text-removed-s">
+                                                    @Html.Raw(title[j])
+                                                </p>
+
+                                            }   
+                                           }
+                                        }
+                                    }                                                                                                                                          
+                            </div>
+                        </div>
+                    }
+                }                
             </div>
 
             <div id="video-background-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; overflow: hidden; background-color: #000;">
@@ -71,9 +100,16 @@
 
         <div class="home-page-expand page-expand">
             <div class="home-page-expand-content">
-                <p>
-                    Website development, customs software, innovative tech solutions. Each designed to <span>elevate your business</span> to interstellar heights.
-                </p>
+                @foreach (var content in contentList)
+                {
+                    if (content.SectionName == "Home")
+                    {
+                        var data = JsonConvert.DeserializeObject<SectionData>(content.RawJson) ?? new SectionData();
+
+                        var item = data.Introduce[0];
+                        @Html.Raw(item.Describe_p)
+                    }
+                }
             </div>
             <a href="#">
                 Project >
@@ -164,111 +200,107 @@
 </div>
 
 
+
 <div class="box">
     <div class="box-content">
         <section class="projects-page page" id="Project">
             <div class="projects-detail">
+                @foreach (var content in contentList)
+                {
+                    if (content.SectionName == "Project")
+                    {
+                        var data = JsonConvert.DeserializeObject<SectionData>(content.RawJson) ?? new SectionData();
 
-                <div class="projects-detail-item">
-                    <div class="paralax" style="background-image: url(./asset/img/bg/Project/LLC.png)"></div>
-                    <div class="projects-detail-item-content">
-                        <h3>Worldcraft Logistics</h3>
-                        <p>Reliable 3PL Solutions & Supply Chain - official website</p>
-                        <div class="describe-list">
-                            <div class="describe-list-item">
-                                Branding
-                            </div>
-                            <div class="describe-list-item">
-                                UI/UX design
-                            </div>
-                            <div class="describe-list-item">
-                                Front-end development
-                            </div>
-                            <div class="describe-list-item">
-                                Back-end development
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        foreach (var item in data.List)
+                        {
+                            @if (!string.IsNullOrEmpty(item.Image) && !item.Image.Contains("placehold.co"))
+                            {
+                            <div class="projects-detail-item">
+                                <div class="paralax" style="background-image: url('@item.Image')"></div>
 
-                <div class="projects-detail-item">
-                    <div class="paralax" style="background-image: url(./asset/img/bg/Project/Acexus.png)"></div>
-                    <div class="projects-detail-item-content">
-                        <h3>ACEXUS</h3>
-                        <p>Transportation firm - official website</p>
-                        <div class="describe-list">
-                            <div class="describe-list-item">
-                                Front-end development
-                            </div>
-                            <div class="describe-list-item">
-                                Back-end development
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                <div class="projects-detail-item-content">
+                                    @if (!string.IsNullOrEmpty(item.Title_c))
+                                    {
+                                        var titleParts = item.Title_c.SplitAndFormat(); // Trả về List<string>
 
-                <div class="projects-detail-item">
-                    <div class="paralax" style="background-image: url(./asset/img/bg/Project/KAVIK.png)"></div>
-                    <div class="projects-detail-item-content">
-                        <h3>Kavik</h3>
-                        <p>Cabinet & Countertop. Wood Furniture business website</p>
-                        <div class="describe-list">
-                            <div class="describe-list-item">
-                                Front-end development
+                                        if (titleParts.Count > 0)
+                                        {
+                                            @* Phần tử đầu tiên luôn là h3 *@
+                                            <h3>@titleParts[0]</h3>
+
+                                            @* Các phần tử từ vị trí số 1 trở đi là thẻ p *@
+                                            for (int i = 1; i < titleParts.Count; i++)
+                                            {
+                                                <p>@titleParts[i]</p>
+                                            }
+                                        }
+                                    }
+
+                                    <div class="describe-list">
+                                        @if (!string.IsNullOrEmpty(item.Describe_c))
+                                        {
+                                            foreach (var tag in item.Describe_c.SplitAndFormat())
+                                            {
+                                                <div class="describe-list-item">
+                                                    @tag
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
                             </div>
-                            <div class="describe-list-item">
-                                Back-end development
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            }
+                        }
+                    }
+                }
+                              
 
                 <div class="projects-detail-item " id="last-item">
-
                     <div class="paralax"></div>
                     <div class="projects-detail-item-content">
-                        <div class="list">
-                            <h3>Hong Duc 1 & Son</h3>
-                            <p>Fish Sauce business - official website</p>
-                            <div class="describe-list">
-                                <div class="describe-list-item">
-                                    Front-end development
-                                </div>
-                                <div class="describe-list-item">
-                                    Back-end development
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list">
-                            <h3>AIUR Marketing</h3>
-                            <p>Marketing agency official website</p>
-                            <div class="describe-list">
-                                <div class="describe-list-item">
-                                    Branding
-                                </div>
-                                <div class="describe-list-item">
-                                    UI/UX design
-                                </div>
-                                <div class="describe-list-item">
-                                    Front-end development
-                                </div>
-                                <div class="describe-list-item">
-                                    Back-end development
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list">
-                            <h3>Prestige Floors LTD</h3>
-                            <p>Wood flooring materials business website</p>
-                            <div class="describe-list">
-                                <div class="describe-list-item">
-                                    Front-end development
-                                </div>
-                                <div class="describe-list-item">
-                                    Back-end development
-                                </div>
-                            </div>
-                        </div>
+
+
+                        @foreach (var content in contentList)
+                        {
+                            if (content.SectionName == "Project")
+                            {
+                                var data = JsonConvert.DeserializeObject<SectionData>(content.RawJson) ?? new SectionData();
+
+                                foreach (var item in data.List)
+                                {
+                                    @if (item.Image.Contains("placehold.co"))
+                                    {                                        
+                                            <div class="list">
+                                                @if (!string.IsNullOrEmpty(item.Title_c))
+                                                {
+                                                    var titleParts = item.Title_c.SplitAndFormat(); 
+
+                                                    if (titleParts.Count > 0)
+                                                    {                                                        
+                                                        <h3>@titleParts[0]</h3>                                                     
+                                                        for (int i = 1; i < titleParts.Count; i++)
+                                                        {
+                                                            <p>@titleParts[i]</p>
+                                                        }
+                                                    }
+                                                }
+                                                <div class="describe-list">
+                                                    @if (!string.IsNullOrEmpty(item.Describe_c))
+                                                    {
+                                                        foreach (var tag in item.Describe_c.SplitAndFormat())
+                                                        {
+                                                            <div class="describe-list-item">
+                                                                @tag
+                                                            </div>
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>                                        
+                                    }
+                                }
+                            }
+                        }                      
+                       
                     </div>
 
                     <div class="see-all-projects">
@@ -317,8 +349,7 @@
         <section class="page" id="Services2">
             <div class="wrapper-title page">
                 <div class="list-title">
-                    <h5>Upgrade your website</h5>
-                    <h5>with our</h5>
+                    <h5>Upgrade your website <br/> with our</h5>
                     <h3>Advanced Features</h3>
                 </div>
             </div>
@@ -563,9 +594,8 @@
 
             <div class="contact-page-try page">
                 <div class="vid-wrapper">
-                    <video autoplay muted loop>
-                        <source src="./asset/img/bg/hero_bg.mp4" type="video/mp4">
-                    </video>
+                    <img src="./asset/img/bg/0001.webp" />
+                    @* <source src="./asset/img/bg/hero_bg.mp4" type="video/mp4"> *@                                        
                 </div>
                 <div class="contact-page-try-content">
                     <h3>
@@ -662,7 +692,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 100vw;                        
+        width: 100vw;
         transform: translate(-50%, -50%);
     }
 </style>

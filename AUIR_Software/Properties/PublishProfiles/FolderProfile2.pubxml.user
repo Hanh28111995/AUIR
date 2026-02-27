@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2026-02-06T04:53:37.3942890Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Models/ApplicationDbContext.cs">
+      <publishTime>02/22/2026 15:46:28</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

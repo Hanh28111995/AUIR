@@ -110,11 +110,10 @@ C:\Users\gmtra\.nuget\packages\bootstrap.sass\5.3.3\contentFiles\any\any\wwwroot
 wwwroot\asset\css\AUIR_Software.styles.css
 wwwroot\asset\css\AUIR_Software.styles.min.css
 wwwroot\asset\fonts\Sequel\ab80d41fb980ff40273bb0028779b41e.eot
-wwwroot\asset\img\bg\0001.jpg
-wwwroot\asset\img\bg\Project\Acexus.png
-wwwroot\asset\img\bg\Project\FLOORING.jpg
-wwwroot\asset\img\bg\Project\KAVIK.png
-wwwroot\asset\img\bg\Project\LLC.png
+wwwroot\asset\img\bg\0001.webp
+wwwroot\asset\img\bg\Project\Acexus.webp
+wwwroot\asset\img\bg\Project\KAVIK.webp
+wwwroot\asset\img\bg\Project\LLC.webp
 wwwroot\asset\img\color_border.png
 wwwroot\asset\img\icon\AUIR.svg
 wwwroot\asset\img\icon\avatar.svg

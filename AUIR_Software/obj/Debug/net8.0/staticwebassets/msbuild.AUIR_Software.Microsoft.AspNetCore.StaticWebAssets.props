@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ufd26wvo4r</Fingerprint>
-      <Integrity>dhn3X4uXrjjNG0WTaK/bFhKmMBJnzY+ICxFTOkedZsY=</Integrity>
+      <Fingerprint>syjkqofr80</Fingerprint>
+      <Integrity>7PM800rAa46XMVlJKP6eQED4ebKvnb2uBJEZ05CHirI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\css\AUIR_Software.styles.css'))</OriginalItemSpec>
@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>cepedj2mks</Fingerprint>
-      <Integrity>7I4S11cisBDi4EcA8bhHUL8k4rW7yR/trDWGSp9C8lg=</Integrity>
+      <Fingerprint>n3axdz4huh</Fingerprint>
+      <Integrity>Y8rJo2x2DL4comiMGpU0JJQKPbX/q6BdwlKllNVV+AM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\css\AUIR_Software.styles.min.css'))</OriginalItemSpec>
@@ -54,113 +54,77 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\fonts\Sequel\ab80d41fb980ff40273bb0028779b41e.eot'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\0001.jpg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\0001.webp'))">
       <SourceType>Package</SourceType>
       <SourceId>AUIR_Software</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AUIR_Software</BasePath>
-      <RelativePath>asset/img/bg/0001.jpg</RelativePath>
+      <RelativePath>asset/img/bg/0001.webp</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>xh3qncgm2e</Fingerprint>
-      <Integrity>y8R7ELsbVlu8d3eWFQgr5NQwOqnFRzdrxgr6x8IJqsU=</Integrity>
+      <Fingerprint>n6okdqpzdk</Fingerprint>
+      <Integrity>b9xoYNyIuQ1aousG6qHwVYRulW8kgrvedb0UlOptkNk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\0001.jpg'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\0001.webp'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\hero_bg.mp4'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\5e3c9d51-904f-4871-a96f-f87f9744bd9d.webp'))">
       <SourceType>Package</SourceType>
       <SourceId>AUIR_Software</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AUIR_Software</BasePath>
-      <RelativePath>asset/img/bg/hero_bg.mp4</RelativePath>
+      <RelativePath>asset/img/bg/Project/5e3c9d51-904f-4871-a96f-f87f9744bd9d.webp</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>i8rm7gc56s</Fingerprint>
-      <Integrity>niWAFmppr+fpQx4M01+Zzl3418p8bG6R+KLDUMTmTmE=</Integrity>
+      <Fingerprint>z5pbdhn7xm</Fingerprint>
+      <Integrity>J5XRB8eKlqp1fLs/LUIx0Vg9A2oTBNZYzOebo0BFJE8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\hero_bg.mp4'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\5e3c9d51-904f-4871-a96f-f87f9744bd9d.webp'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\Acexus.png'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\6fec5086-c1a0-480e-9b5b-8bd22b15d2c2.webp'))">
       <SourceType>Package</SourceType>
       <SourceId>AUIR_Software</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AUIR_Software</BasePath>
-      <RelativePath>asset/img/bg/Project/Acexus.png</RelativePath>
+      <RelativePath>asset/img/bg/Project/6fec5086-c1a0-480e-9b5b-8bd22b15d2c2.webp</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>scphgcdiza</Fingerprint>
-      <Integrity>ZFWapgLgfDmWsddy+UBGAWlDKiOAMkjh/20QK3UAUgk=</Integrity>
+      <Fingerprint>9wq8mlu1xg</Fingerprint>
+      <Integrity>11tzHOWYDqvV/9ivaxP2dnUyDduEExXRLD/RzgRp6aQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\Acexus.png'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\6fec5086-c1a0-480e-9b5b-8bd22b15d2c2.webp'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\FLOORING.jpg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\e14747b6-9363-4aeb-a3e4-d6128e48930c.webp'))">
       <SourceType>Package</SourceType>
       <SourceId>AUIR_Software</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/AUIR_Software</BasePath>
-      <RelativePath>asset/img/bg/Project/FLOORING.jpg</RelativePath>
+      <RelativePath>asset/img/bg/Project/e14747b6-9363-4aeb-a3e4-d6128e48930c.webp</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>nm5rvb9aue</Fingerprint>
-      <Integrity>P/D+iAx+h9smRm6OEPmB732oy5K/qLq19bF+uhcafwo=</Integrity>
+      <Fingerprint>gv2o900du5</Fingerprint>
+      <Integrity>dPIs9B9ANcr/J9Z5N1bzzxvmTqqeXQHbgMSlE08MPKU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\FLOORING.jpg'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\KAVIK.png'))">
-      <SourceType>Package</SourceType>
-      <SourceId>AUIR_Software</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AUIR_Software</BasePath>
-      <RelativePath>asset/img/bg/Project/KAVIK.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>f92auiank3</Fingerprint>
-      <Integrity>DRDKFHUvZDP7IiupTvw9lQNzFmwuJsC2EXuMGnNznuI=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\KAVIK.png'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\LLC.png'))">
-      <SourceType>Package</SourceType>
-      <SourceId>AUIR_Software</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/AUIR_Software</BasePath>
-      <RelativePath>asset/img/bg/Project/LLC.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>smcjn3ojoh</Fingerprint>
-      <Integrity>TJaQB3vEwZi92MxisyExK26/fIu0ZRAjbUEwkrtau8Y=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\LLC.png'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\bg\Project\e14747b6-9363-4aeb-a3e4-d6128e48930c.webp'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\color_border.png'))">
       <SourceType>Package</SourceType>
@@ -174,8 +138,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>7ijnnpzugb</Fingerprint>
-      <Integrity>f+0ubJql8RclnaRj4CqeKz+j1dCUep+IdVo2X0EI7uY=</Integrity>
+      <Fingerprint>n7a9f1am56</Fingerprint>
+      <Integrity>DTHRCBUtdWKiyqCTb+axQQfzif+K9+WZneKoH0IgqJ8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\img\color_border.png'))</OriginalItemSpec>
@@ -606,8 +570,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>0giqr6n488</Fingerprint>
-      <Integrity>IN1NyAPQjX6OxFX4SaBuSlAO/3gwieoUj4xvFm1h0gw=</Integrity>
+      <Fingerprint>9eu2tl7hvi</Fingerprint>
+      <Integrity>YWd7zGCxOaFNIDtVuhwIQObtWfRs7rvPEBAbQ2yVEeE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\js\main.js'))</OriginalItemSpec>
@@ -624,8 +588,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>8mhyl45itf</Fingerprint>
-      <Integrity>sCIyQ4Gy97cwnfOoTarL3Y2JfdOvQunIwfDpsd8VxQc=</Integrity>
+      <Fingerprint>qz0ptoiu8b</Fingerprint>
+      <Integrity>uvE4bfdrsa+c22mUUVhq3h7k6++H3hWz8pdT+F8ewfo=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\scss\AUIR_Software.styles.scss'))</OriginalItemSpec>

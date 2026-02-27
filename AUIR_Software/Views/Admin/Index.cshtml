@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Quản trị hệ thống";
+}
+
+<div id="main-content">
+    @* Logic đúng: Nếu ĐÃ đăng nhập thành công *@
+    @if (User.Identity?.IsAuthenticated == true)
+    {
+        // Render trực tiếp Dashboard ở đây, không dùng Ajax Get nữa
+        @await Html.PartialAsync("_Dashboard")
+    }
+    else
+    {
+        @* Nếu CHƯA đăng nhập: Nhúng Modal Login vào đây *@
+        @await Html.PartialAsync("_LoginModal")
+
+        <div class="text-center mt-5">
+            <i class="fa-solid fa-lock fa-3x text-secondary mb-3"></i>
+            <h3>Khu vực hạn chế truy cập</h3>
+            <p>Vui lòng đăng nhập để tiếp tục quản trị hệ thống.</p>
+            <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <i class="fa-solid fa-right-to-bracket"></i> Đăng nhập ngay
+            </button>
+        </div>
+    }
+</div>
