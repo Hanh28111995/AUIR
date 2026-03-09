@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>syjkqofr80</Fingerprint>
-      <Integrity>7PM800rAa46XMVlJKP6eQED4ebKvnb2uBJEZ05CHirI=</Integrity>
+      <Fingerprint>k81yiv4b1z</Fingerprint>
+      <Integrity>PJfKEME5lOO16x9ZuIEd8t6LqzB8BwRaZzLJdnvZ79I=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\css\AUIR_Software.styles.css'))</OriginalItemSpec>
@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>n3axdz4huh</Fingerprint>
-      <Integrity>Y8rJo2x2DL4comiMGpU0JJQKPbX/q6BdwlKllNVV+AM=</Integrity>
+      <Fingerprint>y8t639g5oi</Fingerprint>
+      <Integrity>ksBp8zh2389wdHArWjzR8VsYEoZMI6ehJ3b40IGZTps=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\css\AUIR_Software.styles.min.css'))</OriginalItemSpec>
@@ -588,8 +588,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>qz0ptoiu8b</Fingerprint>
-      <Integrity>uvE4bfdrsa+c22mUUVhq3h7k6++H3hWz8pdT+F8ewfo=</Integrity>
+      <Fingerprint>mfwbkjh7xr</Fingerprint>
+      <Integrity>DvernLKD61mcEJ/Xi4+qnZ5WcI7/TD3oxTjYIIj1dEA=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\asset\scss\AUIR_Software.styles.scss'))</OriginalItemSpec>

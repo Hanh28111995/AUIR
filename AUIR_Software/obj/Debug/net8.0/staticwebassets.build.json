@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "osS99npqtzRwCnqHhBQ29KrTZBZeriKfya23Qffp+CQ=",
+  "Hash": "n6OHaKOFhvszSrE3BMT+ZgzE+T7nlj7C56peQlV19TE=",
   "Source": "AUIR_Software",
   "BasePath": "_content/AUIR_Software",
   "Mode": "Default",
@@ -2362,8 +2362,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "syjkqofr80",
-      "Integrity": "7PM800rAa46XMVlJKP6eQED4ebKvnb2uBJEZ05CHirI=",
+      "Fingerprint": "k81yiv4b1z",
+      "Integrity": "PJfKEME5lOO16x9ZuIEd8t6LqzB8BwRaZzLJdnvZ79I=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\asset\\css\\AUIR_Software.styles.css"
@@ -2383,8 +2383,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "n3axdz4huh",
-      "Integrity": "Y8rJo2x2DL4comiMGpU0JJQKPbX/q6BdwlKllNVV+AM=",
+      "Fingerprint": "y8t639g5oi",
+      "Integrity": "ksBp8zh2389wdHArWjzR8VsYEoZMI6ehJ3b40IGZTps=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\asset\\css\\AUIR_Software.styles.min.css"
@@ -3034,8 +3034,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "qz0ptoiu8b",
-      "Integrity": "uvE4bfdrsa+c22mUUVhq3h7k6++H3hWz8pdT+F8ewfo=",
+      "Fingerprint": "mfwbkjh7xr",
+      "Integrity": "DvernLKD61mcEJ/Xi4+qnZ5WcI7/TD3oxTjYIIj1dEA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\asset\\scss\\AUIR_Software.styles.scss"
@@ -5048,7 +5048,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "52443"
+          "Value": "52444"
         },
         {
           "Name": "Content-Type",
@@ -5056,11 +5056,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"7PM800rAa46XMVlJKP6eQED4ebKvnb2uBJEZ05CHirI=\""
+          "Value": "\"PJfKEME5lOO16x9ZuIEd8t6LqzB8BwRaZzLJdnvZ79I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Feb 2026 16:26:11 GMT"
+          "Value": "Fri, 27 Feb 2026 00:31:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5070,7 +5070,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-7PM800rAa46XMVlJKP6eQED4ebKvnb2uBJEZ05CHirI="
+          "Value": "sha256-PJfKEME5lOO16x9ZuIEd8t6LqzB8BwRaZzLJdnvZ79I="
+        }
+      ]
+    },
+    {
+      "Route": "asset/css/AUIR_Software.styles.k81yiv4b1z.css",
+      "AssetFile": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\css\\AUIR_Software.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "52444"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PJfKEME5lOO16x9ZuIEd8t6LqzB8BwRaZzLJdnvZ79I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 27 Feb 2026 00:31:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k81yiv4b1z"
+        },
+        {
+          "Name": "label",
+          "Value": "asset/css/AUIR_Software.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PJfKEME5lOO16x9ZuIEd8t6LqzB8BwRaZzLJdnvZ79I="
         }
       ]
     },
@@ -5085,7 +5130,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "44557"
+          "Value": "44553"
         },
         {
           "Name": "Content-Type",
@@ -5093,11 +5138,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Y8rJo2x2DL4comiMGpU0JJQKPbX/q6BdwlKllNVV+AM=\""
+          "Value": "\"ksBp8zh2389wdHArWjzR8VsYEoZMI6ehJ3b40IGZTps=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Feb 2026 16:26:11 GMT"
+          "Value": "Fri, 27 Feb 2026 00:31:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5107,12 +5152,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Y8rJo2x2DL4comiMGpU0JJQKPbX/q6BdwlKllNVV+AM="
+          "Value": "sha256-ksBp8zh2389wdHArWjzR8VsYEoZMI6ehJ3b40IGZTps="
         }
       ]
     },
     {
-      "Route": "asset/css/AUIR_Software.styles.min.n3axdz4huh.css",
+      "Route": "asset/css/AUIR_Software.styles.min.y8t639g5oi.css",
       "AssetFile": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\css\\AUIR_Software.styles.min.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -5122,7 +5167,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "44557"
+          "Value": "44553"
         },
         {
           "Name": "Content-Type",
@@ -5130,11 +5175,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Y8rJo2x2DL4comiMGpU0JJQKPbX/q6BdwlKllNVV+AM=\""
+          "Value": "\"ksBp8zh2389wdHArWjzR8VsYEoZMI6ehJ3b40IGZTps=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Feb 2026 16:26:11 GMT"
+          "Value": "Fri, 27 Feb 2026 00:31:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5144,7 +5189,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "n3axdz4huh"
+          "Value": "y8t639g5oi"
         },
         {
           "Name": "label",
@@ -5152,52 +5197,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Y8rJo2x2DL4comiMGpU0JJQKPbX/q6BdwlKllNVV+AM="
-        }
-      ]
-    },
-    {
-      "Route": "asset/css/AUIR_Software.styles.syjkqofr80.css",
-      "AssetFile": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\css\\AUIR_Software.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "52443"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7PM800rAa46XMVlJKP6eQED4ebKvnb2uBJEZ05CHirI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 23 Feb 2026 16:26:11 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "syjkqofr80"
-        },
-        {
-          "Name": "label",
-          "Value": "asset/css/AUIR_Software.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-7PM800rAa46XMVlJKP6eQED4ebKvnb2uBJEZ05CHirI="
+          "Value": "sha256-ksBp8zh2389wdHArWjzR8VsYEoZMI6ehJ3b40IGZTps="
         }
       ]
     },
@@ -7662,7 +7662,7 @@
       ]
     },
     {
-      "Route": "asset/scss/AUIR_Software.styles.qz0ptoiu8b.scss",
+      "Route": "asset/scss/AUIR_Software.styles.mfwbkjh7xr.scss",
       "AssetFile": "D:\\Project\\AUIR\\AUIR_Software\\wwwroot\\asset\\scss\\AUIR_Software.styles.scss",
       "Selectors": [],
       "ResponseHeaders": [
@@ -7672,7 +7672,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "57864"
+          "Value": "57877"
         },
         {
           "Name": "Content-Type",
@@ -7680,11 +7680,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uvE4bfdrsa+c22mUUVhq3h7k6++H3hWz8pdT+F8ewfo=\""
+          "Value": "\"DvernLKD61mcEJ/Xi4+qnZ5WcI7/TD3oxTjYIIj1dEA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Feb 2026 16:26:11 GMT"
+          "Value": "Fri, 27 Feb 2026 00:31:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7694,7 +7694,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "qz0ptoiu8b"
+          "Value": "mfwbkjh7xr"
         },
         {
           "Name": "label",
@@ -7702,7 +7702,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-uvE4bfdrsa+c22mUUVhq3h7k6++H3hWz8pdT+F8ewfo="
+          "Value": "sha256-DvernLKD61mcEJ/Xi4+qnZ5WcI7/TD3oxTjYIIj1dEA="
         }
       ]
     },
@@ -7717,7 +7717,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "57864"
+          "Value": "57877"
         },
         {
           "Name": "Content-Type",
@@ -7725,11 +7725,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uvE4bfdrsa+c22mUUVhq3h7k6++H3hWz8pdT+F8ewfo=\""
+          "Value": "\"DvernLKD61mcEJ/Xi4+qnZ5WcI7/TD3oxTjYIIj1dEA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 23 Feb 2026 16:26:11 GMT"
+          "Value": "Fri, 27 Feb 2026 00:31:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7739,7 +7739,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-uvE4bfdrsa+c22mUUVhq3h7k6++H3hWz8pdT+F8ewfo="
+          "Value": "sha256-DvernLKD61mcEJ/Xi4+qnZ5WcI7/TD3oxTjYIIj1dEA="
         }
       ]
     },
