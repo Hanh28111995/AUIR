@@ -1,5 +1,0 @@
-D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\bg\0001.jpg
-D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\bg\Project\Acexus.png
-D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\bg\Project\FLOORING.jpg
-D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\bg\Project\KAVIK.png
-D:\Project\AUIR\AUIR_Software\wwwroot\asset\img\bg\Project\LLC.png
