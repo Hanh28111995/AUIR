@@ -1,4 +1,4 @@
-﻿@using AUIR_Software.Models
+@using AUIR_Software.Models
 @* Không cần khai báo @model vì dùng ViewBag *@
 @{
     var contentList = ViewBag.ContentList as IEnumerable<Content>;
@@ -74,7 +74,7 @@
                                     <div class="col-md-8 col-12 mt-3 mt-md-0">
                                         <h6 class="text-secondary small fw-bold text-uppercase"><i class="bi bi-images"></i> Danh sách Items</h6>
                                         <div class="items-container d-flex flex-wrap gap-3 mt-2">
-                                            @foreach (var subItem in sectionData.List)
+                                            @foreach (var subItem in (sectionData.List ?? Enumerable.Empty<ContentItem>()))
                                             {
                                                 <div class="card item-card shadow-sm border-0 bg-light" style="width: 140px;">
                                                     <img src="@subItem.Image" class="card-img p-1 rounded"
@@ -86,7 +86,7 @@
                                                     </div>
                                                 </div>
                                             }
-                                            @if (!sectionData.List.Any())
+                                            @if (sectionData.List == null || !sectionData.List.Any())
                                             {
                                                 <p class="text-muted small ps-1">Chưa có item nào.</p>
                                             }
@@ -107,14 +107,14 @@
                                         Sửa
                                     </button>
                                     
-                                    <button class="btn btn-sm btn-primary me-2 rounded ms-1" onclick=" deleteContent(@item.Id)">Xóa</button>
+                                    <button class="btn btn-sm btn-outline-danger rounded ms-1" onclick="deleteContent(@item.Id)"><i class="fas fa-trash"></i> Xóa</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 }
             </div>
-            <button type="button" class="btn btn-success shadow-sm ms-auto d-block" data-bs-toggle="modal" data-bs-target="#createContentModal">
+            <button type="button" class="btn btn-success shadow-sm ms-auto d-block" onclick="openContentModalForCreate()">
                 <i class="bi bi-plus-circle me-1"></i> Thêm Content mới
             </button>
         </div>
@@ -123,7 +123,12 @@
     <div class="row">
         <div class="col-lg-5 col-12 mb-2">
             <div class="card border-primary shadow-sm h-100">
-                <div class="card-header bg-primary text-white">Quản trị viên</div>
+                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <span>Quản trị viên</span>
+                    <button type="button" class="btn btn-sm btn-light" onclick="openUserModalForCreate()">
+                        <i class="fas fa-plus"></i> Thêm User
+                    </button>
+                </div>
                 <div class="card-body p-0">
                     <table class="table table-hover mb-0">
                         <thead class="table-light">
@@ -144,9 +149,12 @@
                                     <td>@user.PhoneNumber</td>
                                     <td>@user.Email</td>
                                     <td class="text-end">
-                                        @* Truyền tất cả thông tin vào hàm để hiện lên Modal *@
-                                        <button class="btn btn-sm btn-outline-primary"
-                                                onclick="openUserModal(@user.Id, '@user.Username', '@user.PhoneNumber', '@user.Email' )">
+                                        <button class="btn btn-sm btn-outline-primary" type="button"
+                                                data-id="@user.Id"
+                                                data-username="@(user.Username ?? "")"
+                                                data-phone="@(user.PhoneNumber ?? "")"
+                                                data-email="@(user.Email ?? "")"
+                                                onclick="openUserModal(this)">
                                             <i class="fas fa-edit"></i> Sửa
                                         </button>
                                         <button class="btn btn-sm btn-outline-danger" onclick="deleteUser(@user.Id)">
@@ -182,8 +190,11 @@
                                     <td>@contact.Email</td>
                                     <td class="text-truncate" style="max-width: 150px;">@contact.Message</td>
                                     <td class="text-end">
-                                        <button class="btn btn-sm btn-info text-white" onclick="viewContact(@contact.Id)">
+                                        <button class="btn btn-sm btn-info text-white" type="button" onclick="viewContact(@contact.Id)">
                                             <i class="fas fa-eye"></i> Xem
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" type="button" onclick="deleteContact(@contact.Id)">
+                                            <i class="fas fa-trash"></i> Xóa
                                         </button>
                                     </td>
                                 </tr>
@@ -205,7 +216,7 @@
             </div>
             <div class="modal-body">
                 <form id="userForm">
-                    <input  id="userId" name="Id" value=" ">
+                    <input type="hidden" id="edit-id" name="Id" value="">
 
                     <div class="mb-3">
                         <label class="form-label">Tên đăng nhập</label>
@@ -231,6 +242,22 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary" onclick="saveUser()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="contactDetailModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-info text-white">
+                <h5 class="modal-title" id="contactModalLabel">Chi tiết tin nhắn</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="contactDetailContent">
+                    <p class="text-muted">Đang tải...</p>
+                </div>
             </div>
         </div>
     </div>
@@ -409,7 +436,7 @@
                     </div>
                     <div class="col-md-4">
                         ${imageUrl ? `<img src="${imageUrl}" style="height:30px" class="mb-1 d-block">` : ''}
-                             <input type="file" name=" Image" class="form-control form-control-sm" accept="image/*">
+                        <input type="file" name="Image" class="form-control form-control-sm" accept="image/*">
                     </div>
                     <div class="col-md-1 d-flex align-items-end">
                         <button type="button" class="btn btn-danger btn-sm" onclick="$(this).closest('.item-row').remove()">X</button>
@@ -420,14 +447,24 @@
         $('#itemsContainer').append(html);
     }
 
+        function openContentModalForCreate() {
+        $('#createContentForm')[0].reset();
+        $('#contentId').val('');
+        $('#introContainer').empty();
+        $('#itemsContainer').empty();
+        addIntroRow();
+        addItemRow();
+        $('.modal-title', '#createContentModal').text('Tạo mới Content Section');
+        $('#createContentModal').modal('show');
+    }
+
         function openContentModal(id) {
-        // 1. Dọn dẹp form trước khi nạp dữ liệu mới
         $('#createContentForm')[0].reset();
         $('#introContainer').empty();
         $('#itemsContainer').empty();
-            $('#contentId').val(id);
+        $('#contentId').val(id);
 
-        // 2. Gọi AJAX lấy dữ liệu chi tiết
+        // Gọi AJAX lấy dữ liệu chi tiết
         $.ajax({
              url: '@Url.Action("GetContentById", "Content")',
             type: 'GET',
@@ -435,7 +472,7 @@
             success: function (res) {
                 if (res.success) {
                     const item = res.data;
-                    $('.modal-title').text('Cập nhật: ' + item.sectionName);
+                    $('#createContentModal .modal-title').text('Cập nhật: ' + item.sectionName);
                     $('input[name="sectionName"]').val(item.sectionName);
 
                     
@@ -504,23 +541,43 @@
         }
 
         function deleteUser(id) {
-        if(confirm("Xác nhận xóa tài khoản quản trị này?")) {
-            // $.post('/Admin/DeleteUser', { id: id }, function(res) { ... });
+        if (confirm("Xác nhận xóa tài khoản quản trị này?")) {
+            $.post('/Admin/User/Delete', { id: id }, function(res) {
+                if (res.success) {
+                    alert("Xóa thành công!");
+                    location.reload();
+                } else {
+                    alert("Lỗi: " + (res.message || "Không thể xóa."));
+                }
+            }).fail(function(xhr) {
+                alert("Lỗi kết nối: " + xhr.status);
+            });
         }
     }
 
-        // 1. Hàm mở Modal và đổ dữ liệu
-        function openUserModal(id, username, phone, email) {
-        // Reset form và ẩn các thông báo lỗi nếu có
+        function openUserModal(btn) {
+        var id = btn.getAttribute('data-id') || 0;
+        var username = btn.getAttribute('data-username') || '';
+        var phone = btn.getAttribute('data-phone') || '';
+        var email = btn.getAttribute('data-email') || '';
         $('#userForm')[0].reset();
-
-        // Đổ dữ liệu vào các input
         $('#edit-id').val(id);
         $('#edit-username').val(username);
         $('#edit-phone').val(phone);
         $('#edit-email').val(email);
+        $('#userModalLabel').text(id ? 'Cập nhật người dùng' : 'Thêm người dùng mới');
+        var myModal = new bootstrap.Modal(document.getElementById('userModal'));
+        myModal.show();
+    }
 
-        // Hiển thị Modal
+        function openUserModalForCreate() {
+        $('#userForm')[0].reset();
+        $('#edit-id').val(0);
+        $('#edit-username').val('');
+        $('#edit-phone').val('');
+        $('#edit-email').val('');
+        $('#edit-password').val('');
+        $('#userModalLabel').text('Thêm người dùng mới');
         var myModal = new bootstrap.Modal(document.getElementById('userModal'));
         myModal.show();
     }
@@ -535,17 +592,50 @@
             Password: $('#edit-password').val()
         };
 
-        $.post('/Admin/UpdateUser', formData, function(res) {
+        $.post('/Admin/User/SaveUser', formData, function(res) {
             if (res.success) {
-                alert("Cập nhật thành công!");
-                location.reload(); // Tải lại trang để thấy dữ liệu mới
+                alert("Lưu thành công!");
+                location.reload();
             } else {
                 alert("Lỗi: " + res.message);
             }
+        }).fail(function(xhr) {
+            alert("Lỗi kết nối: " + xhr.status);
         });
-    }   
+    }
 
-    // Hàm gửi dữ liệu lên Controller    
+        function viewContact(id) {
+        $('#contactDetailContent').html('<p class="text-muted">Đang tải...</p>');
+        $('#contactDetailModal').modal('show');
+        $.get('/Admin/Contact/GetDetail', { id: id }, function(res) {
+            if (res.success && res.data) {
+                var c = res.data;
+                var html = '<p><strong>Họ tên:</strong> ' + (c.fullName || '-') + '</p>' +
+                    '<p><strong>Email:</strong> ' + (c.email || '-') + '</p>' +
+                    '<p><strong>Ngày gửi:</strong> ' + (c.createdAt ? new Date(c.createdAt).toLocaleString('vi-VN') : '-') + '</p>' +
+                    '<p><strong>Nội dung:</strong></p><p class="border rounded p-2">' + (c.message || '-') + '</p>';
+                $('#contactDetailContent').html(html);
+            } else {
+                $('#contactDetailContent').html('<p class="text-danger">Không tìm thấy tin nhắn.</p>');
+            }
+        }).fail(function() {
+            $('#contactDetailContent').html('<p class="text-danger">Lỗi tải dữ liệu.</p>');
+        });
+    }
+
+        function deleteContact(id) {
+        if (!confirm("Xác nhận xóa tin nhắn này?")) return;
+        $.post('/Admin/Contact/Delete', { id: id }, function(res) {
+            if (res.success) {
+                alert("Xóa thành công!");
+                location.reload();
+            } else {
+                alert("Lỗi: " + (res.message || "Không thể xóa."));
+            }
+        }).fail(function(xhr) {
+            alert("Lỗi kết nối: " + xhr.status);
+        });
+    }    
 
         function deleteContent(id) {
         if (confirm("Bạn có chắc chắn muốn xóa mục này? Toàn bộ ảnh liên quan cũng sẽ bị xóa vĩnh viễn.")) {

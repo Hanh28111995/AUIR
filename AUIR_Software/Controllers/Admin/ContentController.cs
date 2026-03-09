@@ -1,4 +1,4 @@
-﻿using AUIR_Software.Models;
+using AUIR_Software.Models;
 using AUIR_Software.Services.IServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 namespace AUIR_Software.Controllers.Admin
 {
     [Authorize]
+    [Route("Admin/Content/[action]")]
     public class ContentController : Controller
     {
         private readonly IContentService _contentService;
@@ -17,20 +18,20 @@ namespace AUIR_Software.Controllers.Admin
         }
 
         // 1. THÊM MỚI (Sửa lại để nhận DTO thay vì string)
-        [Route("Admin/Content/[action]")]
+        
         [HttpPost]
         public async Task<IActionResult> Create( ContentCreateDto dto, string sectionName)
         {
             // 1. Kiểm tra sectionName được truyền riêng từ tham số Action
             if (string.IsNullOrEmpty(sectionName))
             {
-                return Json(new { success = false, message = "Tên Section không được để trống!" });
+                return Json(ApiResponse.Fail("Tên Section không được để trống!"));
             }
 
             // 2. Kiểm tra tính hợp lệ của Model (ItemTitles, ItemImages...)
             if (!ModelState.IsValid)
             {
-                return Json(new { success = false, message = "Dữ liệu nhập vào không hợp lệ!" });
+                return Json(ApiResponse.Fail("Dữ liệu nhập vào không hợp lệ!"));
             }
 
             try
@@ -41,20 +42,19 @@ namespace AUIR_Software.Controllers.Admin
 
                 if (result)
                 {
-                    return Json(new { success = true, message = "Thêm mới Section thành công!" });
+                    return Json(ApiResponse.Ok("Thêm mới Section thành công!"));
                 }
 
-                return Json(new { success = false, message = "Section đã tồn tại hoặc lưu thất bại." });
+                return Json(ApiResponse.Fail("Section đã tồn tại hoặc lưu thất bại."));
             }
             catch (Exception ex)
             {
-                return Json(new { success = false, message = "Lỗi hệ thống: " + ex.Message });
+                return Json(ApiResponse.Fail("Lỗi hệ thống: " + ex.Message));
             }
         }
 
         // 2. CẬP NHẬT (Giữ nguyên hoặc tùy biến theo nhu cầu)
-        [HttpPost]
-        [Route("Admin/Content/Update")]
+        [HttpPost]        
         public async Task<IActionResult> Update(int id, string sectionName, string jsonData, List<IFormFile> files)
         {
             try
@@ -62,19 +62,18 @@ namespace AUIR_Software.Controllers.Admin
                 // Giải mã chuỗi JSON từ Client gửi lên thành Object SectionData
                 var newData = JsonConvert.DeserializeObject<SectionData>(jsonData);
 
-                if (newData == null) return Json(new { success = false, message = "Dữ liệu JSON không hợp lệ" });
+                if (newData == null) return Json(ApiResponse.Fail("Dữ liệu JSON không hợp lệ"));
 
                 var result = await _contentService.UpdateContentAsync(id, newData, files, sectionName);
 
-                return Json(new { success = result });
+                return Json(result ? ApiResponse.Ok("Cập nhật thành công!") : ApiResponse.Fail("Cập nhật thất bại."));
             }
             catch (Exception ex)
             {
-                return Json(new { success = false, message = ex.Message });
+                return Json(ApiResponse.Fail(ex.Message));
             }
         }
-
-        [Route("Admin/Content/[action]")]
+        
         [HttpGet]
         public async Task<IActionResult> GetContentById(int id)
         {
@@ -84,26 +83,23 @@ namespace AUIR_Software.Controllers.Admin
 
             var sectionData = JsonConvert.DeserializeObject<SectionData>(content.RawJson);
 
-            return Json(new
+            var data = new
             {
-                success = true,
-                data = new
-                {
-                    id = content.Id,
-                    sectionName = content.SectionName,                    
-                    introduction = sectionData?.Introduce,
-                    list = sectionData?.List
-                }
-            });
+                id = content.Id,
+                sectionName = content.SectionName,
+                introduction = sectionData?.Introduce,
+                list = sectionData?.List
+            };
+
+            return Json(ApiResponse.Ok(null, data));
         }
 
-
-            [Route("Admin/Content/[action]")]
+        
         [HttpPost]
         public async Task<IActionResult> Delete(int ID)
-        {            
+        {
             var result = await _contentService.DeleteContentAsync(ID);
-            return Json(new { success = result });
+            return Json(result ? ApiResponse.Ok("Xóa thành công!") : ApiResponse.Fail("Không thể xóa."));
         }
     }
 }

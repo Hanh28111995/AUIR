@@ -1,10 +1,10 @@
-﻿@using AUIR_Software.Helpers
+@using AUIR_Software.Helpers
 @using Newtonsoft.Json
 @{
     ViewData["Title"] = "Home Page";
 }
 @{
-    var contentList = ViewBag.ContentList as IEnumerable<Content>;
+    var contentList = ViewBag.ContentList as IEnumerable<Content> ?? Enumerable.Empty<Content>();
 }
 
 <div class="box">
@@ -32,6 +32,7 @@
                     if (content.SectionName == "Home")
                     {
                         var data = JsonConvert.DeserializeObject<SectionData>(content.RawJson) ?? new SectionData();
+                        if (data.Introduce == null || data.Introduce.Count == 0) { continue; }
 
                         var item = data.Introduce[0];
                         {
@@ -105,6 +106,7 @@
                     if (content.SectionName == "Home")
                     {
                         var data = JsonConvert.DeserializeObject<SectionData>(content.RawJson) ?? new SectionData();
+                        if (data.Introduce == null || data.Introduce.Count == 0) { continue; }
 
                         var item = data.Introduce[0];
                         @Html.Raw(item.Describe_p)
@@ -268,7 +270,7 @@
 
                                 foreach (var item in data.List)
                                 {
-                                    @if (item.Image.Contains("placehold.co"))
+                                    @if (!string.IsNullOrEmpty(item.Image) && item.Image.Contains("placehold.co"))
                                     {                                        
                                             <div class="list">
                                                 @if (!string.IsNullOrEmpty(item.Title_c))
@@ -650,7 +652,7 @@
                             <div class="col-12 col-md-5 p-0">
                                 <ul class="menu">
                                     <li class="title">CONTACT US</li>
-                                    <li class="list">aiursoftware@gmail.com" <br /> +90 (912) 546 696</li>
+                                    <li class="list">aiursoftware@gmail.com <br /> +90 (912) 546 696</li>
                                     <li class="list">2892 Barnes Street, Orlando, Florida</li>
                                 </ul>
                             </div>
@@ -698,13 +700,14 @@
 </style>
 
 <script>
-    // Tải thư viện API
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    (function () {
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    })();
 
-    var player;
+    let player;
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('video-background', {
             videoId: 'PjAGbUCisvc', // ID video của bạn từ ảnh chụp màn hình
@@ -726,7 +729,7 @@
 
     // Xử lý lặp để tránh nhấp nháy trắng/đen
     function onPlayerStateChange(event) {
-        if (event.data === YT.PlayerState.ENDED) {
+        if (player && event.data === YT.PlayerState.ENDED) {
             player.seekTo(0);
             player.playVideo();
         }

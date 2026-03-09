@@ -1,14 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using AUIR_Software.Models;
 using AUIR_Software.Services.IServices;
 using Microsoft.AspNetCore.Authorization;
 
 namespace AUIR_Software.Controllers.Admin
 {
-    [Authorize] // Bảo mật: Chỉ admin mới được truy cập các hàm này
+    [Authorize]
+    [Route("Admin/User/[action]")]
     public class UserController : Controller
     {
         private readonly IAuthService _authService;
+
+
 
         public UserController(IAuthService authService)
         {
@@ -33,12 +36,12 @@ namespace AUIR_Software.Controllers.Admin
                     result = await _authService.UpdateUserAsync(userModel, Password);
                 }
 
-                if (result) return Json(new { success = true });
-                return Json(new { success = false, message = "Thao tác thất bại từ tầng Service." });
+                if (result) return Json(ApiResponse.Ok());
+                return Json(ApiResponse.Fail("Thao tác thất bại từ tầng Service."));
             }
             catch (Exception ex)
             {
-                return Json(new { success = false, message = ex.Message });
+                return Json(ApiResponse.Fail(ex.Message));
             }
         }
 
@@ -47,7 +50,7 @@ namespace AUIR_Software.Controllers.Admin
         public async Task<IActionResult> Delete(int id)
         {
             var result = await _authService.DeleteUserAsync(id);
-            return Json(new { success = result });
+            return Json(result ? ApiResponse.Ok() : ApiResponse.Fail("Không thể xóa người dùng."));
         }
     }
 }

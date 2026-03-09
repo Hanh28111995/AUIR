@@ -1,4 +1,4 @@
-﻿using ApplicationDbContext.Data;
+using ApplicationDbContext.Data;
 using AUIR_Software.Repositories;
 using AUIR_Software.Services;
 using AUIR_Software.Services.IServices;
@@ -65,6 +65,21 @@ app.Use(async (context, next) =>
 
     await next();
 });
+
+app.MapControllerRoute(
+    name: "admin-user",
+    pattern: "Admin/User/{action=Index}/{id?}",
+    defaults: new { controller = "User" });
+
+app.MapControllerRoute(
+    name: "admin-content",
+    pattern: "Admin/Content/{action=Index}/{id?}",
+    defaults: new { controller = "Content" });
+
+app.MapControllerRoute(
+    name: "admin-contact",
+    pattern: "Admin/Contact/{action=Index}/{id?}",
+    defaults: new { controller = "Contact" });
 
 app.MapControllerRoute(
     name: "admin",
