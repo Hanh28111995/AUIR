@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     indx = targetIndex; var navL = document.querySelector('.nav-item a[href*=' + targetId + ']'); if (navL) { $('.nav-item').removeClass('active'); navL.closest('li').classList.add('active') }
                 }
             })
-        }); $('.back-to-top').on('click', function (e) { e.preventDefault(); $('a[href*="Home"]').get(0).click() }); var OneActionOneScroll = !0; function GoTop() { for (var i = box.length - 1; i >= 0; i--) { box[i].anim = TweenLite.to(box[i], 0.7, { yPercent: i * 100, pause: !0 }) } }
+        }); $('.back-to-top').on('click', function (e) { e.preventDefault(); $('a[href*="Home"]').get(0).click() }); var OneActionOneScroll = !0; function GoTop() { for (var i = 0; i < box.length; i++) { TweenLite.set(box[i], { yPercent: i * 100 }); } }
         function Go(e) {
             if (OneActionOneScroll) {
                 $('.guide-icon').css('opacity', 0);
@@ -46,38 +46,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(function () { OneActionOneScroll = !0 }, 200)
             }
         }
-        function isTouchDevice() { return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) }
         $(function () {
-            if (isTouchDevice()) {
-                $('img, a ').on('dragstart', function (event) { event.preventDefault() }); const THRESHOLD = 60; const target = document; let startY = null; let activePointerId = null; let didCall = !1; function onPointerDown(e) { if (e.pointerType === 'mouse' && e.button !== 0) return; startY = e.clientY; activePointerId = e.pointerId; didCall = !1; if (e.target.setPointerCapture) try { e.target.setPointerCapture(e.pointerId) } catch (_) { } }
-                function onPointerMove(e) { if (startY === null || e.pointerId !== activePointerId) return }
-                function onPointerUp(e) {
-                    if (startY === null || e.pointerId !== activePointerId) return; const dy = e.clientY - startY; if (e.target.releasePointerCapture) try { e.target.releasePointerCapture(e.pointerId) } catch (_) { }
-                    startY = null; activePointerId = null; if (Math.abs(dy) < THRESHOLD) { return }
-                    if (didCall) return; didCall = !0; const dir = dy < 0 ? -1 : 1; if (OneActionOneScroll) {
-                        OneActionOneScroll = !1; var activePage = $(box[indx]).find(".page").attr('id') + "Animation"; var x = eval(activePage)(dir, indx, undefined); if (x === !0) {
-                            if (dir > 0 && indx > 0) {
-                                if (!Anim || !Anim.isActive()) {
-                                    for (var i = 0; i < box.length; i++) { let position = Math.round(getScaleY_FromMatrix($(box[i]).css('transform')) / 100); Anim = TweenLite.to(box[i], 0.7, { yPercent: position * 100 + 100 }) }
-                                    indx--; if (EndAnimateOfPage === !1) EndAnimateOfPage = !0
-                                }
-                            } else if (dir < 0 && indx < box.length - 1) {
-                                if (!Anim || !Anim.isActive()) {
-                                    indx++; for (var i = 0; i < box.length; i++) { let position = Math.round(getScaleY_FromMatrix($(box[i]).css('transform')) / 100); Anim = TweenLite.to(box[i], 0.7, { yPercent: position * 100 - 100 }) }
-                                    if (EndAnimateOfPage === !0) EndAnimateOfPage = !1
-                                }
+            $('img, a ').on('dragstart', function (event) { event.preventDefault() }); const THRESHOLD = 60; const target = document; let startY = null; let activePointerId = null; let didCall = !1; function onPointerDown(e) { if (e.pointerType === 'mouse' && e.button !== 0) return; startY = e.clientY; activePointerId = e.pointerId; didCall = !1; if (e.target.setPointerCapture) try { e.target.setPointerCapture(e.pointerId) } catch (_) { } }
+            function onPointerMove(e) { if (startY === null || e.pointerId !== activePointerId) return }
+            function onPointerUp(e) {
+                if (startY === null || e.pointerId !== activePointerId) return; const dy = e.clientY - startY; if (e.target.releasePointerCapture) try { e.target.releasePointerCapture(e.pointerId) } catch (_) { }
+                startY = null; activePointerId = null; if (Math.abs(dy) < THRESHOLD) { return }
+                if (didCall) return; didCall = !0; const dir = dy < 0 ? -1 : 1; if (OneActionOneScroll) {
+                    OneActionOneScroll = !1; var activePage = $(box[indx]).find(".page").attr('id') + "Animation"; var x = eval(activePage)(dir, indx, undefined); if (x === !0) {
+                        if (dir > 0 && indx > 0) {
+                            if (!Anim || !Anim.isActive()) {
+                                for (var i = 0; i < box.length; i++) { let position = Math.round(getScaleY_FromMatrix($(box[i]).css('transform')) / 100); Anim = TweenLite.to(box[i], 0.7, { yPercent: position * 100 + 100 }) }
+                                indx--; if (EndAnimateOfPage === !1) EndAnimateOfPage = !0
+                            }
+                        } else if (dir < 0 && indx < box.length - 1) {
+                            if (!Anim || !Anim.isActive()) {
+                                indx++; for (var i = 0; i < box.length; i++) { let position = Math.round(getScaleY_FromMatrix($(box[i]).css('transform')) / 100); Anim = TweenLite.to(box[i], 0.7, { yPercent: position * 100 - 100 }) }
+                                if (EndAnimateOfPage === !0) EndAnimateOfPage = !1
                             }
                         }
-                        navLinks.forEach(function (navLink) {
-                            $(navLink).closest('.nav-item').removeClass('active')
-                            if ($(navLink).attr('href').replace('#', '') == $(box[indx]).find(".page").attr('id')) { $(navLink).closest('.nav-item').addClass('active') }
-                        })
-                        setTimeout(function () { OneActionOneScroll = !0 }, 200)
                     }
-                    $('.guide-icon').css('opacity', 0);
+                    navLinks.forEach(function (navLink) {
+                        $(navLink).closest('.nav-item').removeClass('active')
+                        if ($(navLink).attr('href').replace('#', '') == $(box[indx]).find(".page").attr('id')) { $(navLink).closest('.nav-item').addClass('active') }
+                    })
+                    setTimeout(function () { OneActionOneScroll = !0 }, 200)
                 }
-                target.addEventListener('pointerdown', onPointerDown, { passive: !0 }); target.addEventListener('pointermove', onPointerMove, { passive: !0 }); target.addEventListener('pointerup', onPointerUp, { passive: !0 }); target.addEventListener('pointercancel', onPointerUp, { passive: !0 })
+                $('.guide-icon').css('opacity', 0);
             }
+            target.addEventListener('pointerdown', onPointerDown, { passive: !0 }); target.addEventListener('pointermove', onPointerMove, { passive: !0 }); target.addEventListener('pointerup', onPointerUp, { passive: !0 }); target.addEventListener('pointercancel', onPointerUp, { passive: !0 })
         }); document.addEventListener("mousewheel", Go); document.addEventListener("DOMMouseScroll", Go); window.addEventListener("load", GoTop); document.addEventListener("keydown", function (e) { if (OneActionOneScroll) { switch (e.key) { case "ArrowUp": case "PageUp": e.preventDefault(); Go(120); break; case "ArrowDown": case "PageDown": case " ": e.preventDefault(); Go(-120); break } } }); let depth = 0; let item = vScrollList.querySelector('.js-vertical-scroll-list-item'); let items = vScrollList.querySelectorAll('.js-vertical-scroll-list-item'); let itemHeight = parseFloat(getComputedStyle(items[1], null).height.replace("px", "")); $(vScrollList).css('height', itemHeight * 3); $(vScrollList).on('ux.vScrollList.init', function () { items[1].classList.add('is-active'); $(this).trigger('ux.vScrollList.setHeight'); $(this).trigger('ux.vScrollList.onWheel') }).on('ux.vScrollList.setHeight', function () { let itemHeight = parseFloat(getComputedStyle(item, null).height.replace("px", "")); $(this).css('height', "100%") })
         let depthb = 0; let itemb = bScrollList.querySelector('.js-vertical-scroll-list-item'); let itemsb = bScrollList.querySelectorAll('.js-vertical-scroll-list-item'); let itemHeightb = parseFloat(getComputedStyle(itemsb[itemsb.length - 1], null).height.replace("px", "")); $(bScrollList).css('height', '100vh'); $(bScrollList).on('ux.bScrollList.init', function () { $(this).trigger('ux.bScrollList.setHeight'); $(this).trigger('ux.bScrollList.onWheel') }).on('ux.bScrollList.setHeight', function () { let itemHeightb = parseFloat(getComputedStyle(itemb, null).height.replace("px", "")); $(this).css('height', itemHeightb * 1) })
         const HomeAnimation = (direct, indx, nav) => {
