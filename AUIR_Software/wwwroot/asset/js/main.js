@@ -1,4 +1,19 @@
+﻿const isF5Reload = performance.getEntriesByType("navigation")[0].type === 'reload';
 document.addEventListener('DOMContentLoaded', function () {
+    if (isF5Reload) {        
+        setTimeout(() => {
+            // Xóa sạch trạng thái cuộn trong lịch sử trình duyệt (giúp không bị kẹt)
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+
+            // Điều hướng về URL gốc, sạch sẽ, không có hash (#)
+            // Điều này thay thế cho việc click vào nút Home
+            window.location.replace(window.location.origin + window.location.pathname);
+        }, 500);
+
+    } else {    
+
     let HomeAnimationCompleted = !1; let AboutAnimationCompleted1 = !1; let AboutAnimationCompleted2 = !1; let AboutAnimationCompleted3 = !1; let ProAnimationCompleted = !1; let ProjectAnimationCompleted1 = !1; let ProjectAnimationCompleted2 = !1; let ServicesAnimationCompleted = !1; let ContactAnimationCompleted = !1; let EndAnimateOfPage = !1; var OneActionOneScroll = !1; $(function () {
         var box = document.querySelectorAll('.box'), indx = 0, Anim; var numSliders = document.querySelectorAll('.projects-detail-item'), numS = 0; const vScrollList = document.querySelector('.vertical-scroll-list-page .js-vertical-scroll-list'); const bScrollList = document.querySelector('.vertical-scroll-list-more-page .js-vertical-scroll-list'); function getScaleY_FromMatrix(matrix) { let matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(', '); let scaleY = parseFloat(matrixValues[matrixValues.length - 1]); return (scaleY / window.innerHeight) * 100 }
         $('.customer-slider').slick({ dots: !0, infinite: !0, speed: 500, fade: !0, cssEase: 'linear', }); $('.slick-prev').html(`         
@@ -22,7 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     indx = targetIndex; var navL = document.querySelector('.nav-item a[href*=' + targetId + ']'); if (navL) { $('.nav-item').removeClass('active'); navL.closest('li').classList.add('active') }
                 }
             })
-        }); $('.back-to-top').on('click', function (e) { e.preventDefault(); $('a[href*="Home"]').get(0).click() }); var OneActionOneScroll = !0; function GoTop() { for (var i = 0; i < box.length; i++) { TweenLite.set(box[i], { yPercent: i * 100 }); } }
+        }); $('.back-to-top').on('click', function (e) { e.preventDefault(); $('a[href*="Home"]').get(0).click() }); var OneActionOneScroll = !0;
+        function GoTop() {         
+            for (var i = 0; i < box.length; i++) {
+                TweenLite.set(box[i], { yPercent: (i) * 100 });
+            }                     
+        }
         function Go(e) {
             if (OneActionOneScroll) {
                 $('.guide-icon').css('opacity', 0);
@@ -75,7 +95,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 $('.guide-icon').css('opacity', 0);
             }
             target.addEventListener('pointerdown', onPointerDown, { passive: !0 }); target.addEventListener('pointermove', onPointerMove, { passive: !0 }); target.addEventListener('pointerup', onPointerUp, { passive: !0 }); target.addEventListener('pointercancel', onPointerUp, { passive: !0 })
-        }); document.addEventListener("mousewheel", Go); document.addEventListener("DOMMouseScroll", Go); window.addEventListener("load", GoTop); document.addEventListener("keydown", function (e) { if (OneActionOneScroll) { switch (e.key) { case "ArrowUp": case "PageUp": e.preventDefault(); Go(120); break; case "ArrowDown": case "PageDown": case " ": e.preventDefault(); Go(-120); break } } }); let depth = 0; let item = vScrollList.querySelector('.js-vertical-scroll-list-item'); let items = vScrollList.querySelectorAll('.js-vertical-scroll-list-item'); let itemHeight = parseFloat(getComputedStyle(items[1], null).height.replace("px", "")); $(vScrollList).css('height', itemHeight * 3); $(vScrollList).on('ux.vScrollList.init', function () { items[1].classList.add('is-active'); $(this).trigger('ux.vScrollList.setHeight'); $(this).trigger('ux.vScrollList.onWheel') }).on('ux.vScrollList.setHeight', function () { let itemHeight = parseFloat(getComputedStyle(item, null).height.replace("px", "")); $(this).css('height', "100%") })
+        });
+        document.addEventListener("mousewheel", Go); document.addEventListener("DOMMouseScroll", Go); window.addEventListener("load", function () {
+            if (performance.getEntriesByType("navigation")[0].type !== 'reload') {
+                GoTop();
+            }
+        }); document.addEventListener("keydown", function (e) { if (OneActionOneScroll) { switch (e.key) { case "ArrowUp": case "PageUp": e.preventDefault(); Go(120); break; case "ArrowDown": case "PageDown": case " ": e.preventDefault(); Go(-120); break } } }); let depth = 0; let item = vScrollList.querySelector('.js-vertical-scroll-list-item'); let items = vScrollList.querySelectorAll('.js-vertical-scroll-list-item'); let itemHeight = parseFloat(getComputedStyle(items[1], null).height.replace("px", "")); $(vScrollList).css('height', itemHeight * 3); $(vScrollList).on('ux.vScrollList.init', function () { items[1].classList.add('is-active'); $(this).trigger('ux.vScrollList.setHeight'); $(this).trigger('ux.vScrollList.onWheel') }).on('ux.vScrollList.setHeight', function () { let itemHeight = parseFloat(getComputedStyle(item, null).height.replace("px", "")); $(this).css('height', "100%") })
         let depthb = 0; let itemb = bScrollList.querySelector('.js-vertical-scroll-list-item'); let itemsb = bScrollList.querySelectorAll('.js-vertical-scroll-list-item'); let itemHeightb = parseFloat(getComputedStyle(itemsb[itemsb.length - 1], null).height.replace("px", "")); $(bScrollList).css('height', '100vh'); $(bScrollList).on('ux.bScrollList.init', function () { $(this).trigger('ux.bScrollList.setHeight'); $(this).trigger('ux.bScrollList.onWheel') }).on('ux.bScrollList.setHeight', function () { let itemHeightb = parseFloat(getComputedStyle(itemb, null).height.replace("px", "")); $(this).css('height', itemHeightb * 1) })
         const HomeAnimation = (direct, indx, nav) => {
             var tl = new TimelineLite(); if (nav >= 0) { animateBlockDefault(); tl.to(".text-existed", 0, { y: "0%", ease: Power1.easeInOut }).to(".text-removed", 0, { y: "100%", ease: Power1.easeInOut }, 0).to(".text-existed-s", 0, { y: "0%", ease: Power1.easeInOut }, 0).to(".text-removed-s", 0, { y: "0%", ease: Power1.easeInOut }, 0).call(() => { HomeAnimationCompleted = !1 }) }
@@ -227,5 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
             for (let x = 0; x < horizalPieces.length; x++) { slatBlindsReverse(x, checkCallback) }
         }
         function slatBlindsReverse(x, callback) { setTimeout(function () { var tl = new TimelineLite(); gsap.set(".quickflip", { transformStyle: "preserve-3d", transformPerspective: 1000 }); tl.to(horizalPieces[x], { rotationX: 0, duration: 0.5 }).call(() => { if (callback) callback(); }) }, x * animationDuration) }
+        }
     }
-})
+    })
+ 
