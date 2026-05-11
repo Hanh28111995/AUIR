@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AUIR_Software</title>
 
-
     <meta name="description" content="AIUR Software">
-    @*<meta property="og:url" content="https://">*@
     <meta property="og:type" content="website">
     <meta property="og:title" content="AIUR Software , Digital Agency">
     <meta property="og:description" content="AIUR Software , Digital Agency">
-    @*<meta property="og:image" content="https://">*@
 
     <link rel="icon" href="~/asset/img/icon/AUIR-favicon.svg" type="image/svg+xml">
 
@@ -23,10 +18,6 @@
     <link rel="preload" href="~/asset/fonts/space-grotesk-v22-latin/space-grotesk-v22-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="~/asset/fonts/Shatoshi/Satoshi-Regular.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="~/asset/fonts/Sequel/ab80d41fb980ff40273bb0028779b41e.woff2" as="font" type="font/woff2" crossorigin>
-
-    <!-- Fonts được định nghĩa @@font-face local trong site.css -->
-    <!-- Sequel100Black-45: chỉ có trên CDN này -->
-    <!-- <link href="https://db.onlinewebfonts.com/c/ab80d41fb980ff40273bb0028779b41e?family=Sequel100Black-45" rel="stylesheet"> -->
 
     <!-- Critical CSS -->
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
@@ -43,7 +34,7 @@
     </noscript>
 </head>
 <body>
-  
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-transparent">
             <div class="container-fluid align-items-center">
@@ -53,14 +44,15 @@
                         <img class="logo img-fluid" src="./asset/img/item/logo.png" alt="AUIR Software" width="120" height="40" />
                     </picture>
                 </a>
-                <div class=" d-inline-flex justify-content-between ml-auto">
+                <div class="d-inline-flex justify-content-between ml-auto">
                     <ul class="navbar-nav d-flex align-items-center">
                         <li class="nav-item">
                             <a class="btn-chatbox" id="scroll-btn">Let's talk</a>
-                        </li>                        
+                        </li>
                         <li class="nav-item">
-                            <button class="navbar-toggler d-block custom-collapse-btn" type="button" data-toggle="collapse"
-                                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            <button class="navbar-toggler d-block custom-collapse-btn" type="button"
+                                    id="navbarToggler"
+                                    aria-controls="navbarNavDropdown" aria-expanded="false"
                                     aria-label="Toggle navigation">
                                 <img src="./asset/img/icon/collapse-menu.svg" alt="" />
                             </button>
@@ -68,8 +60,9 @@
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <button class="navbar-toggler d-block text-light" type="button" data-toggle="collapse"
-                            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    <button class="navbar-toggler d-block text-light" type="button"
+                            id="navbarCloser"
+                            aria-controls="navbarNavDropdown" aria-expanded="false"
                             aria-label="Toggle navigation">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
                             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
@@ -77,14 +70,14 @@
                     </button>
                     <ul class="navbar-nav" style="height: unset;">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#Home" >Home </a>
+                            <a class="nav-link" href="#Home">Home </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#About">About us </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#Project">Projects </a>
-                        </li>                        
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#Services1">Services </a>
                         </li>
@@ -109,39 +102,19 @@
                     <div class="tag-list">
                         <div class="col-12 d-flex flex-row row p-0">
                             <div class="d-inline-flex justify-content-start">
-                                <div class="tag-list-item">
-                                    <span>
-                                        Linkedin
-                                    </span>
-                                </div>
+                                <div class="tag-list-item"><span>Linkedin</span></div>
                             </div>
                             <div class="d-inline-flex justify-content-start">
-                                <div class="tag-list-item">
-                                    <span>
-                                        Facebook
-                                    </span>
-                                </div>
+                                <div class="tag-list-item"><span>Facebook</span></div>
                             </div>
                             <div class="d-inline-flex justify-content-start">
-                                <div class="tag-list-item">
-                                    <span>
-                                        Youtube
-                                    </span>
-                                </div>
+                                <div class="tag-list-item"><span>Youtube</span></div>
                             </div>
                             <div class="d-inline-flex justify-content-start">
-                                <div class="tag-list-item">
-                                    <span>
-                                        Tiktok
-                                    </span>
-                                </div>
+                                <div class="tag-list-item"><span>Tiktok</span></div>
                             </div>
                             <div class="d-inline-flex justify-content-start">
-                                <div class="tag-list-item">
-                                    <span>
-                                        Instagram
-                                    </span>
-                                </div>
+                                <div class="tag-list-item"><span>Instagram</span></div>
                             </div>
                         </div>
                     </div>
@@ -149,16 +122,37 @@
             </div>
         </nav>
     </header>
+
     @RenderBody()
 
-    <!-- jQuery local -->
+    <!-- jQuery local (không dùng CDN) -->
     <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true" defer></script>
-    <!-- Bootstrap 5 đã bundle sẵn Popper, không cần load Popper riêng -->
-    <script src="~/lib/bootstrap/ver431/js/bootstrap.min.js" asp-append-version="true" defer></script>
     <!-- GSAP local -->
     <script src="~/lib/gsap/gsap.min.js" asp-append-version="true" defer></script>
     <script src="~/lib/slick/slick.min.js" asp-append-version="true" defer></script>
     <script src="~/asset/js/main.min.js" asp-append-version="true" defer></script>
+
+    <!-- Vanilla JS navbar toggle (không cần Bootstrap JS) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var toggler = document.getElementById('navbarToggler');
+            var closer = document.getElementById('navbarCloser');
+            var menu = document.getElementById('navbarNavDropdown');
+            if (toggler && menu) {
+                toggler.addEventListener('click', function () {
+                    menu.classList.toggle('show');
+                    var expanded = menu.classList.contains('show');
+                    toggler.setAttribute('aria-expanded', expanded);
+                });
+            }
+            if (closer && menu) {
+                closer.addEventListener('click', function () {
+                    menu.classList.remove('show');
+                    if (toggler) toggler.setAttribute('aria-expanded', 'false');
+                });
+            }
+        });
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

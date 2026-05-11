@@ -2,6 +2,7 @@
 @using Newtonsoft.Json
 @{
     ViewData["Title"] = "Home Page";
+    Layout = "_LayoutHome";
 }
 @{
     var contentList = ViewBag.ContentList as IEnumerable<Content> ?? Enumerable.Empty<Content>();
@@ -64,7 +65,7 @@
                         }
 
                         <div class="title-3">
-                            <img src="./asset/img/icon/li-icon.png" alt="AIUR Software" class="img-fluid" />
+                            <img src="./asset/img/icon/li-icon.png" alt="AIUR Software" class="img-fluid" width="80" height="40" />
                             <div class="wrap-limit-p">                                
                                 @for (int i = 1 ; i < data.Introduce.Count(); i++){
                                     if (!string.IsNullOrEmpty(data.Introduce[i].Title_p))                                        
@@ -94,7 +95,10 @@
             </div>
 
             <div id="video-background-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; overflow: hidden; background-color: #000;">
-                <div id="video-background"></div>
+                <video autoplay muted loop playsinline preload="auto" style="width: 100%; height: 100%; object-fit: cover; outline: none; border: none;">
+                    <source src="~/asset/img/homeBgVideo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
 
         </section>
@@ -125,7 +129,10 @@
         <section class="about-page page" id="About">
             <div class="about-bg">
                 <div class="bg-img">
-                    <img class="mx-auto" src="./asset/img/item/curve text.png" />
+                    <picture>
+                        <source srcset="./asset/img/item/curve text.webp" type="image/webp">
+                        <img class="mx-auto" src="./asset/img/item/curve text.png" alt="" width="600" height="600" loading="lazy" />
+                    </picture>
                 </div>
                 <div class="about-content">
                     <h1 class="img-ct">AIUR</h1>
@@ -142,8 +149,8 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="./asset/img/item/Laptop.png" alt="" class="img-right" />
-                    <img src="./asset/img/item/Phone.png" alt="" class="img-left" />
+                    <img src="./asset/img/item/Laptop.webp" alt="Laptop mockup" class="img-right" width="600" height="400" loading="lazy" />
+                    <img src="./asset/img/item/Phone.webp" alt="Phone mockup" class="img-left" width="300" height="500" loading="lazy" />
                 </div>
             </div>
         </section>
@@ -189,11 +196,17 @@
 
             <div class="projects-title col-12 row">
                 <div class="col-12 col-lg-7  content-left">
-                    <img src="./asset/img/item/32.png" alt="" class="img-fluid mx-auto" />
+                    <picture>
+                        <source srcset="./asset/img/item/32.webp" type="image/webp">
+                        <img src="./asset/img/item/32.png" alt="32 completed projects" class="img-fluid mx-auto" width="740" height="200" loading="lazy" />
+                    </picture>
                     <h5>Completed <span>projects</span></h5>
                 </div>
                 <div class="col-12 col-lg-5  content-right">
-                    <img src="./asset/img/item/12.png" alt="" class="img-fluid mx-auto" />
+                    <picture>
+                        <source srcset="./asset/img/item/12.webp" type="image/webp">
+                        <img src="./asset/img/item/12.png" alt="12 years of experience" class="img-fluid mx-auto" width="424" height="200" loading="lazy" />
+                    </picture>
                     <h5>Years of experience</h5>
                 </div>
             </div>
@@ -596,7 +609,7 @@
 
             <div class="contact-page-try page">
                 <div class="vid-wrapper">
-                    <img src="./asset/img/bg/0001.webp" />
+                    <img src="./asset/img/bg/0001.webp" alt="Let's work together" width="1200" height="800" loading="lazy" />
                     @* <source src="./asset/img/bg/hero_bg.mp4" type="video/mp4"> *@                                        
                 </div>
                 <div class="contact-page-try-content">
@@ -604,7 +617,7 @@
                         Let’s work together
                     </h3>
                     <button class="btn-content">
-                        <img src="./asset/img/icon/Union.svg" alt="">
+                        <img src="./asset/img/icon/Union.svg" alt="" width="24" height="24" loading="lazy">
                         <span>Start a project with us</span>
                     </button>
                 </div>
@@ -627,12 +640,12 @@
                     <div class="part-2 col-2">
                         <div class="list-item">
                             <ul>
-                                <li><img src="./asset/img/icon/linkedin.svg" alt="" /></li>
-                                <li><img src="./asset/img/icon/facebook.svg" alt="" /></li>
-                                <li><img src="./asset/img/icon/instagram.svg" alt="" /></li>
-                                <li><img src="./asset/img/icon/twitter.svg" alt="" /></li>
-                                <li><img src="./asset/img/icon/tiktok.svg" alt="" /></li>
-                                <li><img src="./asset/img/icon/youtube.svg" alt="" /></li>
+                                <li><img src="./asset/img/icon/linkedin.svg" alt="LinkedIn" width="24" height="24" loading="lazy" /></li>
+                                <li><img src="./asset/img/icon/facebook.svg" alt="Facebook" width="24" height="24" loading="lazy" /></li>
+                                <li><img src="./asset/img/icon/instagram.svg" alt="Instagram" width="24" height="24" loading="lazy" /></li>
+                                <li><img src="./asset/img/icon/twitter.svg" alt="Twitter" width="24" height="24" loading="lazy" /></li>
+                                <li><img src="./asset/img/icon/tiktok.svg" alt="TikTok" width="24" height="24" loading="lazy" /></li>
+                                <li><img src="./asset/img/icon/youtube.svg" alt="YouTube" width="24" height="24" loading="lazy" /></li>
                             </ul>
                         </div>
                     </div>
@@ -665,8 +678,8 @@
                             </div>
                             <div class="col-12 col-md-2 p-0" style="position: unset">
                                 <div class="back-to-top">
-                                    <img src="./asset/img/item/BACK TO THE TOP.png" alt="" />
-                                    <img src="./asset/img/item/Arrow.png" alt="" />
+                                    <img src="./asset/img/item/BACK TO THE TOP.png" alt="Back to top" width="120" height="120" loading="lazy" />
+                                    <img src="./asset/img/item/Arrow.png" alt="" width="40" height="40" loading="lazy" />
                                 </div>
                             </div>
                         </div>
@@ -675,7 +688,7 @@
                 <div class="row">
                     <div class="footer-signature">
                         <div class="d-flex align-items-center">
-                            <img src="./asset/img/icon/Group.svg" alt="" />
+                            <img src="./asset/img/icon/Group.svg" alt="AIUR Software logo" width="32" height="32" loading="lazy" />
                             <span>AIUR Software</span>
                         </div>
                         <div class="d-flex">
@@ -698,40 +711,3 @@
         transform: translate(-50%, -50%);
     }
 </style>
-
-<script>
-    (function () {
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    })();
-
-    let player;
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('video-background', {
-            videoId: 'PjAGbUCisvc', // ID video của bạn từ ảnh chụp màn hình
-            playerVars: {
-                'autoplay': 1,
-                'mute': 1,
-                'controls': 0,
-                'modestbranding': 1,
-                'rel': 0,
-                'iv_load_policy': 3,
-                'autohide': 1
-            },
-            events: {
-                'onReady': function(e) { e.target.playVideo(); },
-                'onStateChange': onPlayerStateChange
-            }
-        });
-    }
-
-    // Xử lý lặp để tránh nhấp nháy trắng/đen
-    function onPlayerStateChange(event) {
-        if (player && event.data === YT.PlayerState.ENDED) {
-            player.seekTo(0);
-            player.playVideo();
-        }
-    }
-</script>

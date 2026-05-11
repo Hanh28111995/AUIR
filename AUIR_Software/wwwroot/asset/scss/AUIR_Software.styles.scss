@@ -1,4 +1,6 @@
-﻿.guide-icon {
+@import 'variables';
+
+.guide-icon {
     position: absolute;
     bottom: 6rem;
     right: 6rem;
@@ -140,7 +142,7 @@ body #last-item .projects-detail-item-content .list {
 }
 
 body #last-item .projects-detail-item-content .list h3 {
-    font-family: "Satoshi",sans-serif;
+    font-family: $font-satoshi;
     font-size: 65px;
     font-weight: 500;
     line-height: 1.1;
@@ -150,7 +152,7 @@ body #last-item .projects-detail-item-content .list h3 {
 }
 
 body #last-item .projects-detail-item-content .list p {
-    font-family: "Satoshi",sans-serif;
+    font-family: $font-satoshi;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.4
@@ -165,7 +167,7 @@ body #last-item .projects-detail-item-content .list .describe-list .describe-lis
     border: 1px solid #fff;
     border-radius: 22px;
     padding: 10px 12px;
-    font-family: "Space Grotesk";
+    font-family: $font-space-grotesk;
     font-size: 12px;
     line-height: 1.2;
     font-weight: 500;
@@ -201,7 +203,7 @@ body .about-running-text div {
 }
 
 body .about-running-text div .marquee__line {
-    font-family: "Space Grotesk";
+    font-family: $font-space-grotesk;
     font-weight: 300;
     font-size: 18px;
     float: left;
@@ -268,7 +270,7 @@ body #navbarNavDropdown ul .nav-item {
 }
 
 body #navbarNavDropdown ul .nav-item .nav-link {
-    font-family: "Space Grotesk",sans-serif;
+    font-family: $font-space-grotesk;
     color: #fff;
     font-size: 42px;
     font-weight: 500;
@@ -328,7 +330,7 @@ body #navbarNavDropdown .tag-list .tag-list-item {
 }
 
 body #navbarNavDropdown .tag-list .tag-list-item span {
-    font-family: "Space Grotesk";
+    font-family: $font-space-grotesk;
     font-size: 12px;
     font-weight: 500;
     line-height: 1.2;
@@ -362,7 +364,7 @@ body header .navbar .navbar-nav .nav-item .btn-chatbox {
     padding: 11px 28px;
     border: 1.48px solid #fff0;
     position: relative;
-    font-family: "Space Grotesk",sans-serif;
+    font-family: $font-space-grotesk;
     font-weight: 700;
     font-size: 20px;
     line-height: 1.2
@@ -477,7 +479,7 @@ body .home-page .home-page-content .wrap-limit-p i {
 
 body .home-page .home-page-content .wrap-limit-p h1 {
     position: relative;
-    font-family: "Sequel100Black-45";
+    font-family: $font-sequel;
     font-size: 185px;
     line-height: 1;
     font-weight: 400;
@@ -525,7 +527,7 @@ body .home-page .home-page-content .wrap-limit-p:nth-of-type(2) h1 span {
 body .home-page .home-page-content .title-3 {
     position: absolute;
     bottom: 70px;
-    font-family: "Space Grotesk",sans-serif;
+    font-family: $font-space-grotesk;
     font-size: 20px;
     font-weight: 400;
     font-style: normal;
@@ -573,7 +575,7 @@ body .home-page-expand .home-page-expand-content {
 }
 
 body .home-page-expand .home-page-expand-content p {
-    font-family: "Space Grotesk";
+    font-family: $font-space-grotesk;
     font-size: 42px;
     font-weight: 400;
     line-height: 1.2;
@@ -620,7 +622,7 @@ body .about-page .about-bg .about-content {
 }
 
 body .about-page .about-bg .about-content > h1 {
-    font-family: "Sequel100Black-45";
+    font-family: $font-sequel;
     position: relative;
     font-size: 463px;
     font-weight: 400;
@@ -645,7 +647,7 @@ body .about-page .about-bg .about-content .hor-wrap {
 }
 
 body .about-page .about-bg .about-content .hor-wrap p {
-    font-family: "Space Grotesk";
+    font-family: $font-space-grotesk;
     font-weight: 400;
     font-size: 44px;
     text-align: center;
@@ -717,7 +719,7 @@ body .pr-title-page .about-page-expand .about-page-expand-content {
 }
 
 body .pr-title-page .about-page-expand .about-page-expand-content p {
-    font-family: "Space Grotesk";
+    font-family: $font-space-grotesk;
     font-size: 42px;
     font-weight: 400;
     line-height: 1.2;
@@ -739,7 +741,7 @@ body .pr-title-page .about-page-expand .about-content-text {
 
 body .pr-title-page .about-page-expand .about-content-text p:first-child {
     display: flex;
-    font-family: "Satoshi",sans-serif;
+    font-family: $font-satoshi;
     font-size: 24px;
     font-weight: 700;
     line-height: 1.2;
@@ -750,7 +752,7 @@ body .pr-title-page .about-page-expand .about-content-text p:first-child {
 
 body .pr-title-page .about-page-expand .about-content-text p:last-child {
     display: flex;
-    font-family: "Space Grotesk";
+    font-family: $font-space-grotesk;
     font-size: 24px;
     font-weight: 400;
     line-height: 1.3;
@@ -779,7 +781,7 @@ body .pr-title-page .projects-title .content-left img {
 
 body .pr-title-page .projects-title .content-left h5 {
     color: #FDBB4F;
-    font-family: "Space Grotesk";
+    font-family: $font-space-grotesk;
     font-size: 32px;
     font-weight: 400;
     line-height: 1.4;
@@ -805,7 +807,7 @@ body .pr-title-page .projects-title .content-right img {
 
 body .pr-title-page .projects-title .content-right h5 {
     color: #AFAEAB;
-    font-family: "Space Grotesk";
+    font-family: $font-space-grotesk;
     font-size: 32px;
     font-weight: 400;
     line-height: 1.4;
@@ -831,14 +833,14 @@ body .projects-page .service-page .service-title {
 }
 
 body .projects-page .service-page .service-title h5 {
-    font-family: "Satoshi",sans-serif;
+    font-family: $font-satoshi;
     font-weight: 700;
     font-size: 22px;
     line-height: 1.4
 }
 
 body .projects-page .service-page .service-title h3 {
-    font-family: "Satoshi",sans-serif;
+    font-family: $font-satoshi;
     font-weight: 400;
     font-size: 55px;
     line-height: 1.2
@@ -874,7 +876,7 @@ body .projects-page .projects-detail .projects-detail-item .projects-detail-item
 }
 
 body .projects-page .projects-detail .projects-detail-item .projects-detail-item-content h3 {
-    font-family: "Satoshi",sans-serif;
+    font-family: $font-satoshi;
     font-size: 92px;
     font-weight: 500;
     line-height: 1.1;
@@ -884,7 +886,7 @@ body .projects-page .projects-detail .projects-detail-item .projects-detail-item
 }
 
 body .projects-page .projects-detail .projects-detail-item .projects-detail-item-content p {
-    font-family: "Satoshi",sans-serif;
+    font-family: $font-satoshi;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.4
@@ -899,7 +901,7 @@ body .projects-page .projects-detail .projects-detail-item .projects-detail-item
     border: 1px solid #fff;
     border-radius: 22px;
     padding: 10px 12px;
-    font-family: "Space Grotesk";
+    font-family: $font-space-grotesk;
     font-size: 12px;
     line-height: 1.2;
     font-weight: 500;
@@ -931,7 +933,7 @@ body .projects-page .projects-detail .projects-detail-item .see-all-projects {
 
 body .projects-page .projects-detail .projects-detail-item .see-all-projects a {
     text-decoration: none;
-    font-family: "Satoshi",sans-serif;
+    font-family: $font-satoshi;
     font-size: 72px;
     font-weight: 500;
     line-height: 1.4;
@@ -969,7 +971,7 @@ body .contact-page .contact-page-form {
 
 body .contact-page .contact-page-form .contact-content {
     color: #FFFEFC;
-    font-family: "Space Grotesk";
+    font-family: $font-space-grotesk;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1206,7 +1208,7 @@ body .contact-page .contact-page-try .contact-page-try-content {
 }
 
 body .contact-page .contact-page-try .contact-page-try-content h3 {
-    font-family: "Space Grotesk",sans-serif;
+    font-family: $font-space-grotesk;
     font-weight: 500;
     font-size: 92px;
     line-height: 1.2
@@ -1252,7 +1254,7 @@ body .contact-page .contact-page-try .contact-page-try-content button:after {
 
 body .contact-page .contact-page-try .contact-page-try-content button span {
     margin-left: 12px;
-    font-family: "Space Grotesk",sans-serif;
+    font-family: $font-space-grotesk;
     font-weight: 700;
     font-size: 27px;
     line-height: 1.2;
@@ -1282,7 +1284,7 @@ body .footer-page .footer-content > .row:first-of-type .part-1 {
 
 body .footer-page .footer-content > .row:first-of-type .part-1 h2 {
     color: #6B6A69;
-    font-family: "Sequel100Black-45";
+    font-family: $font-sequel;
     font-size: 144px;
     line-height: 1.2;
     font-weight: 400;
@@ -1333,7 +1335,7 @@ body .footer-page .footer-content > .row:nth-of-type(2) .part-3 {
 }
 
 body .footer-page .footer-content > .row:nth-of-type(2) .part-3 label {
-    font-family: "Space Grotesk",sans-serif;
+    font-family: $font-space-grotesk;
     font-weight: 400;
     font-size: 20px;
     line-height: 1.2;
@@ -1348,7 +1350,7 @@ body .footer-page .footer-content > .row:nth-of-type(2) .part-3 .mail-footer {
 }
 
 body .footer-page .footer-content > .row:nth-of-type(2) .part-3 .mail-footer input {
-    font-family: "Space Grotesk",sans-serif;
+    font-family: $font-space-grotesk;
     font-weight: 400;
     font-size: 20px;
     line-height: 1.2;
@@ -1406,7 +1408,7 @@ body .footer-page .footer-content > .row:nth-of-type(2) .part-3 .menu {
 }
 
 body .footer-page .footer-content > .row:nth-of-type(2) .part-3 .menu .title {
-    font-family: "Space Grotesk",sans-serif;
+    font-family: $font-space-grotesk;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.2;
@@ -1415,7 +1417,7 @@ body .footer-page .footer-content > .row:nth-of-type(2) .part-3 .menu .title {
 }
 
 body .footer-page .footer-content > .row:nth-of-type(2) .part-3 .menu .list {
-    font-family: "Space Grotesk",sans-serif;
+    font-family: $font-space-grotesk;
     font-weight: 400;
     font-size: 20px;
     line-height: 1.5;
@@ -1460,7 +1462,7 @@ body .footer-page .footer-content > .row:nth-of-type(3) .footer-signature {
 }
 
 body .footer-page .footer-content > .row:nth-of-type(3) .footer-signature span {
-    font-family: "Space Grotesk",sans-serif;
+    font-family: $font-space-grotesk;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.2;
@@ -1494,7 +1496,7 @@ body .vertical-scroll-list-page .js-vertical-scroll-list ul {
 }
 
 body .vertical-scroll-list-page .js-vertical-scroll-list ul li {
-    font-family: "Space Grotesk",sans-serif;
+    font-family: $font-space-grotesk;
     font-weight: 500;
     font-size: 92px;
     color: #AFAEAB;
@@ -1520,7 +1522,7 @@ body .wrapper-title .list-title {
 }
 
 body .wrapper-title .list-title h5 {
-    font-family: "Satoshi",sans-serif;
+    font-family: $font-satoshi;
     font-weight: 500;
     font-size: 33px;
     line-height: 1.4;
@@ -1528,7 +1530,7 @@ body .wrapper-title .list-title h5 {
 }
 
 body .wrapper-title .list-title h3 {
-    font-family: "Satoshi",sans-serif;
+    font-family: $font-satoshi;
     font-weight: 700;
     font-size: 80px;
     line-height: 1.2
@@ -1561,7 +1563,7 @@ body .vertical-scroll-list-more-page .js-vertical-scroll-list ul {
 }
 
 body .vertical-scroll-list-more-page .js-vertical-scroll-list ul li {
-    font-family: "Space Grotesk",sans-serif;
+    font-family: $font-space-grotesk;
     display: flex;
     align-items: baseline;
     justify-content: center;
@@ -2252,7 +2254,7 @@ body .vertical-scroll-list-more-page .js-vertical-scroll-list ul li .item-conten
             transform: translateY(-5px);
             box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
         }
-        /* Tối ưu hóa cho Mobile < 500px */
+        /* T?i uu h�a cho Mobile < 500px */
         @media (max-width: 500px) {
             table {       
                 tbody, td, tfoot, th, thead, tr {
@@ -2284,12 +2286,12 @@ body .vertical-scroll-list-more-page .js-vertical-scroll-list ul li .item-conten
                 font-size: 1.4rem;
                 text-align: center;
             }
-            /* Nút Add Content rộng 100% */
+            /* N�t Add Content r?ng 100% */
             .btn-success {
                 width: 100%;
                 margin-bottom: 20px;
             }
-            /* Card Header xếp dọc */
+            /* Card Header x?p d?c */
             .card-header {
                 flex-direction: column;
 
@@ -2308,7 +2310,7 @@ body .vertical-scroll-list-more-page .js-vertical-scroll-list ul li .item-conten
                     gap: 5px;
                 }
             }
-            /* Danh sách Item: Chia 2 cột thay vì xếp tràn */
+            /* Danh s�ch Item: Chia 2 c?t thay v� x?p tr�n */
             .items-container {
                 display: grid !important;
                 grid-template-columns: repeat(2, 1fr);
@@ -2323,7 +2325,7 @@ body .vertical-scroll-list-more-page .js-vertical-scroll-list ul li .item-conten
             .item-card img {
                 height: 80px !important;
             }
-            /* Border ngăn cách các phần trên mobile */
+            /* Border ngan c�ch c�c ph?n tr�n mobile */
             .border-end {
                 border-block-end: none !important;
                 border-bottom: 1px solid #dee2e6;

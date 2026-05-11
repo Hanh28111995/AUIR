@@ -39,7 +39,30 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+
+// Cache static files: 1 năm cho fonts/images, 1 tuần cho CSS/JS
+// asp-append-version="true" trong layout đảm bảo cache busting tự động
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = ctx =>
+    {
+        var path = ctx.File.Name;
+        var headers = ctx.Context.Response.Headers;
+
+        if (path.EndsWith(".woff2") || path.EndsWith(".woff") || path.EndsWith(".eot") ||
+            path.EndsWith(".png") || path.EndsWith(".jpg") || path.EndsWith(".webp") ||
+            path.EndsWith(".svg") || path.EndsWith(".ico"))
+        {
+            // Fonts và images: cache 1 năm
+            headers["Cache-Control"] = "public, max-age=31536000, immutable";
+        }
+        else if (path.EndsWith(".css") || path.EndsWith(".js"))
+        {
+            // CSS/JS: cache 7 ngày (có cache busting qua asp-append-version)
+            headers["Cache-Control"] = "public, max-age=604800";
+        }
+    }
+});
 
 app.UseRouting();
 

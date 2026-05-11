@@ -1,0 +1,31 @@
+[
+  {
+    "outputFileName": "wwwroot/asset/css/AUIR_Software.styles.min.css",
+    "inputFiles": [
+      "wwwroot/asset/css/AUIR_Software.styles.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/asset/js/main.min.js",
+    "inputFiles": [
+      "wwwroot/asset/js/main.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": false
+    }
+  }
+]

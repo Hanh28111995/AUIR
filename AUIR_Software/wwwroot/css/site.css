@@ -2,6 +2,7 @@
     font-family: 'Satoshi';
     font-style: normal;
     font-weight: 400;
+    font-display: block;
     src: local('Satoshi'), url('../asset/fonts/Shatoshi/Satoshi-Regular.woff') format('woff');
 }
 
@@ -9,39 +10,95 @@
     font-family: 'Satoshi';
     font-style: normal;
     font-weight: 300;
+    font-display: block;
     src: local('Satoshi'), url('../asset/fonts/Shatoshi/Satoshi-Light.woff') format('woff');
 }
-
 
 @font-face {
     font-family: 'Satoshi';
     font-style: normal;
     font-weight: 500;
+    font-display: block;
     src: local('Satoshi'), url('../asset/fonts/Shatoshi/Satoshi-Medium.woff') format('woff');
 }
-
 
 @font-face {
     font-family: 'Satoshi';
     font-style: normal;
     font-weight: 700;
+    font-display: block;
     src: local('Satoshi'), url('../asset/fonts/Shatoshi/Satoshi-Bold.woff') format('woff');
 }
-
 
 @font-face {
     font-family: 'Satoshi';
     font-style: normal;
     font-weight: 900;
+    font-display: block;
     src: local('Satoshi'), url('../asset/fonts/Shatoshi/Satoshi-Black.woff') format('woff');
 }
 
 
 @font-face {
     font-family: "Sequel100Black-45";
-    src: url("../asset/fonts/Sequel/ab80d41fb980ff40273bb0028779b41e.eot");    
+    font-display: block;
+    src: url("../asset/fonts/Sequel/ab80d41fb980ff40273bb0028779b41e.eot");
+    src: url("../asset/fonts/Sequel/ab80d41fb980ff40273bb0028779b41e.woff2") format("woff2"),
+         url("../asset/fonts/Sequel/ab80d41fb980ff40273bb0028779b41e.woff") format("woff"),
+         url("../asset/fonts/Sequel/ab80d41fb980ff40273bb0028779b41e.eot?#iefix") format("embedded-opentype");
 }
 
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 300;
+    font-display: block;
+    src: url('../asset/fonts/space-grotesk-v22-latin/space-grotesk-v22-latin-300.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('../asset/fonts/space-grotesk-v22-latin/space-grotesk-v22-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-display: block;
+    src: url('../asset/fonts/space-grotesk-v22-latin/space-grotesk-v22-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    font-display: block;
+    src: url('../asset/fonts/space-grotesk-v22-latin/space-grotesk-v22-latin-700.woff2') format('woff2');
+}
+
+
+/* Fallback font metrics để giảm CLS khi font swap */
+@font-face {
+    font-family: 'Space Grotesk Fallback';
+    src: local('Arial');
+    size-adjust: 95%;
+    ascent-override: 95%;
+    descent-override: 25%;
+    line-gap-override: 0%;
+}
+
+@font-face {
+    font-family: 'Satoshi Fallback';
+    src: local('Arial');
+    size-adjust: 97%;
+    ascent-override: 93%;
+    descent-override: 24%;
+    line-gap-override: 0%;
+}
 
 html {
     font-size: 14px;
