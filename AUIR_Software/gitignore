@@ -39,3 +39,4 @@ wwwroot/lib/
 
 # publish
 publish/
+.env

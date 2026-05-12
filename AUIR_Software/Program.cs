@@ -4,6 +4,9 @@ using AUIR_Software.Services;
 using AUIR_Software.Services.IServices;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using DotNetEnv;
+
+Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +19,6 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<ContactRepository>();
 builder.Services.AddScoped<ContentRepository>();
-builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IContentService, ContentService>();
