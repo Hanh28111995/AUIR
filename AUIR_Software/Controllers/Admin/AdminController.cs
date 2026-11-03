@@ -25,8 +25,22 @@ namespace AUIR_Software.Controllers.Admin
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-           await GetDashboardData();
-           return View();
+            try
+            {
+                var users = await _authService.GetAllUsersAsync();
+                var contacts = await _contactService.GetAllContactsAsync();
+                var contents = await _contentService.GetAllContentsAsync();
+
+                ViewBag.UserList = users;
+                ViewBag.ContactList = contacts;
+                ViewBag.ContentList = contents;
+
+                return View();
+            }
+            catch (Exception)
+            {                
+                return StatusCode(500, "Lỗi khi tải dữ liệu hệ thống");
+            }            
         }
 
         // 2. TRANG ĐĂNG NHẬP (Dùng nếu bạn muốn trang riêng, nếu dùng Modal thì có thể bỏ qua)
@@ -62,28 +76,6 @@ namespace AUIR_Software.Controllers.Admin
             return Json(new { success = true });
         }
 
-        // 5. LẤY DỮ LIỆU DASHBOARD (API Bảo mật cao)
-        [Authorize] // CHỈ hàm này mới thực sự chặn để bảo vệ dữ liệu
-        [HttpGet]
-        public async Task<IActionResult> GetDashboardData()
-        {
-            try
-            {
-                var users = await _authService.GetAllUsersAsync();
-                var contacts = await _contactService.GetAllContactsAsync();
-                var contents = await _contentService.GetAllContentsAsync();
-
-                ViewBag.UserList = users;
-                ViewBag.ContactList = contacts;
-                ViewBag.ContentList = contents;
-
-                return PartialView("_DashboardData");
-            }
-            catch (Exception)
-            {
-                // Nên log lỗi ex ở đây nếu cần
-                return StatusCode(500, "Lỗi khi tải dữ liệu hệ thống");
-            }
-        }
+      
     }
 }

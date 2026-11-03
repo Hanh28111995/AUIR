@@ -1,7 +1,29 @@
 version: '3.9'
+
 services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant
+
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+
+    volumes:
+      - qdrant_data:/qdrant/storage
+
   auir_software:
     build: .
     container_name: auir_software
+
     ports:
       - "8080:8080"
+
+    env_file:
+      - .env
+ 
+    depends_on:
+      - qdrant
+
+volumes:
+  qdrant_data:
