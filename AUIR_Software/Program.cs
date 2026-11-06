@@ -6,6 +6,7 @@ using AUIR_Software.Services.Embedding;
 using AUIR_Software.Services.IServices;
 using AUIR_Software.Services.Tool;
 using AUIR_Software.Services.Vector;
+using AUIR_Software.Services.Chat;
 using DotNetEnv;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
@@ -99,6 +100,7 @@ builder.Services.AddDbContext<ApplicationDbContext.Data.ApplicationDbContext>(op
     options.UseSqlServer(connectionString));
 
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddMemoryCache();
 
 // ======================
 // Repository
@@ -121,6 +123,7 @@ builder.Services.AddScoped<IContentService, ContentService>();
 // Đọc cấu hình Provider từ appsettings.json
 builder.Services.AddScoped<IEmbeddingProvider, GeminiEmbeddingProvider>();
 builder.Services.AddScoped<SearchDocTool>();
+builder.Services.AddSingleton<ChatQueryRouter>();
 // Register RAG Pipeline (Mở khóa nếu bạn đã viết xong lớp này)
 builder.Services.AddScoped<RagPipeline>();
 builder.Services.AddSingleton<RagUploadQueue>();

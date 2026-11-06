@@ -189,7 +189,7 @@ namespace AUIR_Software.Services
             var dim = await _emb.GetDimAsync(ct);
             await _vec.EnsureCollectionAsync(dim, ct);
             var qvec = await _emb.EmbedQueryAsync(question, ct);
-            var hits = await _vec.SearchAsync(qvec, topK ?? _cfg.Rag.TopK, ct);
+            var hits = await _vec.SearchAsync(qvec, topK ?? _cfg.Rag.TopK, ct: ct);
             //filter hits by score
             var filterHits = hits.Where(h => h.Score >= _cfg.Rag.MinScore).ToList();
             if(filterHits.Count == 0)

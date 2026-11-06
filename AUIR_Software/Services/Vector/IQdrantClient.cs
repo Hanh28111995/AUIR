@@ -9,7 +9,11 @@
         Task UpsertAsync( IEnumerable<VecPoint> points, CancellationToken ct = default);
 
         // 3. Tìm kiếm các đoạn văn liên quan nhất (Sửa chính tả query)
-        Task<List<VecHit>> SearchAsync( float[] query, int topK, CancellationToken ct = default);
+        Task<List<VecHit>> SearchAsync(
+            float[] query,
+            int topK,
+            string? source = null,
+            CancellationToken ct = default);
 
         Task<List<RagDocument>> ListDocumentsAsync(CancellationToken ct = default);
 

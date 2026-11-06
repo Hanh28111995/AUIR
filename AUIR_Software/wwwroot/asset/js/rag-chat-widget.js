@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var input = document.getElementById('chat-message-input');
     var messages = document.getElementById('chat-messages');
     var sendButton = document.getElementById('chat-send-button');
+    var conversationStorageKey = 'auir-rag-chat-conversation-id';
+    var conversationId = localStorage.getItem(conversationStorageKey);
+    if (!conversationId) {
+        conversationId = crypto.randomUUID();
+        localStorage.setItem(conversationStorageKey, conversationId);
+    }
 
     if (!openButton || !closeButton || !widget || !form || !input || !messages || !sendButton) {
         return;
@@ -54,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var response = await fetch('/chat/assist', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: message })
+                body: JSON.stringify({ message: message, conversationId: conversationId })
             });
             var responseText = await response.text();
             var result;

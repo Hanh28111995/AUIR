@@ -58,24 +58,44 @@ namespace AUIR_Software.Services.Vector
             _activeCollection = name;
             using var check = await SendAsync(
                 token => _http.GetAsync($"collections/{name}", token), ct);
-            if (check.IsSuccessStatusCode) return;
-            if (check.StatusCode != System.Net.HttpStatusCode.NotFound)
+            if (!check.IsSuccessStatusCode)
             {
-                check.EnsureSuccessStatusCode();
+                if (check.StatusCode != System.Net.HttpStatusCode.NotFound)
+                {
+                    await EnsureSuccessAsync(check, $"GET collections/{name}", name, ct);
+                }
+
+                var body = new
+                {
+                    vectors = new
+                    {
+                        size = vectorSize,
+                        distance = "Cosine"
+                    }
+                };
+                using var response = await SendAsync(
+                    token => _http.PutAsJsonAsync($"collections/{name}", body, token), ct);
+                await EnsureSuccessAsync(response, $"PUT collections/{name}", name, ct);
             }
 
+            await EnsurePayloadIndexAsync(name, ct);
+        }
+
+        private async Task EnsurePayloadIndexAsync(string collection, CancellationToken ct)
+        {
             var body = new
             {
-                vectors = new
-                {
-                    size = vectorSize,
-                    distance = "Cosine"
-                }
+                field_name = "source",
+                field_schema = "keyword"
             };
             using var response = await SendAsync(
-                token => _http.PutAsJsonAsync($"collections/{name}", body, token), ct);
-            response.EnsureSuccessStatusCode();
-
+                token => _http.PutAsJsonAsync(
+                    $"collections/{collection}/index?wait=true", body, token), ct);
+            await EnsureSuccessAsync(
+                response,
+                $"PUT collections/{collection}/index?wait=true (source/keyword)",
+                collection,
+                ct);
         }
 
         public async Task UpsertAsync(IEnumerable<VecPoint> points, CancellationToken ct = default)
@@ -170,14 +190,31 @@ namespace AUIR_Software.Services.Vector
         private sealed record QdrantPoint(string Id, float[] Vector, QdrantPointPayload Payload);
         private sealed record QdrantPointPayload(string Text, string? Source);
 
-        public async Task<List<VecHit>> SearchAsync(float[] query, int topK, CancellationToken ct = default)
+        public async Task<List<VecHit>> SearchAsync(
+            float[] query,
+            int topK,
+            string? source = null,
+            CancellationToken ct = default)
         {
             var name = _activeCollection ?? _config.Qdrant.Collection;
             var payload = new
             {
                 vector = query,
                 limit = topK,
-                with_payload = true
+                with_payload = true,
+                filter = string.IsNullOrWhiteSpace(source)
+                    ? null
+                    : new
+                    {
+                        must = new[]
+                        {
+                            new
+                            {
+                                key = "source",
+                                match = new { value = source }
+                            }
+                        }
+                    }
             };
             using var response = await SendAsync(
                 token => _http.PostAsJsonAsync($"collections/{name}/points/search", payload, token), ct);
@@ -272,7 +309,11 @@ namespace AUIR_Software.Services.Vector
                 using var response = await SendAsync(
                     token => _http.PostAsJsonAsync(
                         $"collections/{name}/points/delete?wait=true", payload, token), ct);
-                response.EnsureSuccessStatusCode();
+                await EnsureSuccessAsync(
+                    response,
+                    $"POST collections/{name}/points/delete?wait=true",
+                    name,
+                    ct);
             }
         }
 
@@ -319,6 +360,26 @@ namespace AUIR_Software.Services.Vector
                 _config.Rag.QdrantThrottleDelayMs,
                 send,
                 ct);
+
+        private static async Task EnsureSuccessAsync(
+            HttpResponseMessage response,
+            string operation,
+            string collection,
+            CancellationToken ct)
+        {
+            if (response.IsSuccessStatusCode)
+            {
+                return;
+            }
+
+            var responseBody = await response.Content.ReadAsStringAsync(ct);
+            throw new HttpRequestException(
+                $"Qdrant operation failed. Operation={operation}; " +
+                $"Collection={collection}; HTTP={(int)response.StatusCode} ({response.StatusCode}); " +
+                $"Response={responseBody}",
+                null,
+                response.StatusCode);
+        }
 
         private sealed class QdrantScrollResponse
         {

@@ -17,7 +17,12 @@ namespace AUIR_Software.Services.Tool
             _emb = emb;
             _cfg = cfg;        
         }
-        public async Task<string> InvokeAsync(string query, int? topK, float? minScore, CancellationToken cancellationToken = default)
+        public async Task<string> InvokeAsync(
+            string query,
+            int? topK,
+            float? minScore,
+            string? source = null,
+            CancellationToken cancellationToken = default)
         {
             int dim = await _emb.GetDimAsync(cancellationToken);
             await _vec.EnsureCollectionAsync(dim, cancellationToken);
@@ -26,7 +31,7 @@ namespace AUIR_Software.Services.Tool
             int overfetch = Math.Max(2, k * 3);
 
             var questionVector = await _emb.EmbedQueryAsync(query, cancellationToken);
-            var raw = await _vec.SearchAsync(questionVector, overfetch, cancellationToken);
+            var raw = await _vec.SearchAsync(questionVector, overfetch, source, cancellationToken);
 
             float gate = minScore ?? (_cfg.Rag is { } ? _cfg.Rag.MinScore : 0.0f);            
             var passed = raw.Where(h => h.Score >= gate).ToList();

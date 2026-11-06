@@ -1,6 +1,7 @@
 ﻿using AUIR_Software.Services.Tool;
 using AUIR_Software.Models.DTO;
 using AUIR_Software.Models.LLM;
+using AUIR_Software.Services.Chat;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -14,6 +15,8 @@ namespace AUIR_Software.Controllers.Home.ChatController
         /// <summary>Câu hỏi cần gửi tới chatbot.</summary>
         [Required, StringLength(2000, MinimumLength = 1)]
         public required string Message { get; init; }
+
+        public string? ConversationId { get; init; }
     }
 
     /// <summary>Phản hồi chat do Gemini tạo.</summary>
@@ -27,17 +30,20 @@ namespace AUIR_Software.Controllers.Home.ChatController
         private readonly ILLMchatProvider _provider;
         private readonly SearchDocTool _search;
         private readonly AppConfig _config;
+        private readonly ChatQueryRouter _router;
         private readonly ILogger<RagChatController> _logger;
 
         public RagChatController(
             ILLMProviderFactory factory,
             SearchDocTool search,
             AppConfig config,
+            ChatQueryRouter router,
             ILogger<RagChatController> logger)
         {
             _provider = factory.GetProvider();
             _search = search;
             _config = config;
+            _router = router;
             _logger = logger;
         }
 
@@ -63,65 +69,57 @@ namespace AUIR_Software.Controllers.Home.ChatController
             [FromBody] ToolRagChatRequest request,
             CancellationToken cancellationToken)
         {
-            const string toolParameters = """
-            {
-                "type": "object",
-                "properties": {
-                    "query": { "type": "string", "description": "User question to search for" }
-                },
-                "required": [ "query" ]
-            }
-            """;
-
+            var conversationId = string.IsNullOrWhiteSpace(request.ConversationId)
+                ? HttpContext.TraceIdentifier
+                : request.ConversationId.Trim();
             var lastHits = new List<(int Ordinal, string Source, double Score)>();
-            var systemPrompt =
-                "You are a retrieval-augmented assistant. " +
-                $"Decide when to call {nameof(SearchDocTool)}. " +
-                $"If the user query likely needs facts from our knowledge base, call {nameof(SearchDocTool)} first, " +
-                "then answer ONLY using returned snippets. " +
-                "Cite passages inline with [#ordinal] and list sources at the end. " +
-                $"If {nameof(SearchDocTool)} returns no hits, say you don't know.";
-
-            async Task<string> HandleSearch(string arguments, CancellationToken ct)
+            var route = _router.Route(request.Message, conversationId);
+            if (route.StaticReply is not null)
             {
-                using var document = JsonDocument.Parse(arguments);
-                var root = document.RootElement;
-                var query = root.TryGetProperty("query", out var queryValue)
-                    ? queryValue.GetString() ?? string.Empty
-                    : string.Empty;
-
-                try
-                {
-                    var resultJson = await _search.InvokeAsync(
-                        query,
-                        _config.Rag.TopK,
-                        _config.Rag.MinScore,
-                        ct);
-                    lastHits.Clear();
-                    lastHits.AddRange(ParseHits(resultJson));
-                    return resultJson;
-                }
-                catch (OperationCanceledException) when (ct.IsCancellationRequested)
-                {
-                    throw;
-                }
-                catch (Exception exception)
-                {
-                    throw new RagSearchException(exception);
-                }
+                return Ok(new ChatAssistResponse(route.StaticReply));
             }
 
-            string reply;
             try
             {
-                reply = await _provider.AskWithToolAsync(
-                    systemPrompt,
-                    request.Message,
-                    nameof(SearchDocTool),
-                    "Search documents in the knowledge base",
-                    toolParameters,
-                    HandleSearch,
+                var resultJson = await _search.InvokeAsync(
+                    route.Query,
+                    _config.Rag.TopK,
+                    _config.Rag.MinScore,
+                    route.SourceHint,
                     cancellationToken);
+                lastHits.AddRange(ParseHits(resultJson));
+
+                if (lastHits.Count == 0 && route.SourceHint is not null)
+                {
+                    resultJson = await _search.InvokeAsync(
+                        route.Query,
+                        _config.Rag.TopK,
+                        _config.Rag.MinScore,
+                        null,
+                        cancellationToken);
+                    lastHits.AddRange(ParseHits(resultJson));
+                }
+
+                if (lastHits.Count == 0)
+                {
+                    return Ok(new ChatAssistResponse(
+                        "Thông tin hiện không có sẵn trên website. " +
+                        "Vui lòng tới mục Contact trên website để liên hệ trực tiếp."));
+                }
+
+                _router.RememberSource(conversationId, lastHits[0].Source);
+                var context = BuildContext(resultJson);
+                var systemPrompt =
+                    "Bạn là trợ lý hỏi đáp của AUIR. Chỉ trả lời dựa trên CONTEXT được cung cấp; " +
+                    "nếu context không đủ thì nói rõ chưa tìm thấy thông tin. Không tự bịa. " +
+                    "Trả lời ngắn gọn bằng tiếng Việt và dùng [#ordinal] khi trích dẫn.";
+                var reply = await _provider.AskAsync(
+                    systemPrompt,
+                    $"CONTEXT:\n{context}\n\nCÂU HỎI:\n{request.Message}",
+                    cancellationToken);
+
+                reply += BuildCitations(lastHits);
+                return Ok(new ChatAssistResponse(reply));
             }
             catch (TaskCanceledException exception) when (!cancellationToken.IsCancellationRequested)
             {
@@ -171,8 +169,16 @@ namespace AUIR_Software.Controllers.Home.ChatController
                     "Không thể hoàn tất yêu cầu với Gemini. Hãy kiểm tra model và log server."));
             }
 
-            reply += BuildCitations(lastHits);
-            return Ok(new ChatAssistResponse(reply));
+        }
+
+        private static string BuildContext(string resultJson)
+        {
+            using var document = JsonDocument.Parse(resultJson);
+            return string.Join("\n", document.RootElement.GetProperty("hits").EnumerateArray()
+                .Select(hit =>
+                    $"[#{hit.GetProperty("ordinal").GetInt32()}] " +
+                    $"{hit.GetProperty("source").GetString()}: " +
+                    hit.GetProperty("snippet").GetString()));
         }
 
         private static string BuildCitations(List<(int Ordinal, string Source, double Score)> hits)
