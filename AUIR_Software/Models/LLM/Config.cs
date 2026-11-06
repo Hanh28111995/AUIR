@@ -17,6 +17,7 @@
         public string ApiVersion { get; set; } = "v1beta";
         public string ChatModel { get; set; } = "gemini-flash-latest";
         public string EmbeddingModel { get; set; } = "gemini-embedding-2";
+        public int EmbeddingOutputDimensionality { get; set; } = 768;
     }
 
     public class QdrantConfig

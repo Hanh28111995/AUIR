@@ -7,12 +7,19 @@ namespace AUIR_Software.Services.Embedding
     {
         private readonly GeminiApiClient _api;
         private readonly string _model;
+        private readonly int _outputDimensionality;
         private int? _dimension;
 
         public GeminiEmbeddingProvider(GeminiApiClient api, AppConfig config)
         {
             _api = api;
             _model = config.Gemini.EmbeddingModel;
+            _outputDimensionality = config.Gemini.EmbeddingOutputDimensionality;
+            if (_outputDimensionality <= 0)
+            {
+                throw new InvalidOperationException(
+                    "Gemini:EmbeddingOutputDimensionality must be greater than zero.");
+            }
         }
 
         public Task<float[]> EmbedAsync(string text, CancellationToken ct = default)
@@ -47,7 +54,8 @@ namespace AUIR_Software.Services.Embedding
                     content = new
                     {
                         parts = new[] { new { text = FormatDocument(document.Text, document.Title) } }
-                    }
+                    },
+                    outputDimensionality = _outputDimensionality
                 }).ToArray();
 
                 using var response = await _api.PostAsync(
@@ -101,7 +109,11 @@ namespace AUIR_Software.Services.Embedding
         {
             using var response = await _api.PostAsync(
                 $"models/{Uri.EscapeDataString(_model)}:embedContent",
-                new { content = new { parts = new[] { new { text } } } },
+                new
+                {
+                    content = new { parts = new[] { new { text } } },
+                    outputDimensionality = _outputDimensionality
+                },
                 ct);
 
             var values = response.RootElement

@@ -14,34 +14,62 @@ namespace AUIR_Software.Services.Text
             return sb.ToString().Replace("\r\n", "\n").Replace("\r", "\n");
         }
 
-        public static IEnumerable<string> Chunk(string text, int chunkSize, int chunkOverlap)
+        public static IEnumerable<string> Chunk(
+       string text,
+       int chunkSize,
+       int chunkOverlap)
         {
             if (chunkSize <= 0)
-            {
-                throw new ArgumentOutOfRangeException(
-                    nameof(chunkSize),
-                    "Chunk size must be positive.");
-            }
+                throw new ArgumentOutOfRangeException(nameof(chunkSize));
 
             if (chunkOverlap < 0 || chunkOverlap >= chunkSize)
-            {
-                throw new ArgumentOutOfRangeException(
-                    nameof(chunkOverlap),
-                    "Chunk overlap must be non-negative and smaller than chunk size.");
-            }
+                throw new ArgumentOutOfRangeException(nameof(chunkOverlap));
 
-            if(string.IsNullOrWhiteSpace(text)) yield break;
+            if (string.IsNullOrWhiteSpace(text))
+                yield break;
+
             var cleaned = Normalize(text);
-            int start = 0;
+            var start = 0;
+
             while (start < cleaned.Length)
             {
-                int end = Math.Min(start + chunkSize, cleaned.Length);
-                int lastPeriod = cleaned.LastIndexOf('.', end - 1, end - start);
-                if (lastPeriod > start + 100) end = lastPeriod+1;
-                yield return cleaned.Substring(start, end - start).Trim();
-                if(end >= cleaned.Length) break;
-                start = Math.Max(0, end - chunkOverlap);
-            }                     
-        }        
+                var end = Math.Min(start + chunkSize, cleaned.Length);
+
+                if (end < cleaned.Length)
+                {
+                    // Chỉ chọn dấu chấm gần cuối chunk để tránh bước tiến quá ngắn.
+                    var searchStart = Math.Max(
+                        start + chunkOverlap + 1,
+                        end - chunkOverlap);
+                    var searchLength = end - searchStart;
+
+                    if (searchLength > 0)
+                    {
+                        var lastPeriod = cleaned.LastIndexOf(
+                            '.',
+                            end - 1,
+                            searchLength);
+
+                        if (lastPeriod >= searchStart)
+                            end = lastPeriod + 1;
+                    }
+                }
+
+                var chunk = cleaned.Substring(start, end - start).Trim();
+                if (chunk.Length > 0)
+                    yield return chunk;
+
+                if (end >= cleaned.Length)
+                    break;
+
+                var nextStart = end - chunkOverlap;
+
+                // Rào bảo vệ bắt buộc: luôn tiến về phía trước.
+                if (nextStart <= start)
+                    nextStart = start + 1;
+
+                start = nextStart;
+            }
+        }
     }
 }
