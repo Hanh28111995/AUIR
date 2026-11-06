@@ -1,0 +1,32 @@
+@baseUrl = http://localhost:5210
+@adminCookie = paste-admin-cookie-here
+@requestVerificationToken = paste-token-from-upload-token-response-here
+
+### Test Gemini directly without RAG search
+POST {{baseUrl}}/api/diagnostics/gemini
+Cookie: {{adminCookie}}
+
+### Test RAG chat; the only request field is message
+POST {{baseUrl}}/chat/assist
+Content-Type: application/json
+
+{
+  "message": "Trả lời ngắn gọn: Gemini có hoạt động không?"
+}
+
+### Get an antiforgery token before upload
+GET {{baseUrl}}/api/querry/upload-token
+Cookie: {{adminCookie}}
+
+### Upload a small sample document
+POST {{baseUrl}}/api/querry/upload
+Cookie: {{adminCookie}}
+RequestVerificationToken: {{requestVerificationToken}}
+Content-Type: multipart/form-data; boundary=----AuirUploadBoundary
+
+------AuirUploadBoundary
+Content-Disposition: form-data; name="files"; filename="swagger-check.txt"
+Content-Type: text/plain
+
+AUIR Swagger upload verification sample document.
+------AuirUploadBoundary--

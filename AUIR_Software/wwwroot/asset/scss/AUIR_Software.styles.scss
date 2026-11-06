@@ -337,7 +337,7 @@ body #navbarNavDropdown .tag-list .tag-list-item span {
     color: #fff
 }
 
-body header {
+body > header {
     padding: 5px 60px;
     display: block;
     position: fixed;
@@ -1989,7 +1989,7 @@ body .vertical-scroll-list-more-page .js-vertical-scroll-list ul li .item-conten
         padding-right: 10px
     }
 
-    body header {
+    body > header {
         padding-left: 10px;
         padding-right: 10px
     }

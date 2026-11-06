@@ -1,7 +1,6 @@
 ﻿using AUIR_Software.Models.LLM;
 using AUIR_Software.Services.Embedding;
 using AUIR_Software.Services.Vector;
-using Microsoft.Identity.Client;
 using System.Text;
 using System.Text.Json;
 
@@ -9,13 +8,11 @@ namespace AUIR_Software.Services.Tool
 {
     public class SearchDocTool
     {
-        private readonly ILLMchatProvider _provider;
         private readonly IEmbeddingProvider _emb;
         private readonly IQdrantClient _vec;
         private readonly AppConfig _cfg;
-        public SearchDocTool(ILLMProviderFactory factory, IEmbeddingProvider emb, IQdrantClient vec, AppConfig cfg)
+        public SearchDocTool(IEmbeddingProvider emb, IQdrantClient vec, AppConfig cfg)
         {
-            _provider = factory.GetProvider();
             _vec = vec;
             _emb = emb;
             _cfg = cfg;        
@@ -28,7 +25,7 @@ namespace AUIR_Software.Services.Tool
             int k = topK ?? _cfg.Rag.TopK;
             int overfetch = Math.Max(2, k * 3);
 
-            var questionVector = await _emb.EmbedAsync(query, cancellationToken);
+            var questionVector = await _emb.EmbedQueryAsync(query, cancellationToken);
             var raw = await _vec.SearchAsync(questionVector, overfetch, cancellationToken);
 
             float gate = minScore ?? (_cfg.Rag is { } ? _cfg.Rag.MinScore : 0.0f);            
@@ -59,7 +56,7 @@ namespace AUIR_Software.Services.Tool
 
             var payload = new
             {
-                Hits = kept.Select((h, i) => new {
+                hits = kept.Select((h, i) => new {
                     id = h.Id,
                     ordinal = i + 1,     // để model trích dẫn [#ordinal]
                     score = Math.Round(h.Score, 4),

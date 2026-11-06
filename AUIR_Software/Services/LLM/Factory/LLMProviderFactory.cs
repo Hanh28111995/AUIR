@@ -18,16 +18,12 @@
 
         return provider switch
         {
-            "OpenAI"
+            "Gemini"
                 => _serviceProvider
-                    .GetRequiredService<OpenAIchatProvider>(),
+                    .GetRequiredService<GeminiChatProvider>(),
 
-            "Ollama"
-                => _serviceProvider
-                    .GetRequiredService<OllamaAIchatProvider>(),
-
-            _ => throw new Exception(
-                "Provider not supported")
+            _ => throw new InvalidOperationException(
+                $"LLM provider '{provider}' is not supported.")
         };
     }
 }

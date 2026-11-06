@@ -8,23 +8,54 @@ using AUIR_Software.Services.Tool;
 using AUIR_Software.Services.Vector;
 using DotNetEnv;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
-using OpenAI.Chat;
-using OpenAI.Embeddings;
+using System.Reflection;
 
-Env.Load();
+const long maxUploadRequestBytes = 210L * 1024L * 1024L;
+
+var envFile = Path.Combine(Directory.GetCurrentDirectory(), ".env");
+if (!File.Exists(envFile))
+{
+    envFile = Path.Combine(Directory.GetCurrentDirectory(), "AUIR_Software", ".env");
+}
+if (File.Exists(envFile))
+{
+    Env.Load(envFile);
+}
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.Limits.MaxRequestBodySize = maxUploadRequestBytes;
+});
+builder.Services.Configure<IISServerOptions>(options =>
+{
+    options.MaxRequestBodySize = maxUploadRequestBytes;
+});
 
 // ======================
 // ENV & CONFIGURATION
 // ======================
 var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION");
-var openAiKey = Environment.GetEnvironmentVariable("OPENAI_KEY");
+var geminiApiKey = Environment.GetEnvironmentVariable("GEMINI_KEY");
+var qdrantApiKey = Environment.GetEnvironmentVariable("QDRANT_KEY");
+var qdrantEndpoint = Environment.GetEnvironmentVariable("QDRANT_ENDPOINT");
 
-// Nạp Key vào bộ cấu hình hệ thống
-builder.Configuration["OpenAI:ApiKey"] = openAiKey;
+if (!string.IsNullOrWhiteSpace(geminiApiKey))
+{
+    builder.Configuration["Gemini:ApiKey"] = geminiApiKey;
+}
+if (!string.IsNullOrWhiteSpace(qdrantApiKey))
+{
+    builder.Configuration["Qdrant:ApiKey"] = qdrantApiKey;
+}
+if (!string.IsNullOrWhiteSpace(qdrantEndpoint))
+{
+    builder.Configuration["Qdrant:Endpoint"] = qdrantEndpoint;
+}
 
 // FIX: Khởi tạo và Bind dữ liệu chuẩn từ appsettings.json + Biến môi trường vào AppConfig
 var appConfig = new AppConfig();
@@ -35,6 +66,10 @@ builder.Services.AddSingleton(appConfig); // Đăng ký để QdrantHttpClient v
 // MVC + Swagger
 // ======================
 builder.Services.AddControllersWithViews();
+builder.Services.AddRequestTimeouts(options =>
+{
+    options.AddPolicy("RagUpload", TimeSpan.FromMinutes(10));
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -42,8 +77,15 @@ builder.Services.AddSwaggerGen(options =>
     {
         Title = "AUIR API",
         Version = "v1",
-        Description = "RAG Chatbot API"
+        Description = """
+            API kiểm tra Gemini, chat RAG và nạp tài liệu.
+            Để thử các endpoint quản trị trong Swagger, hãy đăng nhập Admin trên cùng host trước.
+            Endpoint upload yêu cầu antiforgery token; lấy token qua GET /api/querry/upload-token
+            rồi gửi trong header RequestVerificationToken.
+            """
     });
+    options.IncludeXmlComments(
+        Path.Combine(AppContext.BaseDirectory, $"{Assembly.GetExecutingAssembly().GetName().Name}.xml"));
 });
 
 builder.Services
@@ -73,52 +115,36 @@ builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IContentService, ContentService>();
 
 // ======================
-// AI Config Resolve (OpenAI & Ollama)
+// AI Config Resolve (Gemini)
 // ======================
 
-// OpenAI ChatClient: Chỉ ném lỗi khi thực sự gọi đến OpenAI mà không có Key
-builder.Services.AddSingleton(sp =>
-{
-    if (string.IsNullOrWhiteSpace(openAiKey))
-    {
-        // Không throw trực tiếp ở ngoài nữa, chỉ báo lỗi khi có service cố tình bốc ChatClient của OpenAI ra dùng
-        throw new InvalidOperationException("Lỗi: OpenAI ApiKey đang bị trống! Hãy kiểm tra lại file .env hoặc biến môi trường.");
-    }
-
-    return new ChatClient(
-        model: builder.Configuration["OpenAI:ChatModel"] ?? "gpt-4o-mini",
-        apiKey: openAiKey
-    );
-});
-
 // Đọc cấu hình Provider từ appsettings.json
-var llmProvider = builder.Configuration["LLM:Provider"];
-
-if (llmProvider == "Ollama")
-{
-    builder.Services.AddScoped<IEmbeddingProvider, OllamaEmbeddingProvider>();
-    // Đăng ký thêm OllamaChat nếu có...
-}
-else if (llmProvider == "OpenAI")
-{
-    builder.Services.AddScoped<IEmbeddingProvider, OpenAIembeddingProvider>();
-    // Đăng ký thêm OpenAIChat nếu có...
-}
+builder.Services.AddScoped<IEmbeddingProvider, GeminiEmbeddingProvider>();
 builder.Services.AddScoped<SearchDocTool>();
 // Register RAG Pipeline (Mở khóa nếu bạn đã viết xong lớp này)
 builder.Services.AddScoped<RagPipeline>();
+builder.Services.AddSingleton<RagUploadQueue>();
+builder.Services.AddHostedService(serviceProvider =>
+    serviceProvider.GetRequiredService<RagUploadQueue>());
+builder.Services.AddSingleton<ApiRequestPacer>();
 
 // ======================
 // AI Providers & Vector DB
 // ======================
-builder.Services.AddScoped<OpenAIchatProvider>();
-builder.Services.AddHttpClient<OllamaAIchatProvider>();
+builder.Services.AddHttpClient<GeminiApiClient>(client =>
+{
+    client.Timeout = TimeSpan.FromSeconds(appConfig.Rag.GeminiRequestTimeoutSeconds);
+});
+builder.Services.AddScoped<GeminiChatProvider>();
 
 builder.Services.AddScoped<ILLMProviderFactory, LLMProviderFactory>();
 builder.Services.AddScoped<IChatService, ChatService>();
 
 // Cấu hình HttpClient Factory cho Qdrant DB
-builder.Services.AddHttpClient(nameof(QdrantHttpClient));
+builder.Services.AddHttpClient(nameof(QdrantHttpClient), client =>
+{
+    client.Timeout = TimeSpan.FromSeconds(appConfig.Rag.QdrantRequestTimeoutSeconds);
+});
 builder.Services.AddTransient<IQdrantClient, QdrantHttpClient>();
 
 // ======================
@@ -130,6 +156,36 @@ builder.Services
     {
         options.LoginPath = "/Admin/LoginPage";
         options.AccessDeniedPath = "/Admin/LoginPage";
+        options.Events.OnRedirectToLogin = async context =>
+        {
+            if (context.Request.Path.StartsWithSegments("/api") ||
+                context.Request.Path.StartsWithSegments("/chat"))
+            {
+                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                await context.Response.WriteAsJsonAsync(new
+                {
+                    message = "Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại."
+                });
+                return;
+            }
+
+            context.Response.Redirect(context.RedirectUri);
+        };
+        options.Events.OnRedirectToAccessDenied = async context =>
+        {
+            if (context.Request.Path.StartsWithSegments("/api") ||
+                context.Request.Path.StartsWithSegments("/chat"))
+            {
+                context.Response.StatusCode = StatusCodes.Status403Forbidden;
+                await context.Response.WriteAsJsonAsync(new
+                {
+                    message = "Bạn không có quyền thực hiện thao tác này."
+                });
+                return;
+            }
+
+            context.Response.Redirect(context.RedirectUri);
+        };
     });
 
 var app = builder.Build();
@@ -177,6 +233,7 @@ app.UseStaticFiles(new StaticFileOptions
 });
 
 app.UseRouting();
+app.UseRequestTimeouts();
 app.UseAuthentication();
 app.UseAuthorization();
 

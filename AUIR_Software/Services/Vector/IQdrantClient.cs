@@ -10,11 +10,16 @@
 
         // 3. Tìm kiếm các đoạn văn liên quan nhất (Sửa chính tả query)
         Task<List<VecHit>> SearchAsync( float[] query, int topK, CancellationToken ct = default);
+
+        Task<List<RagDocument>> ListDocumentsAsync(CancellationToken ct = default);
+
+        Task DeleteBySourceAsync(string source, CancellationToken ct = default);
     }
 
     // Các lớp Record và Model giữ nguyên cấu trúc rất tốt của bạn
     public record VecPoint(string Id, float[] Vector, string Text, string? Source);
     public record VecHit(string Id, float Score, string Text, string? Source); // Sửa Source viết hoa cho đồng bộ
+    public record RagDocument(string Source, int ChunkCount);
 
     public class QdrantSearchResponse
     {

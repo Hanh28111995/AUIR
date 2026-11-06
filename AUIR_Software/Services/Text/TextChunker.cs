@@ -2,7 +2,6 @@
 
 namespace AUIR_Software.Services.Text
 {
-    using System.Text;
     public class TextChunker
     {
         static string Normalize(string text)
@@ -17,6 +16,20 @@ namespace AUIR_Software.Services.Text
 
         public static IEnumerable<string> Chunk(string text, int chunkSize, int chunkOverlap)
         {
+            if (chunkSize <= 0)
+            {
+                throw new ArgumentOutOfRangeException(
+                    nameof(chunkSize),
+                    "Chunk size must be positive.");
+            }
+
+            if (chunkOverlap < 0 || chunkOverlap >= chunkSize)
+            {
+                throw new ArgumentOutOfRangeException(
+                    nameof(chunkOverlap),
+                    "Chunk overlap must be non-negative and smaller than chunk size.");
+            }
+
             if(string.IsNullOrWhiteSpace(text)) yield break;
             var cleaned = Normalize(text);
             int start = 0;

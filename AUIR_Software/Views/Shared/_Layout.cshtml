@@ -31,6 +31,7 @@
     <!-- Critical CSS -->
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/asset/css/AUIR_Software.styles.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/asset/css/rag-chat-widget.css" asp-append-version="true" />
 
     <!-- Non-critical CSS: load async -->
     <link rel="stylesheet" href="~/lib/bootstrap/ver431/css/bootstrap.min.css" asp-append-version="true" media="print" onload="this.media='all'" />
@@ -56,7 +57,7 @@
                 <div class=" d-inline-flex justify-content-between ml-auto">
                     <ul class="navbar-nav d-flex align-items-center">
                         <li class="nav-item">
-                            <a class="btn-chatbox" id="scroll-btn">Let's talk</a>
+                            <button class="btn-chatbox" id="chat-open-button" type="button" aria-haspopup="dialog" aria-controls="rag-chat-widget">Let's talk</button>
                         </li>                        
                         <li class="nav-item">
                             <button class="navbar-toggler d-block custom-collapse-btn" type="button" data-toggle="collapse"
@@ -150,6 +151,7 @@
         </nav>
     </header>
     @RenderBody()
+    @await Html.PartialAsync("_RagChatWidget")
 
     <!-- jQuery local -->
     <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true" defer></script>
@@ -159,6 +161,7 @@
     <script src="~/lib/gsap/gsap.min.js" asp-append-version="true" defer></script>
     <script src="~/lib/slick/slick.min.js" asp-append-version="true" defer></script>
     <script src="~/asset/js/main.min.js" asp-append-version="true" defer></script>
+    <script src="~/asset/js/rag-chat-widget.js" asp-append-version="true" defer></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

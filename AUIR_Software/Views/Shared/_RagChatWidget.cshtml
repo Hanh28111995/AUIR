@@ -1,0 +1,17 @@
+<section class="rag-chat" id="rag-chat-widget" role="dialog" aria-labelledby="rag-chat-title" aria-modal="false" hidden>
+    <header class="rag-chat__header">
+        <div>
+            <h2 id="rag-chat-title">AUIR Assistant</h2>
+            <p>Hỏi tôi về nội dung trong tài liệu</p>
+        </div>
+        <button class="rag-chat__close" id="chat-close-button" type="button" aria-label="Đóng chat">×</button>
+    </header>
+    <div class="rag-chat__messages" id="chat-messages" role="log" aria-live="polite" aria-relevant="additions text">
+        <p class="rag-chat__message rag-chat__message--assistant">Xin chào! Bạn muốn tìm hiểu điều gì?</p>
+    </div>
+    <form class="rag-chat__form" id="chat-form">
+        <label class="sr-only" for="chat-message-input">Tin nhắn</label>
+        <input id="chat-message-input" name="message" type="text" maxlength="2000" placeholder="Nhập câu hỏi..." autocomplete="off" required />
+        <button id="chat-send-button" type="submit">Gửi</button>
+    </form>
+</section>

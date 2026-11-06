@@ -1,147 +1,205 @@
 ﻿using AUIR_Software.Services.Tool;
+using AUIR_Software.Models.DTO;
+using AUIR_Software.Models.LLM;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
-using OpenAI.Chat;
+using System.Net;
 using System.Text.Json;
 
 namespace AUIR_Software.Controllers.Home.ChatController
 {
-    public record ToolRagChatRequest(string Message, int? TopK, float? MinScore);
+    /// <summary>Yêu cầu chat với RAG; hai tham số tìm kiếm được lấy từ cấu hình backend.</summary>
+    public sealed record ToolRagChatRequest
+    {
+        /// <summary>Câu hỏi cần gửi tới chatbot.</summary>
+        [Required, StringLength(2000, MinimumLength = 1)]
+        public required string Message { get; init; }
+    }
 
+    /// <summary>Phản hồi chat do Gemini tạo.</summary>
+    public sealed record ChatAssistResponse(string Reply);
+
+    /// <summary>Gửi câu hỏi tới Gemini; chatbot có thể tra cứu nội dung trong kho RAG.</summary>
     [Route("chat")]
     [ApiController]
     public class RagChatController : Controller
     {
-        private readonly ChatClient _chat;
+        private readonly ILLMchatProvider _provider;
         private readonly SearchDocTool _search;
-        public RagChatController(ChatClient chat, SearchDocTool search)
+        private readonly AppConfig _config;
+        private readonly ILogger<RagChatController> _logger;
+
+        public RagChatController(
+            ILLMProviderFactory factory,
+            SearchDocTool search,
+            AppConfig config,
+            ILogger<RagChatController> logger)
         {
-            _chat = chat;
+            _provider = factory.GetProvider();
             _search = search;
+            _config = config;
+            _logger = logger;
         }
+
+        /// <summary>Trả lời một câu hỏi bằng Gemini và tìm kiếm tài liệu liên quan khi cần.</summary>
+        /// <param name="request">Câu hỏi và tùy chọn tìm kiếm RAG.</param>
+        /// <param name="cancellationToken">Token hủy request.</param>
+        /// <response code="200">Gemini đã trả lời thành công.</response>
+        /// <response code="400">Nội dung request không hợp lệ.</response>
+        /// <response code="402">Prepaid credits của Gemini đã hết.</response>
+        /// <response code="429">Gemini giới hạn tần suất hoặc quota.</response>
+        /// <response code="502">Gemini hoặc quá trình truy xuất tài liệu gặp lỗi.</response>
+        /// <response code="503">Gemini tạm thời không khả dụng.</response>
+        /// <response code="504">Gemini không phản hồi trong thời gian cho phép.</response>
         [HttpPost("assist")]
-        public async Task<IActionResult> Assist([FromBody] ToolRagChatRequest request, CancellationToken cancellationToken)
+        [ProducesResponseType(typeof(ChatAssistResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status402PaymentRequired)]
+        [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status429TooManyRequests)]
+        [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status502BadGateway)]
+        [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status503ServiceUnavailable)]
+        [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status504GatewayTimeout)]
+        public async Task<IActionResult> Assist(
+            [FromBody] ToolRagChatRequest request,
+            CancellationToken cancellationToken)
         {
-            var searchTool = ChatTool.CreateFunctionTool(
-                functionName: nameof(SearchDocTool),
-                functionDescription: "Search documents in the knowledge base",
-                functionParameters: BinaryData.FromBytes("""
+            const string toolParameters = """
             {
                 "type": "object",
                 "properties": {
-                    "query": { "type": "string", "description": "User question to search for" },
-                    "topK": { "type": "integer", "minimum": 1, "maximum": 20 },
-                    "minScore": { "type": "number", "minimum": -1, "maximum": 1 }
+                    "query": { "type": "string", "description": "User question to search for" }
                 },
-                "required": [ "query" ],
-                "additionalProperties": false
+                "required": [ "query" ]
             }
-            """u8.ToArray())
-                );
+            """;
 
-            var messages = new List<ChatMessage>
-        {
-            new SystemChatMessage(
+            var lastHits = new List<(int Ordinal, string Source, double Score)>();
+            var systemPrompt =
                 "You are a retrieval-augmented assistant. " +
                 $"Decide when to call {nameof(SearchDocTool)}. " +
                 $"If the user query likely needs facts from our knowledge base, call {nameof(SearchDocTool)} first, " +
                 "then answer ONLY using returned snippets. " +
                 "Cite passages inline with [#ordinal] and list sources at the end. " +
-                $"If {nameof(SearchDocTool)} returns no hits, say you don't know."
-            ),
-            new UserChatMessage(request.Message)
-        };
+                $"If {nameof(SearchDocTool)} returns no hits, say you don't know.";
 
-            var options = new ChatCompletionOptions { Tools = { searchTool } };
-
-            List<(int Ordinal, string Source, double Score)> lastHits = new();
-
-            bool requiresAction;
-            do
+            async Task<string> HandleSearch(string arguments, CancellationToken ct)
             {
-                requiresAction = false;
-                var completionResult = await _chat.CompleteChatAsync(messages, options, cancellationToken);
-                var completion = completionResult.Value ?? completionResult;
-                if (completion == null)
-                    return BadRequest("No completion result.");
+                using var document = JsonDocument.Parse(arguments);
+                var root = document.RootElement;
+                var query = root.TryGetProperty("query", out var queryValue)
+                    ? queryValue.GetString() ?? string.Empty
+                    : string.Empty;
 
-                switch (completion.FinishReason)
+                try
                 {
-                    case ChatFinishReason.Stop:
-                        messages.Add(new AssistantChatMessage(completion));
-                        var reply = completion.Content == null && completion.Content.Count > 0 ? completion.Content[0].Text : string.Empty;
-                        reply += BuildCitations(lastHits);
-                        return Ok(new { reply });
-
-                    case ChatFinishReason.ToolCalls:
-                        messages.Add(new AssistantChatMessage(completion));
-                        if (completion.ToolCalls != null)
-                        {
-                            foreach (var call in completion.ToolCalls)
-                                await HandleToolCall(call, request, messages, cancellationToken, lastHits);
-                        }
-                        requiresAction = true;
-                        break;
-                    default:
-                        throw new NotImplementedException(completion.FinishReason.ToString());
+                    var resultJson = await _search.InvokeAsync(
+                        query,
+                        _config.Rag.TopK,
+                        _config.Rag.MinScore,
+                        ct);
+                    lastHits.Clear();
+                    lastHits.AddRange(ParseHits(resultJson));
+                    return resultJson;
                 }
-            } while (requiresAction);
+                catch (OperationCanceledException) when (ct.IsCancellationRequested)
+                {
+                    throw;
+                }
+                catch (Exception exception)
+                {
+                    throw new RagSearchException(exception);
+                }
+            }
 
-            return BadRequest("Unexpected exit from chat loop.");
+            string reply;
+            try
+            {
+                reply = await _provider.AskWithToolAsync(
+                    systemPrompt,
+                    request.Message,
+                    nameof(SearchDocTool),
+                    "Search documents in the knowledge base",
+                    toolParameters,
+                    HandleSearch,
+                    cancellationToken);
+            }
+            catch (TaskCanceledException exception) when (!cancellationToken.IsCancellationRequested)
+            {
+                _logger.LogError(exception, "Gemini request timed out.");
+                return StatusCode(StatusCodes.Status504GatewayTimeout, new
+                {
+                    message = "Gemini phản hồi quá chậm. Vui lòng thử lại sau."
+                });
+            }
+            catch (RagSearchException exception)
+            {
+                _logger.LogError(
+                    exception,
+                    "RAG document search failed during chat. Check Gemini embeddings and Qdrant availability.");
+                return StatusCode(StatusCodes.Status502BadGateway, new ApiErrorResponse(
+                    "Không thể tìm kiếm tài liệu. Hãy kiểm tra dịch vụ embedding và Qdrant."));
+            }
+            catch (HttpRequestException exception)
+            {
+                _logger.LogError(exception, "Gemini request failed with status {StatusCode}.", exception.StatusCode);
+
+                if (exception.StatusCode == HttpStatusCode.PaymentRequired)
+                {
+                    return StatusCode(StatusCodes.Status402PaymentRequired, new ApiErrorResponse(
+                        "Prepaid credits của Gemini đã hết. Hãy nạp thêm credit cho project đang gắn với GEMINI_KEY trong Google AI Studio."));
+                }
+
+                if (exception.StatusCode == HttpStatusCode.TooManyRequests)
+                {
+                    return StatusCode(StatusCodes.Status429TooManyRequests, new ApiErrorResponse(
+                        "Gemini đã giới hạn tần suất hoặc quota. Kiểm tra quota/API key rồi thử lại sau."));
+                }
+
+                if (exception.StatusCode == HttpStatusCode.ServiceUnavailable)
+                {
+                    return StatusCode(StatusCodes.Status503ServiceUnavailable, new ApiErrorResponse(
+                        "Gemini tạm thời không khả dụng. Hãy thử lại sau."));
+                }
+
+                if (exception.Message.Contains("API_KEY_INVALID", StringComparison.Ordinal))
+                {
+                    return StatusCode(StatusCodes.Status502BadGateway, new ApiErrorResponse(
+                        "Gemini từ chối API key. Hãy kiểm tra GEMINI_KEY rồi khởi động lại ứng dụng."));
+                }
+
+                return StatusCode(StatusCodes.Status502BadGateway, new ApiErrorResponse(
+                    "Không thể hoàn tất yêu cầu với Gemini. Hãy kiểm tra model và log server."));
+            }
+
+            reply += BuildCitations(lastHits);
+            return Ok(new ChatAssistResponse(reply));
         }
 
         private static string BuildCitations(List<(int Ordinal, string Source, double Score)> hits)
         {
             if (hits.Count == 0) return string.Empty;
             return "\n\nSources:\n" + string.Join("\n",
-                hits.Select(h => $"[#{h.Ordinal}] {h.Source} (score={h.Score:0.000})"));
+                hits.Select(hit => $"[#{hit.Ordinal}] {hit.Source} (score={hit.Score:0.000})"));
         }
 
         private static List<(int Ordinal, string Source, double Score)> ParseHits(string resultJson)
         {
-            var hits = new List<(int, string, double)>();
-            try
+            using var resultDocument = JsonDocument.Parse(resultJson);
+            var hits = new List<(int Ordinal, string Source, double Score)>();
+            foreach (var hit in resultDocument.RootElement.GetProperty("hits").EnumerateArray())
             {
-                using var resultDoc = JsonDocument.Parse(resultJson);
-                var hitsEl = resultDoc.RootElement
-                    .GetProperty("hits")
-                    .EnumerateArray();
-                foreach (var h in hitsEl)
-                {
-                    hits.Add((
-                        Ordinal: h.GetProperty("ordinal").GetInt32(),
-                        Source: h.GetProperty("source").GetString() ?? "(unknown)",
-                        Score: h.GetProperty("score").GetDouble()
-                    ));
-                }
+                hits.Add((
+                    hit.GetProperty("ordinal").GetInt32(),
+                    hit.GetProperty("source").GetString() ?? "(unknown)",
+                    hit.GetProperty("score").GetDouble()));
             }
-            catch { /* Ignore parse errors */ }
+
             return hits;
         }
 
-        private async Task HandleToolCall(ChatToolCall call, ToolRagChatRequest req, List<ChatMessage> messages, CancellationToken ct, List<(int Ordinal, string Source, double Score)> lastHits)
+        private sealed class RagSearchException(Exception innerException)
+            : Exception("RAG document search failed.", innerException)
         {
-            switch (call.FunctionName)
-            {
-                case nameof(SearchDocTool):
-                    string jsonArgs = call.FunctionArguments.ToString();
-                    using (var doc = JsonDocument.Parse(jsonArgs))
-                    {
-                        var root = doc.RootElement;
-                        string query = root.TryGetProperty("query", out var q) ? q.GetString() ?? "" : "";
-                        int? topK = root.TryGetProperty("topK", out var k) ? k.GetInt32() : req.TopK;
-                        float? minScore = root.TryGetProperty("minScore", out var s) ? (float?)s.GetDouble() : req.MinScore;
-
-                        string resultJson = await _search.InvokeAsync(query, topK, minScore, ct);
-                        lastHits.Clear();
-                        lastHits.AddRange(ParseHits(resultJson));
-                        messages.Add(new ToolChatMessage(call.Id, [ChatMessageContentPart.CreateTextPart(resultJson)]));
-                    }
-                    break;
-                default:
-                    messages.Add(new ToolChatMessage(call.Id, [ChatMessageContentPart.CreateTextPart($"{{ \"error\": \"Unknown tool: {call.FunctionName}\" }}")]));
-                    break;
-            }
         }
-
     }
 }
