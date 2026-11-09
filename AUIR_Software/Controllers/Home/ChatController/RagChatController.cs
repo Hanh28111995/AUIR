@@ -118,7 +118,7 @@ namespace AUIR_Software.Controllers.Home.ChatController
                     $"CONTEXT:\n{context}\n\nCÂU HỎI:\n{request.Message}",
                     cancellationToken);
 
-                reply += BuildCitations(lastHits);
+                //reply += BuildCitations(lastHits);
                 return Ok(new ChatAssistResponse(reply));
             }
             catch (TaskCanceledException exception) when (!cancellationToken.IsCancellationRequested)

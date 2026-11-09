@@ -20,10 +20,26 @@ document.addEventListener('DOMContentLoaded', function () {
     function appendMessage(text, kind) {
         var message = document.createElement('p');
         message.className = 'rag-chat__message rag-chat__message--' + kind;
-        message.textContent = text;
+        message.textContent = cleanResponseText(text);
         messages.appendChild(message);
         messages.scrollTop = messages.scrollHeight;
         return message;
+    }
+
+    function cleanResponseText(text) {
+        return String(text || '')
+            .replace(/```(?:[a-zA-Z0-9_+-]+)?/g, '')
+            .replace(/```/g, '')
+            .replace(/`([^`]+)`/g, '$1')
+            .replace(/\*\*(.*?)\*\*/g, '$1')
+            .replace(/__(.*?)__/g, '$1')
+            .replace(/\*([^*\n]+)\*/g, '$1')
+            .replace(/^\s*#{1,6}\s*/gm, '')
+            .replace(/^\s*[-*+]\s+/gm, '')
+            .replace(/\[#\d+\]\s*/g, '')
+            .replace(/\s*\(score\s*=\s*\d+(?:\.\d+)?\)/gi, '')
+            .replace(/\n{3,}/g, '\n\n')
+            .trim();
     }
 
     openButton.addEventListener('click', function () {
@@ -78,10 +94,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 throw new Error(result.message || result.title || 'Không thể gửi câu hỏi. Vui lòng thử lại.');
             }
 
-            pendingMessage.textContent = result.reply || 'Chatbot chưa trả về nội dung.';
+            pendingMessage.textContent = cleanResponseText(
+                result.reply || 'Chatbot chưa trả về nội dung.');
         } catch (error) {
             pendingMessage.classList.add('rag-chat__message--error');
-            pendingMessage.textContent = error.message || 'Không thể kết nối tới chatbot. Vui lòng thử lại.';
+            pendingMessage.textContent = cleanResponseText(
+                error.message || 'Không thể kết nối tới chatbot. Vui lòng thử lại.');
         } finally {
             input.disabled = false;
             sendButton.disabled = false;
