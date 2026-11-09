@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Text.Json;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace AUIR_Software.Controllers.Home.ChatController
 {
@@ -28,10 +29,11 @@ namespace AUIR_Software.Controllers.Home.ChatController
     public class RagChatController : Controller
     {
         private readonly ILLMchatProvider _provider;
+        private readonly ILogger<RagChatController> _logger;
         private readonly SearchDocTool _search;
         private readonly AppConfig _config;
-        private readonly ChatQueryRouter _router;
-        private readonly ILogger<RagChatController> _logger;
+        private readonly ChatQueryRouter _router;        
+        private readonly ChatAnswerCache _cache;
 
         public RagChatController(
             ILLMProviderFactory factory,
@@ -57,6 +59,7 @@ namespace AUIR_Software.Controllers.Home.ChatController
         /// <response code="502">Gemini hoặc quá trình truy xuất tài liệu gặp lỗi.</response>
         /// <response code="503">Gemini tạm thời không khả dụng.</response>
         /// <response code="504">Gemini không phản hồi trong thời gian cho phép.</response>
+        [EnableRateLimiting("public-chat")]
         [HttpPost("assist")]
         [ProducesResponseType(typeof(ChatAssistResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]

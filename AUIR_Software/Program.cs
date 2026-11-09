@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using System.Threading.RateLimiting;
 using System.Reflection;
 
 const long maxUploadRequestBytes = 210L * 1024L * 1024L;
@@ -116,15 +117,12 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IContentService, ContentService>();
 
-// ======================
-// AI Config Resolve (Gemini)
-// ======================
-
-// Đọc cấu hình Provider từ appsettings.json
 builder.Services.AddScoped<IEmbeddingProvider, GeminiEmbeddingProvider>();
 builder.Services.AddScoped<SearchDocTool>();
 builder.Services.AddSingleton<ChatQueryRouter>();
-// Register RAG Pipeline (Mở khóa nếu bạn đã viết xong lớp này)
+builder.Services.AddSingleton<ChatAnswerCache>();
+
+// Register RAG Pipeline 
 builder.Services.AddScoped<RagPipeline>();
 builder.Services.AddSingleton<RagUploadQueue>();
 builder.Services.AddHostedService(serviceProvider =>
@@ -191,11 +189,32 @@ builder.Services
         };
     });
 
+// ======================
+// Rate Limiter for chat RAG
+// ======================
+
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+
+    options.AddPolicy("public-chat", context =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: context.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+            factory: _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 5,
+                Window = TimeSpan.FromMinutes(1),
+                QueueLimit = 0,
+                AutoReplenishment = true
+            }));
+});
+
+
 var app = builder.Build();
 
-// ======================
+
 // Pipeline (Middleware)
-// ======================
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -236,6 +255,7 @@ app.UseStaticFiles(new StaticFileOptions
 });
 
 app.UseRouting();
+app.UseRateLimiter();
 app.UseRequestTimeouts();
 app.UseAuthentication();
 app.UseAuthorization();
